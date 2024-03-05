@@ -1,0 +1,19 @@
+/* Hide hamburger menu when screen width is larger than 1100px */
+@media screen and (max-width: 1101px) {
+    #hamburger-nav {
+        display: none;
+    }
+    #desktop-nav {
+        display: flex;
+    }
+}
+
+/* Show only hamburger nav when screen width is less than or equal to 1100px */
+@media screen and (max-width: 1100px) {
+    #desktop-nav {
+        display: none;
+    }
+    #hamburger-nav {
+        display: flex;
+    }
+}
