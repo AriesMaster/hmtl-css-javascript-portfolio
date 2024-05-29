@@ -1,7 +1,39 @@
-/* General style */
+:root {
+    --primary-color: #000000;
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --transition-speed: 0.3s;
+}
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+#theme-toggle {
+    padding: 0.5em 1em;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+}
+
+body.dark-mode {
+    --primary-color: #ffffff;
+    --background-color: #000000;
+    --text-color: #ffffff;
+}
+
 
 /* Font Classes */
 .poppins-light {
@@ -35,18 +67,18 @@ body {
 }
 
 p {
-  color: black; /* Change RGB values to actual color */
+  color: black;
 }
 
 /* Transition */
 a, .btn {
-  transition: all 0.3s ease; /* Add unit to the transition timing */
+  transition: all 0.3s ease;
 }
+
 
 /* Desktop Nav */
 nav, .nav-links {
   display: flex;
-  
 }
 
 nav {
@@ -83,8 +115,8 @@ a:hover {
 
 /* Hamburger Menu */
 #hamburger-nav {
-  display: none; /* Change from "none" to "flex" to make it visible */
-  align-items: center; /* Center align items vertically */
+  display: none;
+  align-items: center;
 }
 
 .hamburger-menu {
@@ -120,7 +152,7 @@ a:hover {
 
 .menu-links a {
   display: block;
-  padding: 10px; /* Corrected typo from "10x" to "10px" */
+  padding: 10px;
   text-align: center;
   color: black;
   text-decoration: none;
@@ -135,7 +167,7 @@ a:hover {
 }
 
 .hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(5px, 5px); /* Corrected the rotation and translation values */
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -143,24 +175,10 @@ a:hover {
 }
 
 .hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(5px, -5px); /* Corrected the rotation and translation values */
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Sections*/
-
-section {
-  padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
-  box-sizing: border-box;
-  min-height: fit-content;
-}
-
-.section-container {
-  display: flex;
-}
-
-/* profile */
+/* Profile */
 
 #profile {
   display: flex;
@@ -177,12 +195,11 @@ section {
   border-radius: 20%;
 }
 
-.section__text{
+.section__text {
   margin-top: 100px;
   align-self: center;
   text-align: center;
   height: 550px;
-  
 }
 
 .section__text p {
@@ -192,36 +209,37 @@ section {
 .section__text__p1 {
   text-align: center;
 }
+
 .section__text__p2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .section__text__p2 {
-  margin-bottom: 20px; /* Add margin-bottom to create space */
+  margin-bottom: 20px;
 }
-
 
 .title {
   font-size: 2rem;
   text-align: center;
 }
 
-#socials-container{
+#socials-container {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
   gap: 2rem;
+ 
 }
 
-/* ICONS*/
+/* Icons */
 
 .icon {
   cursor: pointer;
   height: 2rem;
 }
 
-/* BUTTONS*/
+/* Buttons */
 
 .btn-container {
   display: flex;
@@ -263,48 +281,45 @@ section {
 }
 
 .btn:hover {
-  background: rgb(0, 0, 0); /* Change background color on hover */
+  background: rgb(0, 0, 0);
 }
 
-/* ABOUT SECTION */
+/* About Section */
 
-#about{
-
+#about {
   position: relative;
 }
 
-.about-container{
-
+.about-container {
   gap: 2rem;
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
-.about-details-container{
-
+.about-details-container {
   justify-content: center;
   flex-direction: column;
 }
 
 .about-container,
-.about-details-container{
+.about-details-container {
   display: flex;
 }
 
 .about-pic {
+  margin-top: 4rem;
   display: block;
   margin: 0 auto;
-  border-radius: 50%; /* Add this line to make the image circular */
+  border-radius: 50%;
 }
 
-
-.arrow{
+.arrow {
   position: absolute;
   right: -5rem;
   bottom: 2.5rem;
 }
 
-.details-container{
+.details-container {
   padding: 1.5rem;
   flex: 1;
   background: white;
@@ -314,53 +329,88 @@ section {
   text-align: center;
 }
 
-.section-container{
+.section-container {
   gap: 4rem;
   height: 80%;
 }
 
-.section__pic-container{
+.section__pic-container {
   height: 400px;
   width: 400px;
   margin: auto 0;
 }
 
-/* EXPRIENCE SECTION */
-#experience { /* Corrected the id from "exprience" to "experience" */
+
+
+/* Experience Section */
+
+#experience {
   position: relative;
 }
 
-.experience-sub-title { /* Corrected class name from ".exprience-sub-title" to ".experience-sub-title" */
+.experience-sub-title {
   color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.experience-details-container { /* Corrected class name from ".exprience-details-container" to ".experience-details-container" */
+.experience-details-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 2rem;
 }
 
 .article-container {
   display: flex;
-  text-align: initial;
   flex-wrap: wrap;
-  flex-direction: row;
   gap: 2.5rem;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 article {
   display: flex;
-  width: 10rem;
-  justify-content: space-around;
+  align-items: center;
   gap: 0.5rem;
+  width: 10rem;
 }
 
-article.icon {
-  cursor: default;
+article img {
+  height: 2rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+
+  article {
+    font-size: 1rem;
+  }
+
+  .experience-sub-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .experience-details-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-container {
+    margin-bottom: 1rem;
+  }
+
+  article {
+    font-size: 0.875rem;
+  }
+
+  .experience-sub-title {
+    font-size: 1rem;
+  }
 }
 
 
@@ -373,14 +423,12 @@ article.icon {
 .color-container {
   border-color: rgb(163, 163, 163);
   background: rgb(250, 250, 250);
-
 }
 
 .project-img {
   border-radius: 2rem;
   width: 90%;
   height: 90%;
-
 }
 
 .project-title {
@@ -393,7 +441,7 @@ article.icon {
   border-color: rgb(163, 163, 163);
 }
 
-/* CONTACT */
+/* Contact Section */
 
 #contact {
   display: flex;
@@ -421,7 +469,7 @@ article.icon {
   margin: 1rem;
 }
 
-.contact-info-container p{
+.contact-info-container p {
   font: larger;
 }
 
@@ -429,17 +477,63 @@ article.icon {
   cursor: default;
 }
 
-.email-icon{
+.email-icon {
   height: 2.5rem;
 }
-
-/*  FOOTERS ECTION*/
+/* Footer Section */
 
 footer {
   height: 26vh;
   margin: 0 1rem;
 }
 
-footer p{
+
+
+
+/* Footer Section */
+
+footer {
+  height: 26vh;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+}
+
+footer nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links-container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  color: gray;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+footer p {
+  font-size: 1rem;
+  color: black;
+  margin-top: 1rem;
 }
