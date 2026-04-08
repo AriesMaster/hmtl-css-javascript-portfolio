@@ -18,9 +18,10 @@
 
 <body>
 
-<!-- CUSTOM CURSOR FOLLOWER -->
+<!-- CUSTOM CURSOR FOLLOWER (Temporarily Disabled)
 <div class="cursor-dot" data-cursor-dot></div>
 <div class="cursor-outline" data-cursor-outline></div>
+-->
 
 <!-- NAVIGATION -->
 
@@ -73,9 +74,7 @@
 
 <div class="section__text">
 
-<p class="section__text__p1">Hello, I'm</p>
-
-<h1 class="title">Thabo Tankiso Mavundza</h1>
+<h1 class="title terminal-title" id="typewriter">&nbsp;</h1>
 
 <p class="section__text__p2">Software Developer</p>
 
@@ -119,7 +118,7 @@ onclick="location.href='https://github.com/AriesMaster'">
 <section id="about">
 
 <p class="section__text__p1">Get To Know More</p>
-<h1 class="title">About Me</h1>
+<h1 class="title code-header">&lt;About_Me /&gt;</h1>
 
 <div class="about-details-container">
 
@@ -204,11 +203,32 @@ Java Supplemental Instruction Facilitator – North-West University
 <section id="experience">
 
 <p class="section__text__p1">Technical Skills</p>
-<h1 class="title">Technologies</h1>
+<h1 class="title code-header">&lt;Technologies /&gt;</h1>
 
 <div class="experience-details-container">
 
 <div class="about-container">
+
+<!-- IDE Mock Window -->
+<div class="details-container mock-window">
+  <div class="window-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="filename">internship.ts</span>
+  </div>
+  <pre class="code-content">
+<span class="keyword">const</span> <span class="variable">skills</span>: <span class="type">string</span>[] = [
+  <span class="string">'Angular'</span>,
+  <span class="string">'ASP.NET Core'</span>,
+  <span class="string">'TypeScript'</span>,
+  <span class="string">'C#'</span>,
+  <span class="string">'REST APIs'</span>,
+  <span class="string">'SignalR'</span>,
+  <span class="string">'SMTP'</span>,
+  <span class="string">'Bcrypt'</span>
+];</pre>
+</div>
 
 
 <div class="details-container">
@@ -335,7 +355,7 @@ Java Supplemental Instruction Facilitator – North-West University
 <section id="work">
 
 <p class="section__text__p1">My Journey</p>
-<h1 class="title">Work Experience</h1>
+<h1 class="title code-header">&lt;Experience /&gt;</h1>
 
 
 <div class="details-container">
@@ -404,7 +424,7 @@ Helped students prepare for exams and assignments
 <section id="projects">
 
 <p class="section__text__p1">My Work</p>
-<h1 class="title">Projects</h1>
+<h1 class="title code-header">&lt;Projects /&gt;</h1>
 
 <div class="experience-details-container">
 
@@ -503,7 +523,7 @@ GitHub
 <section id="contact">
 
 <p class="section__text__p1">Get In Touch</p>
-<h1 class="title">Contact</h1>
+<h1 class="title code-header">&lt;Contact /&gt;</h1>
 
 <div class="contact-info-upper-container">
 

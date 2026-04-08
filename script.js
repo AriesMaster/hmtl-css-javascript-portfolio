@@ -54,3 +54,22 @@ if (cursorDot && cursorOutline) {
         }
     });
 }
+
+// Terminal Typewriter Effect
+const typewriterElement = document.getElementById('typewriter');
+if (typewriterElement) {
+    const text = "> Hello, I'm Thabo Tankiso Mavundza";
+    let index = 0;
+    
+    typewriterElement.innerHTML = '';
+    
+    function typeWriterWithCursor() {
+        if (index < text.length) {
+            typewriterElement.innerHTML = text.substring(0, index + 1) + '<span class="blinking-cursor">_</span>';
+            index++;
+            setTimeout(typeWriterWithCursor, Math.random() * 50 + 50); // Speed randomness feels more human
+        }
+    }
+    
+    setTimeout(typeWriterWithCursor, 500); // initial startup delay
+}
