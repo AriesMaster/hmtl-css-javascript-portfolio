@@ -377,28 +377,30 @@ CUSTOM CURSOR
 ============================== */
 
 .cursor-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background-color: var(--primary-color);
   transition: opacity 0.2s ease-out;
 }
 
 .cursor-outline {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 0%, transparent 60%);
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(139, 92, 246, 0.8), rgba(236, 72, 153, 0.8));
+  filter: blur(80px);
   border: none;
-  transition: transform 0.2s ease-out;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 .cursor-dot.hovering {
-  transform: translate(-50%, -50%) scale(2);
-  background-color: var(--accent);
+  opacity: 0;
 }
 
 .cursor-outline.hovering {
-  transform: translate(-50%, -50%) scale(1.2);
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 60%);
+  transform: translate(-50%, -50%) scale(1.4);
+  opacity: 0.8;
 }
 
 .cursor-dot,
