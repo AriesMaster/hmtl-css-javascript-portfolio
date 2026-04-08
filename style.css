@@ -373,6 +373,53 @@ text-align:center;
 }
 
 /* ==============================
+CUSTOM CURSOR
+============================== */
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  transition: opacity 0.2s ease-out;
+}
+
+.cursor-outline {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 0%, transparent 60%);
+  border: none;
+  transition: transform 0.2s ease-out;
+}
+
+.cursor-dot.hovering {
+  transform: translate(-50%, -50%) scale(2);
+  background-color: var(--accent);
+}
+
+.cursor-outline.hovering {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 60%);
+}
+
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+@media (hover: none) and (pointer: coarse), (max-width: 900px) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+}
+
+/* ==============================
 ANIMATIONS
 ============================== */
 
