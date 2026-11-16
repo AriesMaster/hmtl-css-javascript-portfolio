@@ -1,807 +1,977 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Thabo Mavundza | Junior Software Developer</title>
+    <title>Thabo Mavundza | Junior Software Developer</title>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="mediaqQueries.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqQueries.css">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-</style>
-
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    </style>
 </head>
 
 <body>
 
-<nav id="desktop-nav">
-<div class="logo">Thabo Tankiso Mavundza</div>
+    <!-- DESKTOP NAVIGATION -->
+    <nav id="desktop-nav">
 
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Skills</a></li>
-<li><a href="#work">Experience</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+        <div class="logo">Thabo Tankiso Mavundza</div>
 
-</nav>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Skills</a></li>
+            <li><a href="#work">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#bookshelf">Bookshelf</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
+    </nav>
 
-<nav id="hamburger-nav">
+    <!-- MOBILE NAVIGATION -->
+    <nav id="hamburger-nav">
 
-<div class="logo">Thabo Mavundza</div>
+        <div class="logo">Thabo Mavundza</div>
 
-<div class="hamburger-menu">
+        <div class="hamburger-menu">
 
-<div class="hamburger-icon" onclick="toggleMenu()" role="button" tabindex="0" aria-label="Toggle menu" aria-expanded="false">
-<span></span>
-<span></span>
-<span></span>
-</div>
+            <div class="hamburger-icon"
+                 onclick="toggleMenu()"
+                 role="button"
+                 tabindex="0"
+                 aria-label="Toggle menu"
+                 aria-expanded="false">
 
-<div class="menu-links">
-<li><a href="#about" onclick="toggleMenu()">About</a></li>
-<li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
-<li><a href="#work" onclick="toggleMenu()">Experience</a></li>
-<li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-<li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-</div>
+                <span></span>
+                <span></span>
+                <span></span>
 
-</div>
+            </div>
 
-</nav>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#work" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#bookshelf" onclick="toggleMenu()">Bookshelf</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
 
+        </div>
 
-<!-- PROFILE / HERO -->
+    </nav>
 
-<section id="profile">
 
-<div class="section__pic-container">
-<img src="./assets/profile-pic11.png" alt="Thabo Tankiso Mavundza profile picture" />
-</div>
+    <!-- PROFILE / HERO -->
+    <section id="profile">
 
-<div class="section__text">
+        <div class="section__pic-container">
+            <img src="./assets/profile-pic11.png"
+                 alt="Thabo Tankiso Mavundza profile picture">
+        </div>
 
-<h1 class="title terminal-title" id="typewriter">&nbsp;</h1>
+        <div class="section__text">
 
-<p class="section__text__p2">Software Developer · Data &amp; Analytics · IT Support</p>
+            <h1 class="title terminal-title" id="typewriter">&nbsp;</h1>
 
-<p>
-Full-stack · SQL · Data Analytics · Networking · Support
-</p>
+            <p class="section__text__p2">
+                Software Developer · Data &amp; Analytics · IT Support
+            </p>
 
-<p>
-Location: Midrand, Gauteng
-</p>
+            <p>
+                Full-stack · SQL · Data Analytics · Networking · Support
+            </p>
 
-<div class="btn-container">
+            <p>
+                Location: Midrand, Gauteng
+            </p>
 
-<button class="btn btn-color-2"
-onclick="window.open('./assets/cv.pdf')">
-Download CV
-</button>
+            <div class="btn-container">
 
-<button class="btn btn-color-1"
-onclick="location.href='#contact'">
-Contact
-</button>
+                <button class="btn btn-color-2"
+                        onclick="window.open('./assets/cv.pdf')">
+                    Download CV
+                </button>
 
-</div>
+                <button class="btn btn-color-1"
+                        onclick="location.href='#contact'">
+                    Contact
+                </button>
 
-<div id="socials-container">
+            </div>
 
-<img src="./assets/linkedin.png"
-class="icon"
-alt="LinkedIn"
-onclick="location.href='https://linkedin.com/in/thabo-mavundza'">
+            <div id="socials-container">
 
-<img src="./assets/github.png"
-class="icon"
-alt="GitHub"
-onclick="location.href='https://github.com/AriesMaster'">
+                <img src="./assets/linkedin.png"
+                     class="icon"
+                     alt="LinkedIn"
+                     onclick="location.href='https://linkedin.com/in/thabo-mavundza'">
 
-</div>
+                <img src="./assets/github.png"
+                     class="icon"
+                     alt="GitHub"
+                     onclick="location.href='https://github.com/AriesMaster'">
 
-</div>
+            </div>
 
-</section>
+        </div>
 
+    </section>
 
-<!-- ABOUT -->
 
-<section id="about">
+    <!-- ABOUT -->
+    <section id="about">
 
-<p class="section__text__p1">Get To Know More</p>
-<h1 class="title code-header">&lt;About_Me /&gt;</h1>
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title code-header">&lt;About_Me /&gt;</h1>
 
-<div class="about-details-container">
+        <div class="about-details-container">
 
-<div class="about-container">
+            <div class="about-container">
 
-<div class="details-container">
+                <!-- PROFESSIONAL SUMMARY -->
+                <div class="details-container">
 
-<h3>Professional Summary</h3>
+                    <h3>Professional Summary</h3>
 
-<p>
-BSc Information Technology graduate with one year of professional full-stack experience
-building and supporting applications with Angular, ASP.NET Core, Entity Framework Core
-and SQL Server. Strong in REST APIs, database design, debugging, documentation and
-Azure DevOps workflows. Data side: SQL, data preparation, Data Analytics coursework,
-Python, R and Power BI for analysis and visualisation. IT support side: Windows environments,
-Microsoft 365 basics, networking fundamentals (TCP/IP, DHCP, DNS, LAN/WAN), hardware/software
-troubleshooting and clear user guidance. Also experienced with Java/Spring Boot and Oracle APEX.
-Passionate about clean software, reliable systems and continuous learning.
-</p>
+                    <p>
+                        BSc Information Technology graduate with one year of professional full-stack experience
+                        building and supporting applications with Angular, ASP.NET Core, Entity Framework Core
+                        and SQL Server. Strong in REST APIs, database design, debugging, documentation and
+                        Azure DevOps workflows. Data side: SQL, data preparation, Data Analytics coursework,
+                        Python, R and Power BI for analysis and visualisation. IT support side: Windows environments,
+                        Microsoft 365 basics, networking fundamentals (TCP/IP, DHCP, DNS, LAN/WAN), hardware/software
+                        troubleshooting and clear user guidance. Also experienced with Java/Spring Boot and Oracle APEX.
+                        Passionate about clean software, reliable systems and continuous learning.
+                    </p>
 
-</div>
+                </div>
 
 
-<div class="details-container">
+                <!-- EDUCATION -->
+                <div class="details-container">
 
-<h3>Education</h3>
+                    <h3>Education</h3>
 
-<p>
-<strong>Bachelor of Science in Information Technology (NQF 7)</strong><br>
-North-West University — Vaal Triangle Campus<br>
-January 2020 – November 2024<br><br>
+                    <p>
+                        <strong>Bachelor of Science in Information Technology (NQF 7)</strong><br>
+                        North-West University — Vaal Triangle Campus<br>
+                        January 2020 – November 2024<br><br>
 
-Major: Software Development<br>
-Minors: Accounting &amp; Statistics<br><br>
+                        Major: Software Development<br>
+                        Minors: Accounting &amp; Statistics<br><br>
 
-<strong>Key modules:</strong> Object-Oriented Programming, Data Structures &amp; Algorithms,
-Databases &amp; Advanced Databases, Systems Analysis &amp; Design, Computer Networks,
-Operating Systems, Information Security, Data Analytics, Artificial Intelligence,
-Decision Support Systems, User Interface Programming.
-</p>
+                        <strong>Key modules:</strong>
+                        Object-Oriented Programming, Data Structures &amp; Algorithms,
+                        Databases &amp; Advanced Databases, Systems Analysis &amp; Design,
+                        Computer Networks, Operating Systems, Information Security,
+                        Data Analytics, Artificial Intelligence, Decision Support Systems,
+                        User Interface Programming.
+                    </p>
 
-</div>
+                </div>
 
 
-<div class="details-container">
+                <!-- CERTIFICATES -->
+                <div class="details-container">
 
-<h3>Certificates &amp; Achievements</h3>
+                    <h3>Certificates &amp; Achievements</h3>
 
-<ul class="cert-list">
+                    <ul class="cert-list">
 
-<li>
-<strong>Work Readiness Programme</strong> — North-West University (Nov 2024)<br>
-<span>Professional communication, teamwork and workplace readiness</span>
-</li>
+                        <li>
+                            <strong>Work Readiness Programme</strong> — North-West University (Nov 2024)<br>
+                            <span>Professional communication, teamwork and workplace readiness</span>
+                        </li>
 
-<li>
-<strong>Project Quality, Risk and Time Management</strong> — Enterprises University of Pretoria (Jan 2026)<br>
-<span>Planning, quality standards, risk awareness and delivering on time</span>
-</li>
+                        <li>
+                            <strong>Project Quality, Risk and Time Management</strong> —
+                            Enterprises University of Pretoria (Jan 2026)<br>
+                            <span>Planning, quality standards, risk awareness and delivering on time</span>
+                        </li>
 
-<li>
-<strong>Java Supplemental Instruction Facilitator</strong> — North-West University (Jun–Nov 2022)<br>
-<span>Led weekly Java sessions and one-on-one debugging support for students</span>
-</li>
+                        <li>
+                            <strong>Java Supplemental Instruction Facilitator</strong> —
+                            North-West University (Jun–Nov 2022)<br>
+                            <span>Led weekly Java sessions and one-on-one debugging support for students</span>
+                        </li>
 
-</ul>
+                    </ul>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
 
-<!-- TECHNICAL SKILLS -->
+    <!-- TECHNICAL SKILLS -->
+    <section id="experience">
 
-<section id="experience">
+        <p class="section__text__p1">Technical Skills</p>
+        <h1 class="title code-header">&lt;Technologies /&gt;</h1>
 
-<p class="section__text__p1">Technical Skills</p>
-<h1 class="title code-header">&lt;Technologies /&gt;</h1>
+        <div class="experience-details-container">
 
-<div class="experience-details-container">
+            <div class="about-container">
 
-<div class="about-container">
+                <!-- IDE MOCK WINDOW -->
+                <div class="details-container mock-window">
 
-<!-- IDE Mock Window -->
-<div class="details-container mock-window">
-  <div class="window-header">
-    <span class="dot red"></span>
-    <span class="dot yellow"></span>
-    <span class="dot green"></span>
-    <span class="filename">skills.ts</span>
-  </div>
-  <pre class="code-content">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="filename">skills.ts</span>
+                    </div>
+
+                    <pre class="code-content">
 <span class="keyword">const</span> <span class="variable">skills</span>: <span class="type">string</span>[] = [
-  <span class="string">'Angular'</span>,
-  <span class="string">'ASP.NET Core'</span>,
-  <span class="string">'C#'</span>,
-  <span class="string">'SQL / Data Analytics'</span>,
-  <span class="string">'Python / R / Power BI'</span>,
-  <span class="string">'REST APIs'</span>,
-  <span class="string">'Azure DevOps'</span>,
-  <span class="string">'Windows / M365'</span>,
-  <span class="string">'Networking (TCP/IP)'</span>,
-  <span class="string">'IT Support & Troubleshooting'</span>
+    <span class="string">'Angular'</span>,
+    <span class="string">'ASP.NET Core'</span>,
+    <span class="string">'C#'</span>,
+    <span class="string">'SQL / Data Analytics'</span>,
+    <span class="string">'Python / R / Power BI'</span>,
+    <span class="string">'REST APIs'</span>,
+    <span class="string">'Azure DevOps'</span>,
+    <span class="string">'Windows / M365'</span>,
+    <span class="string">'Networking (TCP/IP)'</span>,
+    <span class="string">'IT Support & Troubleshooting'</span>
 ];</pre>
-</div>
-
-
-<div class="details-container">
-
-<h2 class="experience-sub-title">Frontend</h2>
-
-<div class="article-container">
-
-<article>
-<img src="assets/html.png" class="icon" alt="">
-<div>
-<h3>HTML</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/css1.png" class="icon" alt="">
-<div>
-<h3>CSS</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/javas.png" class="icon" alt="">
-<div>
-<h3>JavaScript</h3>
-<p>Intermediate</p>
-</div>
-</article>
-
-<article>
-<img src="assets/react.png" class="icon" alt="">
-<div>
-<h3>TypeScript</h3>
-<p>Intermediate</p>
-</div>
-</article>
-
-<article>
-<img src="assets/react.png" class="icon" alt="">
-<div>
-<h3>Angular</h3>
-<p>Intermediate</p>
-</div>
-</article>
-
-</div>
-
-</div>
-
-
-<div class="details-container">
-
-<h2 class="experience-sub-title">Backend</h2>
-
-<div class="article-container">
-
-<article>
-<img src="assets/c.png" class="icon" alt="">
-<div>
-<h3>C#</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/c.png" class="icon" alt="">
-<div>
-<h3>ASP.NET Core</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/java.png" class="icon" alt="">
-<div>
-<h3>Java</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/java.png" class="icon" alt="">
-<div>
-<h3>Spring Boot</h3>
-<p>Intermediate</p>
-</div>
-</article>
-
-<article>
-<img src="assets/node.png" class="icon" alt="">
-<div>
-<h3>REST APIs</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-</div>
-
-</div>
-
-
-<div class="details-container">
-
-<h2 class="experience-sub-title">Databases</h2>
-
-<div class="article-container">
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>SQL Server</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Entity Framework</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>PostgreSQL</h3>
-<p>Intermediate</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Oracle / APEX</h3>
-<p>Intermediate</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>SQL / LINQ</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-</div>
-
-</div>
-
-
-<div class="details-container">
-
-<h2 class="experience-sub-title">Tools &amp; Practices</h2>
-
-<div class="article-container">
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Git</h3>
-<p>Intermediate</p>
-</div>
-</article>
-
-<article>
-<img src="assets/vsc.png" class="icon" alt="">
-<div>
-<h3>VS Code</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/vs.png" class="icon" alt="">
-<div>
-<h3>Visual Studio</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Azure DevOps</h3>
-<p>Intermediate</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Postman</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Git / Azure DevOps</h3>
-<p>Intermediate</p>
-</div>
-</article>
-
-</div>
-
-</div>
-
-
-<div class="details-container">
-
-<h2 class="experience-sub-title">Data &amp; Analytics</h2>
-
-<div class="article-container">
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>SQL</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Data Analytics</h3>
-<p>Coursework</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Python</h3>
-<p>Foundational</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>R</h3>
-<p>Foundational</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Power BI</h3>
-<p>Foundational</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Statistics</h3>
-<p>Minor</p>
-</div>
-</article>
-
-</div>
-
-</div>
-
-
-<div class="details-container">
-
-<h2 class="experience-sub-title">IT Support &amp; Systems</h2>
-
-<div class="article-container">
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Windows</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Microsoft 365</h3>
-<p>Basics</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Networking</h3>
-<p>TCP/IP, DHCP, DNS</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Troubleshooting</h3>
-<p>Hardware &amp; Software</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>Documentation</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-<article>
-<img src="assets/git.png" class="icon" alt="">
-<div>
-<h3>User Support</h3>
-<p>Experienced</p>
-</div>
-</article>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- WORK EXPERIENCE -->
-
-<section id="work">
-
-<p class="section__text__p1">My Journey</p>
-<h1 class="title code-header">&lt;Experience /&gt;</h1>
-
-
-<div class="details-container">
-
-<h3>Software Developer Intern</h3>
-
-<p><strong>Scenivision — Centurion, Gauteng</strong></p>
-<p><em>April 2025 – April 2026</em></p>
-
-<p style="margin: 1.5rem 0; text-align: justify;">
-Built and maintained full-stack features using Angular, ASP.NET Core Web API,
-Entity Framework Core and SQL Server. Worked across UI, API and database layers:
-designing models, writing LINQ and SQL, implementing authentication and role-based
-access control, testing with Postman, and collaborating through Azure DevOps
-(boards, pull requests, CI/CD). Focused on clean architecture, SOLID principles
-and maintainable, well-documented code.
-</p>
-
-<h4 style="margin-bottom: 0.5rem; color: var(--accent);">Major Duties</h4>
-<ul>
-<li>Build Angular components, services, routing and responsive UI layouts</li>
-<li>Use browser DevTools to debug UI issues, inspect API requests and analyse performance</li>
-<li>Develop ASP.NET Core Web API endpoints using clean architecture and Dependency Injection</li>
-<li>Apply code-first Entity Framework Core for tables, relationships and migrations</li>
-<li>Write LINQ queries and design efficient relational data structures</li>
-<li>Design features from the ground up: data models, workflows and UI structure</li>
-<li>Implement authentication, role-based access control and secure password practices</li>
-<li>Test and validate API functionality with Postman</li>
-<li>Use Azure DevOps and Git for source control, pull requests, task tracking and collaboration</li>
-<li>Follow SOLID principles, Separation of Concerns and modern clean coding practices</li>
-</ul>
 
-<h4 style="margin: 1.5rem 0 0.5rem 0; color: var(--accent);">Key Skills &amp; Successes</h4>
-<ul>
-<li>Able to work independently across the full stack (UI → API → Database)</li>
-<li>Effective collaboration using Azure DevOps workflows</li>
-<li>Strong debugging with browser DevTools, backend diagnostics and API testing</li>
-<li>Improved system design by building and refining complete features from scratch</li>
-<li>Consistent focus on clean, reusable and maintainable code</li>
-</ul>
+                </div>
+
+
+                <!-- FRONTEND -->
+                <div class="details-container">
+
+                    <h2 class="experience-sub-title">Frontend</h2>
+
+                    <div class="article-container">
+
+                        <article>
+                            <img src="assets/html.png" class="icon" alt="">
+                            <div>
+                                <h3>HTML</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/css1.png" class="icon" alt="">
+                            <div>
+                                <h3>CSS</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/javas.png" class="icon" alt="">
+                            <div>
+                                <h3>JavaScript</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/react.png" class="icon" alt="">
+                            <div>
+                                <h3>TypeScript</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/react.png" class="icon" alt="">
+                            <div>
+                                <h3>Angular</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BACKEND -->
+                <div class="details-container">
+
+                    <h2 class="experience-sub-title">Backend</h2>
+
+                    <div class="article-container">
+
+                        <article>
+                            <img src="assets/c.png" class="icon" alt="">
+                            <div>
+                                <h3>C#</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/c.png" class="icon" alt="">
+                            <div>
+                                <h3>ASP.NET Core</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/java.png" class="icon" alt="">
+                            <div>
+                                <h3>Java</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/java.png" class="icon" alt="">
+                            <div>
+                                <h3>Spring Boot</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/node.png" class="icon" alt="">
+                            <div>
+                                <h3>REST APIs</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATABASES -->
+                <div class="details-container">
+
+                    <h2 class="experience-sub-title">Databases</h2>
+
+                    <div class="article-container">
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>SQL Server</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Entity Framework</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>PostgreSQL</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Oracle / APEX</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>SQL / LINQ</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOOLS -->
+                <div class="details-container">
+
+                    <h2 class="experience-sub-title">Tools &amp; Practices</h2>
+
+                    <div class="article-container">
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Git</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/vsc.png" class="icon" alt="">
+                            <div>
+                                <h3>VS Code</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/vs.png" class="icon" alt="">
+                            <div>
+                                <h3>Visual Studio</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Azure DevOps</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Postman</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Git / Azure DevOps</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATA & ANALYTICS -->
+                <div class="details-container">
+
+                    <h2 class="experience-sub-title">Data &amp; Analytics</h2>
+
+                    <div class="article-container">
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>SQL</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Data Analytics</h3>
+                                <p>Coursework</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Python</h3>
+                                <p>Foundational</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>R</h3>
+                                <p>Foundational</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Power BI</h3>
+                                <p>Foundational</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Statistics</h3>
+                                <p>Minor</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IT SUPPORT -->
+                <div class="details-container">
+
+                    <h2 class="experience-sub-title">IT Support &amp; Systems</h2>
+
+                    <div class="article-container">
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Windows</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Microsoft 365</h3>
+                                <p>Basics</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Networking</h3>
+                                <p>TCP/IP, DHCP, DNS</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Troubleshooting</h3>
+                                <p>Hardware &amp; Software</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>Documentation</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="assets/git.png" class="icon" alt="">
+                            <div>
+                                <h3>User Support</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WORK EXPERIENCE -->
+    <section id="work">
+
+        <p class="section__text__p1">My Journey</p>
+        <h1 class="title code-header">&lt;Experience /&gt;</h1>
+
+
+        <!-- SCENIVISION -->
+        <div class="details-container">
+
+            <h3>Software Developer Intern</h3>
+
+            <p><strong>Scenivision — Centurion, Gauteng</strong></p>
+            <p><em>April 2025 – April 2026</em></p>
+
+            <p style="margin: 1.5rem 0; text-align: justify;">
+                Built and maintained full-stack features using Angular, ASP.NET Core Web API,
+                Entity Framework Core and SQL Server. Worked across UI, API and database layers:
+                designing models, writing LINQ and SQL, implementing authentication and role-based
+                access control, testing with Postman, and collaborating through Azure DevOps
+                (boards, pull requests, CI/CD). Focused on clean architecture, SOLID principles
+                and maintainable, well-documented code.
+            </p>
+
+            <h4 style="margin-bottom: 0.5rem; color: var(--accent);">
+                Major Duties
+            </h4>
+
+            <ul>
+                <li>Build Angular components, services, routing and responsive UI layouts</li>
+                <li>Use browser DevTools to debug UI issues, inspect API requests and analyse performance</li>
+                <li>Develop ASP.NET Core Web API endpoints using clean architecture and Dependency Injection</li>
+                <li>Apply code-first Entity Framework Core for tables, relationships and migrations</li>
+                <li>Write LINQ queries and design efficient relational data structures</li>
+                <li>Design features from the ground up: data models, workflows and UI structure</li>
+                <li>Implement authentication, role-based access control and secure password practices</li>
+                <li>Test and validate API functionality with Postman</li>
+                <li>Use Azure DevOps and Git for source control, pull requests, task tracking and collaboration</li>
+                <li>Follow SOLID principles, Separation of Concerns and modern clean coding practices</li>
+            </ul>
+
+            <h4 style="margin: 1.5rem 0 0.5rem 0; color: var(--accent);">
+                Key Skills &amp; Successes
+            </h4>
+
+            <ul>
+                <li>Able to work independently across the full stack (UI → API → Database)</li>
+                <li>Effective collaboration using Azure DevOps workflows</li>
+                <li>Strong debugging with browser DevTools, backend diagnostics and API testing</li>
+                <li>Improved system design by building and refining complete features from scratch</li>
+                <li>Consistent focus on clean, reusable and maintainable code</li>
+            </ul>
+
+        </div>
 
-</div>
+
+        <!-- JAVA SI FACILITATOR -->
+        <div class="details-container">
 
+            <h3>Java Supplemental Instruction Facilitator</h3>
+
+            <p><strong>North-West University — Vaal Triangle Campus</strong></p>
+            <p><em>June 2022 – November 2022</em></p>
 
-<div class="details-container">
+            <ul>
+                <li>Led weekly Java programming and exam-preparation sessions</li>
+                <li>Provided one-on-one debugging assistance and helped students resolve coding problems</li>
+                <li>Explained OOP, algorithms and structured problem-solving in clear language</li>
+            </ul>
 
-<h3>Java Supplemental Instruction Facilitator</h3>
+        </div>
 
-<p><strong>North-West University — Vaal Triangle Campus</strong></p>
-<p><em>June 2022 – November 2022</em></p>
+    </section>
 
-<ul>
-<li>Led weekly Java programming and exam-preparation sessions</li>
-<li>Provided one-on-one debugging assistance and helped students resolve coding problems</li>
-<li>Explained OOP, algorithms and structured problem-solving in clear language</li>
-</ul>
 
-</div>
+    <!-- PROJECTS -->
+    <section id="projects">
 
-</section>
+        <p class="section__text__p1">My Work</p>
+        <h1 class="title code-header">&lt;Projects /&gt;</h1>
 
+        <div class="experience-details-container">
 
-<!-- PROJECTS -->
+            <div class="about-container">
 
-<section id="projects">
 
-<p class="section__text__p1">My Work</p>
-<h1 class="title code-header">&lt;Projects /&gt;</h1>
+                <!-- BRIGHTSMILE DENTAL -->
+                <div class="details-container color-container">
 
-<div class="experience-details-container">
+                    <h2 class="project-title">BrightSmile Dental System</h2>
 
-<div class="about-container">
+                    <p>
+                        Full-stack dental management platform. Angular SPA with role-based dashboards
+                        for Admin, Patient and Dentist: registration/login with JWT, appointment booking
+                        and scheduling, service management and profile management. ASP.NET Core Web API
+                        backend with Entity Framework Core, PostgreSQL (Supabase), password hashing,
+                        REST endpoints and Swagger. Feature-based architecture, route guards and
+                        responsive UI.
+                    </p>
 
+                    <div class="btn-container">
 
-<div class="details-container color-container">
+                        <button class="btn btn-color-1"
+                                onclick="window.open('https://brightsmiledentalfrontend.netlify.app/', '_blank')">
+                            Live Demo
+                        </button>
 
-<h2 class="project-title">BrightSmile Dental System</h2>
+                        <button class="btn btn-color-2"
+                                onclick="window.open('https://github.com/AriesMaster/BrightSmileDentalFrontEnd', '_blank')">
+                            Frontend
+                        </button>
 
-<p>
-Full-stack dental management platform. Angular SPA with role-based dashboards
-for Admin, Patient and Dentist: registration/login with JWT, appointment booking
-and scheduling, service management and profile management. ASP.NET Core Web API
-backend with Entity Framework Core, PostgreSQL (Supabase), password hashing,
-REST endpoints and Swagger. Feature-based architecture, route guards and
-responsive UI.
-</p>
+                        <button class="btn btn-color-2"
+                                onclick="window.open('https://github.com/AriesMaster/BrightSmileDentalBackEnd', '_blank')">
+                            Backend
+                        </button>
 
-<div class="btn-container">
+                    </div>
 
-<button class="btn btn-color-1"
-onclick="window.open('https://brightsmiledentalfrontend.netlify.app/', '_blank')">
-Live Demo
-</button>
+                </div>
 
-<button class="btn btn-color-2"
-onclick="window.open('https://github.com/AriesMaster/BrightSmileDentalFrontEnd', '_blank')">
-Frontend
-</button>
 
-<button class="btn btn-color-2"
-onclick="window.open('https://github.com/AriesMaster/BrightSmileDentalBackEnd', '_blank')">
-Backend
-</button>
+                <!-- TECH TRENDS API -->
+                <div class="details-container color-container">
 
-</div>
+                    <h2 class="project-title">Tech Trends REST API</h2>
 
-</div>
+                    <p>
+                        RESTful API built with ASP.NET Core implementing secure CRUD operations
+                        with authentication and structured endpoint design.
+                    </p>
 
+                    <div class="btn-container">
 
-<div class="details-container color-container">
+                        <button class="btn btn-color-2"
+                                onclick="location.href='https://github.com/AriesMaster/Tech-Trends-Management-API-System-CRUD-RESTful-API'">
+                            GitHub
+                        </button>
 
-<h2 class="project-title">Tech Trends REST API</h2>
+                    </div>
 
-<p>
-RESTful API built with ASP.NET Core implementing secure CRUD operations
-with authentication and structured endpoint design.
-</p>
+                </div>
 
-<div class="btn-container">
 
-<button class="btn btn-color-2"
-onclick="location.href='https://github.com/AriesMaster/Tech-Trends-Management-API-System-CRUD-RESTful-API'">
-GitHub
-</button>
+                <!-- TELEMETRY PORTAL -->
+                <div class="details-container color-container">
 
-</div>
+                    <h2 class="project-title">Telemetry Portal MVC</h2>
 
-</div>
+                    <p>
+                        Full-stack ASP.NET Core MVC application with CRUD functionality
+                        and SQL Server integration, applying architectural patterns and design principles.
+                    </p>
 
+                    <div class="btn-container">
 
-<div class="details-container color-container">
+                        <button class="btn btn-color-2"
+                                onclick="location.href='https://github.com/AriesMaster/CRUD-functionality-architectural-patterns-and-design-principles-ASP.NET-Core-MVC'">
+                            GitHub
+                        </button>
 
-<h2 class="project-title">Telemetry Portal MVC</h2>
+                    </div>
 
-<p>
-Full-stack ASP.NET Core MVC application with CRUD functionality
-and SQL Server integration, applying architectural patterns and design principles.
-</p>
+                </div>
 
-<div class="btn-container">
+            </div>
 
-<button class="btn btn-color-2"
-onclick="location.href='https://github.com/AriesMaster/CRUD-functionality-architectural-patterns-and-design-principles-ASP.NET-Core-MVC'">
-GitHub
-</button>
+        </div>
 
-</div>
+    </section>
 
-</div>
 
-</div>
+    <!-- BOOKSHELF -->
+    <section id="bookshelf">
 
-</div>
+        <p class="section__text__p1">Continuous Learning</p>
 
-</section>
+        <h1 class="title code-header">&lt;Bookshelf /&gt;</h1>
 
+        <p class="bookshelf-description">
+            Books that have shaped how I think about software development,
+            software architecture, system design and engineering practices.
+        </p>
 
-<!-- CONTACT -->
+        <div class="books-grid">
 
-<section id="contact">
 
-<p class="section__text__p1">Get In Touch</p>
-<h1 class="title code-header">&lt;Contact /&gt;</h1>
+            <!-- BOOK 1 -->
+            <div class="book-card">
 
-<div class="contact-info-upper-container">
+                <div class="book-cover">
+                    <img src="assets/A Philosophy of Software Design.jpg"
+                         alt="A Philosophy of Software Design by John Ousterhout">
+                </div>
 
-<div class="contact-info-container">
+                <div class="book-info">
+                    <h3>A Philosophy of Software Design</h3>
+                    <p>John Ousterhout</p>
+                </div>
 
-<img src="assets/email.png" class="icon email-icon" alt="">
+            </div>
 
-<p>
-<a href="mailto:thabotankisomavundza@gmail.com">
-thabotankisomavundza@gmail.com
-</a>
-</p>
 
-</div>
+            <!-- BOOK 2 -->
+            <div class="book-card">
 
+                <div class="book-cover">
+                    <img src="assets/Designing Data-Intensive Applications The Big Ideas Behind Reliable, Scalable, and Maintainable Systems.jpg"
+                         alt="Designing Data-Intensive Applications">
+                </div>
 
-<div class="contact-info-container">
+                <div class="book-info">
+                    <h3>Designing Data-Intensive Applications</h3>
+                    <p>Martin Kleppmann, Chris Riccomini</p>
+                </div>
 
-<img src="assets/linkedin.png" class="icon" alt="">
+            </div>
 
-<p>
-<a href="https://linkedin.com/in/thabo-mavundza">
-LinkedIn
-</a>
-</p>
 
-</div>
+            <!-- BOOK 3 -->
+            <div class="book-card">
 
-<div class="contact-info-container">
+                <div class="book-cover">
+                    <img src="assets/Software Architecture The Hard Parts Modern Trade-Off Analyses for Distributed Architectures.jpg"
+                         alt="Software Architecture: The Hard Parts">
+                </div>
 
-<img src="assets/github.png" class="icon" alt="">
+                <div class="book-info">
+                    <h3>Software Architecture: The Hard Parts</h3>
+                    <p>Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani</p>
+                </div>
 
-<p>
-<a href="https://github.com/AriesMaster">
-GitHub
-</a>
-</p>
+            </div>
 
-</div>
 
-</div>
+            <!-- BOOK 4 -->
+            <div class="book-card">
 
-</section>
+                <div class="book-cover">
+                    <img src="assets/Fundamentals of Software Architecture A Modern Engineering Approach.jpg"
+                         alt="Fundamentals of Software Architecture">
+                </div>
 
+                <div class="book-info">
+                    <h3>Fundamentals of Software Architecture</h3>
+                    <p>Mark Richards, Neal Ford</p>
+                </div>
 
-<!-- FOOTER -->
+            </div>
 
-<footer>
 
-<nav>
+            <!-- BOOK 5 -->
+            <div class="book-card">
 
-<ul class="nav-links">
+                <div class="book-cover">
+                    <img src="assets/Learning Domain-Driven Design Aligning Software Architecture and Business Strategy.jpg"
+                         alt="Learning Domain-Driven Design">
+                </div>
 
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Skills</a></li>
-<li><a href="#work">Experience</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
+                <div class="book-info">
+                    <h3>Learning Domain-Driven Design</h3>
+                    <p>Vlad Khononov</p>
+                </div>
 
-</ul>
+            </div>
 
-</nav>
 
-<p>Copyright © 2026 Thabo Mavundza</p>
+            <!-- BOOK 6 -->
+            <div class="book-card">
 
-</footer>
+                <div class="book-cover">
+                    <img src="assets/Fundamentals of Software Engineering From Coder to Engineer.jpg"
+                         alt="Fundamentals of Software Engineering: From Coder to Engineer">
+                </div>
 
-<script src="script.js"></script>
+                <div class="book-info">
+                    <h3>Fundamentals of Software Engineering: From Coder to Engineer</h3>
+                    <p>Nathaniel Schutta, Dan Vega</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <p class="section__text__p1">Get In Touch</p>
+
+        <h1 class="title code-header">&lt;Contact /&gt;</h1>
+
+        <div class="contact-info-upper-container">
+
+
+            <!-- EMAIL -->
+            <div class="contact-info-container">
+
+                <img src="assets/email.png"
+                     class="icon email-icon"
+                     alt="Email">
+
+                <p>
+                    <a href="mailto:thabotankisomavundza@gmail.com">
+                        thabotankisomavundza@gmail.com
+                    </a>
+                </p>
+
+            </div>
+
+
+            <!-- LINKEDIN -->
+            <div class="contact-info-container">
+
+                <img src="assets/linkedin.png"
+                     class="icon"
+                     alt="LinkedIn">
+
+                <p>
+                    <a href="https://linkedin.com/in/thabo-mavundza">
+                        LinkedIn
+                    </a>
+                </p>
+
+            </div>
+
+
+            <!-- GITHUB -->
+            <div class="contact-info-container">
+
+                <img src="assets/github.png"
+                     class="icon"
+                     alt="GitHub">
+
+                <p>
+                    <a href="https://github.com/AriesMaster">
+                        GitHub
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Skills</a></li>
+                <li><a href="#work">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#bookshelf">Bookshelf</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+        <p>Copyright © 2026 Thabo Mavundza</p>
+
+    </footer>
+
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
 </body>
+
 </html>
