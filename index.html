@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+          content="Thabo Tankiso Mavundza - Junior Full-Stack Software Developer specialising in Angular, ASP.NET Core, C#, REST APIs and SQL databases.">
+
     <title>Thabo Mavundza | Junior Software Developer</title>
 
     <link rel="stylesheet" href="style.css">
@@ -18,7 +21,10 @@
 
 <body>
 
-    <!-- DESKTOP NAVIGATION -->
+    <!-- =========================
+         DESKTOP NAVIGATION
+    ========================== -->
+
     <nav id="desktop-nav">
 
         <div class="logo">Thabo Tankiso Mavundza</div>
@@ -34,7 +40,11 @@
 
     </nav>
 
-    <!-- MOBILE NAVIGATION -->
+
+    <!-- =========================
+         MOBILE NAVIGATION
+    ========================== -->
+
     <nav id="hamburger-nav">
 
         <div class="logo">Thabo Mavundza</div>
@@ -43,6 +53,7 @@
 
             <div class="hamburger-icon"
                  onclick="toggleMenu()"
+                 onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleMenu(); }"
                  role="button"
                  tabindex="0"
                  aria-label="Toggle menu"
@@ -68,24 +79,35 @@
     </nav>
 
 
-    <!-- PROFILE / HERO -->
+    <!-- =========================
+         PROFILE / HERO
+    ========================== -->
+
     <section id="profile">
 
         <div class="section__pic-container">
+
             <img src="./assets/profile-pic11.png"
                  alt="Thabo Tankiso Mavundza profile picture">
+
         </div>
 
         <div class="section__text">
 
-            <h1 class="title terminal-title" id="typewriter">&nbsp;</h1>
+            <h1 class="title terminal-title"
+                id="typewriter">&nbsp;</h1>
 
             <p class="section__text__p2">
-                Software Developer · Data &amp; Analytics · IT Support
+                Junior Full-Stack Software Developer
             </p>
 
             <p>
-                Full-stack · SQL · Data Analytics · Networking · Support
+                Angular · ASP.NET Core · C# · SQL · REST APIs
+            </p>
+
+            <p>
+                BSc Information Technology graduate with one year
+                of professional full-stack software development experience.
             </p>
 
             <p>
@@ -95,13 +117,13 @@
             <div class="btn-container">
 
                 <button class="btn btn-color-2"
-                        onclick="window.open('./assets/cv.pdf')">
+                        onclick="window.open('./assets/cv.pdf', '_blank')">
                     Download CV
                 </button>
 
                 <button class="btn btn-color-1"
-                        onclick="location.href='#contact'">
-                    Contact
+                        onclick="location.href='#projects'">
+                    View My Projects
                 </button>
 
             </div>
@@ -111,12 +133,12 @@
                 <img src="./assets/linkedin.png"
                      class="icon"
                      alt="LinkedIn"
-                     onclick="location.href='https://linkedin.com/in/thabo-mavundza'">
+                     onclick="window.open('https://linkedin.com/in/thabo-mavundza', '_blank')">
 
                 <img src="./assets/github.png"
                      class="icon"
                      alt="GitHub"
-                     onclick="location.href='https://github.com/AriesMaster'">
+                     onclick="window.open('https://github.com/AriesMaster', '_blank')">
 
             </div>
 
@@ -125,10 +147,14 @@
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
     <section id="about">
 
         <p class="section__text__p1">Get To Know More</p>
+
         <h1 class="title code-header">&lt;About_Me /&gt;</h1>
 
         <div class="about-details-container">
@@ -136,42 +162,74 @@
             <div class="about-container">
 
                 <!-- PROFESSIONAL SUMMARY -->
+
                 <div class="details-container">
 
                     <h3>Professional Summary</h3>
 
                     <p>
-                        BSc Information Technology graduate with one year of professional full-stack experience
-                        building and supporting applications with Angular, ASP.NET Core, Entity Framework Core
-                        and SQL Server. Strong in REST APIs, database design, debugging, documentation and
-                        Azure DevOps workflows. Data side: SQL, data preparation, Data Analytics coursework,
-                        Python, R and Power BI for analysis and visualisation. IT support side: Windows environments,
-                        Microsoft 365 basics, networking fundamentals (TCP/IP, DHCP, DNS, LAN/WAN), hardware/software
-                        troubleshooting and clear user guidance. Also experienced with Java/Spring Boot and Oracle APEX.
-                        Passionate about clean software, reliable systems and continuous learning.
+                        BSc Information Technology graduate with one year
+                        of professional full-stack experience building
+                        and supporting applications with Angular,
+                        ASP.NET Core, Entity Framework Core and SQL Server.
+
+                        Strong in REST APIs, database design, debugging,
+                        documentation and Azure DevOps workflows.
+
+                        Data side: SQL, data preparation, Data Analytics
+                        coursework, Python, R and Power BI for analysis
+                        and visualisation.
+
+                        IT support side: Windows environments,
+                        Microsoft 365 basics, networking fundamentals
+                        (TCP/IP, DHCP, DNS, LAN/WAN), hardware/software
+                        troubleshooting and clear user guidance.
+
+                        Also experienced with Java/Spring Boot and Oracle APEX.
+
+                        Passionate about clean software, reliable systems
+                        and continuous learning.
                     </p>
 
                 </div>
 
 
                 <!-- EDUCATION -->
+
                 <div class="details-container">
 
                     <h3>Education</h3>
 
                     <p>
-                        <strong>Bachelor of Science in Information Technology (NQF 7)</strong><br>
-                        North-West University — Vaal Triangle Campus<br>
-                        January 2020 – November 2024<br><br>
+                        <strong>
+                            Bachelor of Science in Information Technology (NQF 7)
+                        </strong>
+                        <br>
 
-                        Major: Software Development<br>
-                        Minors: Accounting &amp; Statistics<br><br>
+                        North-West University — Vaal Triangle Campus
+                        <br>
+
+                        January 2020 – November 2024
+                        <br><br>
+
+                        Major: Software Development
+                        <br>
+
+                        Minors: Accounting &amp; Statistics
+                        <br><br>
 
                         <strong>Key modules:</strong>
-                        Object-Oriented Programming, Data Structures &amp; Algorithms,
-                        Databases &amp; Advanced Databases, Systems Analysis &amp; Design,
-                        Computer Networks, Operating Systems, Information Security,
-                        Data Analytics, Artificial Intelligence, Decision Support Systems,
+
+                        Object-Oriented Programming,
+                        Data Structures &amp; Algorithms,
+                        Databases &amp; Advanced Databases,
+                        Systems Analysis &amp; Design,
+                        Computer Networks,
+                        Operating Systems,
+                        Information Security,
+                        Data Analytics,
+                        Artificial Intelligence,
+                        Decision Support Systems,
                         User Interface Programming.
                     </p>
 
@@ -179,6 +237,7 @@
 
 
                 <!-- CERTIFICATES -->
+
                 <div class="details-container">
 
                     <h3>Certificates &amp; Achievements</h3>
@@ -186,20 +245,37 @@
                     <ul class="cert-list">
 
                         <li>
-                            <strong>Work Readiness Programme</strong> — North-West University (Nov 2024)<br>
-                            <span>Professional communication, teamwork and workplace readiness</span>
+                            <strong>Work Readiness Programme</strong>
+                            — North-West University (Nov 2024)
+                            <br>
+                            <span>
+                                Professional communication, teamwork
+                                and workplace readiness
+                            </span>
                         </li>
 
                         <li>
-                            <strong>Project Quality, Risk and Time Management</strong> —
-                            Enterprises University of Pretoria (Jan 2026)<br>
-                            <span>Planning, quality standards, risk awareness and delivering on time</span>
+                            <strong>
+                                Project Quality, Risk and Time Management
+                            </strong>
+                            — Enterprises University of Pretoria (Jan 2026)
+                            <br>
+                            <span>
+                                Planning, quality standards, risk awareness
+                                and delivering on time
+                            </span>
                         </li>
 
                         <li>
-                            <strong>Java Supplemental Instruction Facilitator</strong> —
-                            North-West University (Jun–Nov 2022)<br>
-                            <span>Led weekly Java sessions and one-on-one debugging support for students</span>
+                            <strong>
+                                Java Supplemental Instruction Facilitator
+                            </strong>
+                            — North-West University (Jun–Nov 2022)
+                            <br>
+                            <span>
+                                Led weekly Java sessions and one-on-one
+                                debugging support for students
+                            </span>
                         </li>
 
                     </ul>
@@ -213,10 +289,14 @@
     </section>
 
 
-    <!-- TECHNICAL SKILLS -->
+    <!-- =========================
+         TECHNICAL SKILLS
+    ========================== -->
+
     <section id="experience">
 
         <p class="section__text__p1">Technical Skills</p>
+
         <h1 class="title code-header">&lt;Technologies /&gt;</h1>
 
         <div class="experience-details-container">
@@ -224,6 +304,7 @@
             <div class="about-container">
 
                 <!-- IDE MOCK WINDOW -->
+
                 <div class="details-container mock-window">
 
                     <div class="window-header">
@@ -233,8 +314,7 @@
                         <span class="filename">skills.ts</span>
                     </div>
 
-                    <pre class="code-content">
-<span class="keyword">const</span> <span class="variable">skills</span>: <span class="type">string</span>[] = [
+                    <pre class="code-content"><span class="keyword">const</span> <span class="variable">skills</span>: <span class="type">string</span>[] = [
     <span class="string">'Angular'</span>,
     <span class="string">'ASP.NET Core'</span>,
     <span class="string">'C#'</span>,
@@ -244,13 +324,14 @@
     <span class="string">'Azure DevOps'</span>,
     <span class="string">'Windows / M365'</span>,
     <span class="string">'Networking (TCP/IP)'</span>,
-    <span class="string">'IT Support & Troubleshooting'</span>
+    <span class="string">'IT Support &amp; Troubleshooting'</span>
 ];</pre>
 
                 </div>
 
 
                 <!-- FRONTEND -->
+
                 <div class="details-container">
 
                     <h2 class="experience-sub-title">Frontend</h2>
@@ -303,6 +384,7 @@
 
 
                 <!-- BACKEND -->
+
                 <div class="details-container">
 
                     <h2 class="experience-sub-title">Backend</h2>
@@ -355,6 +437,7 @@
 
 
                 <!-- DATABASES -->
+
                 <div class="details-container">
 
                     <h2 class="experience-sub-title">Databases</h2>
@@ -407,6 +490,7 @@
 
 
                 <!-- TOOLS -->
+
                 <div class="details-container">
 
                     <h2 class="experience-sub-title">Tools &amp; Practices</h2>
@@ -467,6 +551,7 @@
 
 
                 <!-- DATA & ANALYTICS -->
+
                 <div class="details-container">
 
                     <h2 class="experience-sub-title">Data &amp; Analytics</h2>
@@ -527,6 +612,7 @@
 
 
                 <!-- IT SUPPORT -->
+
                 <div class="details-container">
 
                     <h2 class="experience-sub-title">IT Support &amp; Systems</h2>
@@ -592,27 +678,42 @@
     </section>
 
 
-    <!-- WORK EXPERIENCE -->
+    <!-- =========================
+         WORK EXPERIENCE
+    ========================== -->
+
     <section id="work">
 
         <p class="section__text__p1">My Journey</p>
+
         <h1 class="title code-header">&lt;Experience /&gt;</h1>
 
 
         <!-- SCENIVISION -->
+
         <div class="details-container">
 
             <h3>Software Developer Intern</h3>
 
-            <p><strong>Scenivision — Centurion, Gauteng</strong></p>
-            <p><em>April 2025 – April 2026</em></p>
+            <p>
+                <strong>Scenivision — Centurion, Gauteng</strong>
+            </p>
+
+            <p>
+                <em>April 2025 – April 2026</em>
+            </p>
 
             <p style="margin: 1.5rem 0; text-align: justify;">
-                Built and maintained full-stack features using Angular, ASP.NET Core Web API,
-                Entity Framework Core and SQL Server. Worked across UI, API and database layers:
-                designing models, writing LINQ and SQL, implementing authentication and role-based
-                access control, testing with Postman, and collaborating through Azure DevOps
-                (boards, pull requests, CI/CD). Focused on clean architecture, SOLID principles
+                Built and maintained full-stack features using Angular,
+                ASP.NET Core Web API, Entity Framework Core and SQL Server.
+
+                Worked across UI, API and database layers:
+                designing models, writing LINQ and SQL,
+                implementing authentication and role-based access control,
+                testing with Postman, and collaborating through
+                Azure DevOps (boards, pull requests, CI/CD).
+
+                Focused on clean architecture, SOLID principles
                 and maintainable, well-documented code.
             </p>
 
@@ -621,16 +722,54 @@
             </h4>
 
             <ul>
-                <li>Build Angular components, services, routing and responsive UI layouts</li>
-                <li>Use browser DevTools to debug UI issues, inspect API requests and analyse performance</li>
-                <li>Develop ASP.NET Core Web API endpoints using clean architecture and Dependency Injection</li>
-                <li>Apply code-first Entity Framework Core for tables, relationships and migrations</li>
-                <li>Write LINQ queries and design efficient relational data structures</li>
-                <li>Design features from the ground up: data models, workflows and UI structure</li>
-                <li>Implement authentication, role-based access control and secure password practices</li>
-                <li>Test and validate API functionality with Postman</li>
-                <li>Use Azure DevOps and Git for source control, pull requests, task tracking and collaboration</li>
-                <li>Follow SOLID principles, Separation of Concerns and modern clean coding practices</li>
+                <li>
+                    Build Angular components, services,
+                    routing and responsive UI layouts
+                </li>
+
+                <li>
+                    Use browser DevTools to debug UI issues,
+                    inspect API requests and analyse performance
+                </li>
+
+                <li>
+                    Develop ASP.NET Core Web API endpoints using
+                    clean architecture and Dependency Injection
+                </li>
+
+                <li>
+                    Apply code-first Entity Framework Core
+                    for tables, relationships and migrations
+                </li>
+
+                <li>
+                    Write LINQ queries and design efficient
+                    relational data structures
+                </li>
+
+                <li>
+                    Design features from the ground up:
+                    data models, workflows and UI structure
+                </li>
+
+                <li>
+                    Implement authentication, role-based access control
+                    and secure password practices
+                </li>
+
+                <li>
+                    Test and validate API functionality with Postman
+                </li>
+
+                <li>
+                    Use Azure DevOps and Git for source control,
+                    pull requests, task tracking and collaboration
+                </li>
+
+                <li>
+                    Follow SOLID principles, Separation of Concerns
+                    and modern clean coding practices
+                </li>
             </ul>
 
             <h4 style="margin: 1.5rem 0 0.5rem 0; color: var(--accent);">
@@ -638,28 +777,65 @@
             </h4>
 
             <ul>
-                <li>Able to work independently across the full stack (UI → API → Database)</li>
-                <li>Effective collaboration using Azure DevOps workflows</li>
-                <li>Strong debugging with browser DevTools, backend diagnostics and API testing</li>
-                <li>Improved system design by building and refining complete features from scratch</li>
-                <li>Consistent focus on clean, reusable and maintainable code</li>
+                <li>
+                    Able to work independently across the full stack
+                    (UI → API → Database)
+                </li>
+
+                <li>
+                    Effective collaboration using Azure DevOps workflows
+                </li>
+
+                <li>
+                    Strong debugging with browser DevTools,
+                    backend diagnostics and API testing
+                </li>
+
+                <li>
+                    Improved system design by building and refining
+                    complete features from scratch
+                </li>
+
+                <li>
+                    Consistent focus on clean, reusable
+                    and maintainable code
+                </li>
             </ul>
 
         </div>
 
 
         <!-- JAVA SI FACILITATOR -->
+
         <div class="details-container">
 
             <h3>Java Supplemental Instruction Facilitator</h3>
 
-            <p><strong>North-West University — Vaal Triangle Campus</strong></p>
-            <p><em>June 2022 – November 2022</em></p>
+            <p>
+                <strong>
+                    North-West University — Vaal Triangle Campus
+                </strong>
+            </p>
+
+            <p>
+                <em>June 2022 – November 2022</em>
+            </p>
 
             <ul>
-                <li>Led weekly Java programming and exam-preparation sessions</li>
-                <li>Provided one-on-one debugging assistance and helped students resolve coding problems</li>
-                <li>Explained OOP, algorithms and structured problem-solving in clear language</li>
+                <li>
+                    Led weekly Java programming
+                    and exam-preparation sessions
+                </li>
+
+                <li>
+                    Provided one-on-one debugging assistance
+                    and helped students resolve coding problems
+                </li>
+
+                <li>
+                    Explained OOP, algorithms and structured
+                    problem-solving in clear language
+                </li>
             </ul>
 
         </div>
@@ -667,95 +843,290 @@
     </section>
 
 
-    <!-- PROJECTS -->
-    <section id="projects">
+    <!-- =========================
+         PROJECTS — REDESIGNED
+    ========================== -->
 
-        <p class="section__text__p1">My Work</p>
+    <section id="projects" class="portfolio-projects">
+
+        <p class="section__text__p1">Selected Work</p>
+
         <h1 class="title code-header">&lt;Projects /&gt;</h1>
 
-        <div class="experience-details-container">
+        <p class="projects-intro">
+            A selection of applications demonstrating full-stack development,
+            backend engineering, database integration and software design.
+        </p>
 
-            <div class="about-container">
+        <div class="projects-layout">
+
+            <!-- =========================
+                 FEATURED: BRIGHTSMILE
+            ========================== -->
+
+            <article class="project-card project-featured">
+
+                <div class="project-topline">
+
+                    <span class="project-category">
+                        FULL-STACK APPLICATION
+                    </span>
+
+                    <span class="project-status">
+                        <span class="status-dot"></span>
+                        In Development
+                    </span>
+
+                </div>
+
+                <div class="project-featured-content">
+
+                    <!-- MAIN PROJECT INFORMATION -->
+
+                    <div class="project-main">
+
+                        <div class="project-icon" aria-hidden="true">
+                            BS.
+                        </div>
+
+                        <h2>BrightSmile Dental</h2>
+
+                        <p class="project-subtitle">
+                            Dental Practice Management System
+                        </p>
+
+                        <p class="project-description">
+                            A role-based dental management application built
+                            with Angular, ASP.NET Core Web API and PostgreSQL.
+                            Features JWT authentication, user profiles,
+                            protected service management endpoints and
+                            RESTful API validation.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Angular</span>
+                            <span>TypeScript</span>
+                            <span>C#</span>
+                            <span>ASP.NET Core 10</span>
+                            <span>EF Core</span>
+                            <span>PostgreSQL</span>
+                            <span>JWT</span>
+                        </div>
+
+                        <div class="project-actions">
+
+                            <a href="brightsmile.html"
+                               class="project-btn primary">
+                                View Case Study
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                            <a href="https://brightsmiledentalfrontend.netlify.app/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="project-btn secondary">
+                                Live Demo
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                            <a href="assets/BrightSmile_Dental_Backend_Development_Documentation.pdf"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="project-btn secondary">
+                                Documentation
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
 
 
-                <!-- BRIGHTSMILE DENTAL -->
-                <div class="details-container color-container">
+                    <!-- ENGINEERING HIGHLIGHTS -->
 
-                    <h2 class="project-title">BrightSmile Dental System</h2>
+                    <div class="project-feature-panel">
 
-                    <p>
-                        Full-stack dental management platform. Angular SPA with role-based dashboards
-                        for Admin, Patient and Dentist: registration/login with JWT, appointment booking
-                        and scheduling, service management and profile management. ASP.NET Core Web API
-                        backend with Entity Framework Core, PostgreSQL (Supabase), password hashing,
-                        REST endpoints and Swagger. Feature-based architecture, route guards and
-                        responsive UI.
-                    </p>
+                        <div class="feature-panel-heading">
+                            <span class="feature-dot"></span>
+                            Engineering Highlights
+                        </div>
 
-                    <div class="btn-container">
+                        <div class="feature-item">
 
-                        <button class="btn btn-color-1"
-                                onclick="window.open('https://brightsmiledentalfrontend.netlify.app/', '_blank')">
-                            Live Demo
-                        </button>
+                            <span class="feature-number">01</span>
 
-                        <button class="btn btn-color-2"
-                                onclick="window.open('https://github.com/AriesMaster/BrightSmileDentalFrontEnd', '_blank')">
-                            Frontend
-                        </button>
+                            <div>
+                                <strong>Authentication &amp; RBAC</strong>
+                                <p>
+                                    JWT with Admin, Dentist and Patient roles.
+                                </p>
+                            </div>
 
-                        <button class="btn btn-color-2"
-                                onclick="window.open('https://github.com/AriesMaster/BrightSmileDentalBackEnd', '_blank')">
-                            Backend
-                        </button>
+                        </div>
+
+                        <div class="feature-item">
+
+                            <span class="feature-number">02</span>
+
+                            <div>
+                                <strong>RESTful API Development</strong>
+                                <p>
+                                    Service CRUD, DTO validation and HTTP responses.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="feature-item">
+
+                            <span class="feature-number">03</span>
+
+                            <div>
+                                <strong>Database Integration</strong>
+                                <p>
+                                    Entity Framework Core and Supabase PostgreSQL.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="feature-item">
+
+                            <span class="feature-number">04</span>
+
+                            <div>
+                                <strong>API Testing</strong>
+                                <p>
+                                    Swagger verification and authorization tests.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="feature-panel-footer">
+
+                            <a href="https://github.com/AriesMaster/BrightSmileDentalFrontEnd"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Frontend Repository ↗
+                            </a>
+
+                            <a href="https://github.com/AriesMaster/BrightSmileDentalBackEnd"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Backend Repository ↗
+                            </a>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-
-                <!-- TECH TRENDS API -->
-                <div class="details-container color-container">
-
-                    <h2 class="project-title">Tech Trends REST API</h2>
-
-                    <p>
-                        RESTful API built with ASP.NET Core implementing secure CRUD operations
-                        with authentication and structured endpoint design.
-                    </p>
-
-                    <div class="btn-container">
-
-                        <button class="btn btn-color-2"
-                                onclick="location.href='https://github.com/AriesMaster/Tech-Trends-Management-API-System-CRUD-RESTful-API'">
-                            GitHub
-                        </button>
-
-                    </div>
-
-                </div>
+            </article>
 
 
-                <!-- TELEMETRY PORTAL -->
-                <div class="details-container color-container">
+            <!-- =========================
+                 SECONDARY PROJECTS
+            ========================== -->
 
-                    <h2 class="project-title">Telemetry Portal MVC</h2>
+            <div class="projects-secondary">
 
-                    <p>
-                        Full-stack ASP.NET Core MVC application with CRUD functionality
-                        and SQL Server integration, applying architectural patterns and design principles.
-                    </p>
+                <!-- TECH TRENDS REST API -->
 
-                    <div class="btn-container">
+                <article class="project-card project-small">
 
-                        <button class="btn btn-color-2"
-                                onclick="location.href='https://github.com/AriesMaster/CRUD-functionality-architectural-patterns-and-design-principles-ASP.NET-Core-MVC'">
-                            GitHub
-                        </button>
+                    <div class="project-topline">
+
+                        <span class="project-category">
+                            BACKEND / REST API
+                        </span>
+
+                        <span class="project-index">02</span>
 
                     </div>
 
-                </div>
+                    <div class="project-small-icon" aria-hidden="true">
+                        API
+                    </div>
+
+                    <h3>Tech Trends REST API</h3>
+
+                    <p class="project-description">
+                        An ASP.NET Core REST API demonstrating CRUD
+                        operations, authentication and structured
+                        backend endpoint design.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>C#</span>
+                        <span>ASP.NET Core</span>
+                        <span>REST API</span>
+                        <span>CRUD</span>
+                    </div>
+
+                    <div class="project-card-footer">
+
+                        <a href="https://github.com/AriesMaster/Tech-Trends-Management-API-System-CRUD-RESTful-API"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-text-link">
+                            Explore Source Code
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TELEMETRY PORTAL MVC -->
+
+                <article class="project-card project-small">
+
+                    <div class="project-topline">
+
+                        <span class="project-category">
+                            WEB APPLICATION / MVC
+                        </span>
+
+                        <span class="project-index">03</span>
+
+                    </div>
+
+                    <div class="project-small-icon" aria-hidden="true">
+                        MVC
+                    </div>
+
+                    <h3>Telemetry Portal MVC</h3>
+
+                    <p class="project-description">
+                        An ASP.NET Core MVC application with CRUD
+                        functionality and SQL Server integration,
+                        applying architectural patterns and
+                        software design principles.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>C#</span>
+                        <span>ASP.NET Core MVC</span>
+                        <span>SQL Server</span>
+                        <span>CRUD</span>
+                    </div>
+
+                    <div class="project-card-footer">
+
+                        <a href="https://github.com/AriesMaster/CRUD-functionality-architectural-patterns-and-design-principles-ASP.NET-Core-MVC"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-text-link">
+                            Explore Source Code
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
 
             </div>
 
@@ -764,7 +1135,10 @@
     </section>
 
 
-    <!-- BOOKSHELF -->
+    <!-- =========================
+         BOOKSHELF
+    ========================== -->
+
     <section id="bookshelf">
 
         <p class="section__text__p1">Continuous Learning</p>
@@ -780,6 +1154,7 @@
 
 
             <!-- BOOK 1 -->
+
             <div class="book-card">
 
                 <div class="book-cover">
@@ -796,6 +1171,7 @@
 
 
             <!-- BOOK 2 -->
+
             <div class="book-card">
 
                 <div class="book-cover">
@@ -812,6 +1188,7 @@
 
 
             <!-- BOOK 3 -->
+
             <div class="book-card">
 
                 <div class="book-cover">
@@ -821,13 +1198,17 @@
 
                 <div class="book-info">
                     <h3>Software Architecture: The Hard Parts</h3>
-                    <p>Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani</p>
+                    <p>
+                        Neal Ford, Mark Richards,
+                        Pramod Sadalage, Zhamak Dehghani
+                    </p>
                 </div>
 
             </div>
 
 
             <!-- BOOK 4 -->
+
             <div class="book-card">
 
                 <div class="book-cover">
@@ -844,6 +1225,7 @@
 
 
             <!-- BOOK 5 -->
+
             <div class="book-card">
 
                 <div class="book-cover">
@@ -860,6 +1242,7 @@
 
 
             <!-- BOOK 6 -->
+
             <div class="book-card">
 
                 <div class="book-cover">
@@ -868,7 +1251,10 @@
                 </div>
 
                 <div class="book-info">
-                    <h3>Fundamentals of Software Engineering: From Coder to Engineer</h3>
+                    <h3>
+                        Fundamentals of Software Engineering:
+                        From Coder to Engineer
+                    </h3>
                     <p>Nathaniel Schutta, Dan Vega</p>
                 </div>
 
@@ -879,7 +1265,10 @@
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
     <section id="contact">
 
         <p class="section__text__p1">Get In Touch</p>
@@ -890,6 +1279,7 @@
 
 
             <!-- EMAIL -->
+
             <div class="contact-info-container">
 
                 <img src="assets/email.png"
@@ -906,6 +1296,7 @@
 
 
             <!-- LINKEDIN -->
+
             <div class="contact-info-container">
 
                 <img src="assets/linkedin.png"
@@ -913,7 +1304,9 @@
                      alt="LinkedIn">
 
                 <p>
-                    <a href="https://linkedin.com/in/thabo-mavundza">
+                    <a href="https://linkedin.com/in/thabo-mavundza"
+                       target="_blank"
+                       rel="noopener noreferrer">
                         LinkedIn
                     </a>
                 </p>
@@ -922,6 +1315,7 @@
 
 
             <!-- GITHUB -->
+
             <div class="contact-info-container">
 
                 <img src="assets/github.png"
@@ -929,7 +1323,9 @@
                      alt="GitHub">
 
                 <p>
-                    <a href="https://github.com/AriesMaster">
+                    <a href="https://github.com/AriesMaster"
+                       target="_blank"
+                       rel="noopener noreferrer">
                         GitHub
                     </a>
                 </p>
@@ -941,20 +1337,21 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
 
         <nav>
 
             <ul class="nav-links">
-
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Skills</a></li>
                 <li><a href="#work">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#bookshelf">Bookshelf</a></li>
                 <li><a href="#contact">Contact</a></li>
-
             </ul>
 
         </nav>
@@ -964,12 +1361,18 @@
     </footer>
 
 
-    <!-- CUSTOM CURSOR -->
+    <!-- =========================
+         CUSTOM CURSOR
+    ========================== -->
+
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script src="script.js"></script>
 
 </body>
