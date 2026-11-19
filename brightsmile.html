@@ -1,1514 +1,1438 @@
 
-
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
+    <meta name="description"
+          content="BrightSmile Dental full-stack engineering case study covering Angular, ASP.NET Core 10, PostgreSQL, JWT authentication, role-based authorization, appointment management and API testing.">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightSmile Dental | Technical Case Study</title>
 
-  <meta name="description" content="BrightSmile Dental technical case study: ASP.NET Core, Angular, PostgreSQL, JWT authentication, role-based authorization and API testing.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <title>BrightSmile Dental | Technical Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet">
 
-
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="brightsmile.css">
-
+    <link rel="stylesheet" href="brightsmile.css">
 </head>
-
-
 
 <body>
 
+    <!-- NAVIGATION -->
 
+    <header class="navbar">
+        <nav class="container nav-inner" aria-label="Project navigation">
 
-  <!-- NAVIGATION -->
-
-  <header class="navbar">
-
-    <nav class="container nav-inner" aria-label="Project navigation">
-
-      <a href="index.html" class="brand">
-
-        &lt;Thabo /&gt;
-
-      </a>
-
-
-
-      <div class="nav-links">
-
-        <a href="index.html#projects">Portfolio</a>
-
-        <a href="#overview">Overview</a>
-
-        <a href="#architecture">Architecture</a>
-
-        <a href="#testing">Testing</a>
-
-        <a href="#documentation">Documentation</a>
-
-      </div>
-
-    </nav>
-
-  </header>
-
-
-
-  <main>
-
-
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-      <div class="container">
-
-        <p class="eyebrow mono">Full-Stack Engineering Case Study</p>
-
-
-
-        <h1>
-
-          BrightSmile <span>Dental</span>
-
-        </h1>
-
-
-
-        <p class="hero-description">
-
-          A dental practice management application built to
-
-          demonstrate full-stack development, RESTful API design,
-
-          database integration, JWT authentication, role-based
-
-          authorization and practical software engineering.
-
-        </p>
-
-
-
-        <div class="tech-tags">
-
-          <span class="tag">Angular</span>
-
-          <span class="tag">TypeScript</span>
-
-          <span class="tag">C#</span>
-
-          <span class="tag">ASP.NET Core 10</span>
-
-          <span class="tag">Entity Framework Core</span>
-
-          <span class="tag">PostgreSQL</span>
-
-          <span class="tag">Supabase</span>
-
-          <span class="tag">JWT</span>
-
-          <span class="tag">Swagger</span>
-
-        </div>
-
-
-
-        <div class="actions">
-
-          <a class="btn btn-primary"
-
-             href="https://brightsmiledentalfrontend.netlify.app/"
-
-             target="_blank" rel="noopener noreferrer">
-
-            View Live Application
-
-          </a>
-
-
-
-          <a class="btn btn-outline"
-
-             href="https://github.com/AriesMaster/BrightSmileDentalBackEnd"
-
-             target="_blank" rel="noopener noreferrer">
-
-            Backend Source
-
-          </a>
-
-
-
-          <a class="btn btn-outline"
-
-             href="https://github.com/AriesMaster/BrightSmileDentalFrontEnd"
-
-             target="_blank" rel="noopener noreferrer">
-
-            Frontend Source
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- OVERVIEW -->
-
-    <section class="section" id="overview">
-
-      <div class="container">
-
-
-
-        <div class="section-heading">
-
-          <p class="eyebrow mono">01 / Project Overview</p>
-
-          <h2>Building a Role-Based Dental Platform</h2>
-
-          <p>
-
-            BrightSmile Dental is an ongoing portfolio project.
-
-            Its goal is to bring patient, dentist and administrator
-
-            workflows together in one application.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="grid">
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">01 — ADMIN</span>
-
-            <h3>Practice Administration</h3>
-
-            <p>
-
-              Administrative users manage the dental service catalogue
-
-              through protected CRUD endpoints.
-
-            </p>
-
-            <ul>
-
-              <li>Create and update services</li>
-
-              <li>Delete eligible services</li>
-
-              <li>Enforce service validation</li>
-
-              <li>Prevent duplicate service names</li>
-
-            </ul>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">02 — PATIENT</span>
-
-            <h3>Patient Experience</h3>
-
-            <p>
-
-              Patients can authenticate, retrieve their identity,
-
-              maintain profile information and view dental services.
-
-            </p>
-
-            <ul>
-
-              <li>JWT-based login</li>
-
-              <li>Personal profile endpoints</li>
-
-              <li>Browse available services</li>
-
-              <li>Appointment booking planned</li>
-
-            </ul>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">03 — DENTIST</span>
-
-            <h3>Dentist Workflow</h3>
-
-            <p>
-
-              The Dentist role is part of the application's access
-
-              model. Appointment-related workflows are planned
-
-              for the next development phase.
-
-            </p>
-
-            <ul>
-
-              <li>Role-specific access model</li>
-
-              <li>Assigned appointment viewing planned</li>
-
-              <li>Appointment status updates planned</li>
-
-              <li>Scheduling management planned</li>
-
-            </ul>
-
-          </article>
-
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ARCHITECTURE -->
-
-    <section class="section section-alt" id="architecture">
-
-      <div class="container">
-
-
-
-        <div class="section-heading">
-
-          <p class="eyebrow mono">02 / System Design</p>
-
-          <h2>Application Architecture</h2>
-
-          <p>
-
-            The application separates frontend presentation,
-
-            backend request handling and relational data persistence.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="architecture">
-
-          <div class="architecture-flow">
-
-
-
-            <div class="architecture-node">
-
-              <strong>Angular SPA</strong>
-
-              <small>Components, routes, forms and HTTP requests</small>
-
-            </div>
-
-
-
-            <span class="architecture-arrow" aria-hidden="true">→</span>
-
-
-
-            <div class="architecture-node">
-
-              <strong>ASP.NET Core API</strong>
-
-              <small>Controllers, DTOs, validation and JWT</small>
-
-            </div>
-
-
-
-            <span class="architecture-arrow" aria-hidden="true">→</span>
-
-
-
-            <div class="architecture-node">
-
-              <strong>PostgreSQL</strong>
-
-              <small>Supabase with Entity Framework Core</small>
-
-            </div>
-
-
-
-          </div>
-
-
-
-          <p class="architecture-note">
-
-            Angular communicates with the API over HTTP.
-
-            Entity Framework Core handles database access through Npgsql.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="grid grid-two" style="margin-top: 22px;">
-
-
-
-          <article class="card">
-
-            <h3>Backend Organization</h3>
-
-            <p>
-
-              Controller-based API with dedicated request and response
-
-              DTOs, EF Core entities, application services and a
-
-              database context.
-
-            </p>
-
-            <ul>
-
-              <li>Controllers handle HTTP operations</li>
-
-              <li>DTOs define API contracts</li>
-
-              <li>Models represent database entities</li>
-
-              <li>ApplicationDbContext manages persistence</li>
-
-              <li>JWT and email services provide supporting functionality</li>
-
-            </ul>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>Database Design</h3>
-
-            <p>
-
-              Relational entities support account management,
-
-              personal profiles, service catalogues and the
-
-              future appointment workflow.
-
-            </p>
-
-            <ul>
-
-              <li>Users with unique email addresses</li>
-
-              <li>One-to-one User and Profile relationship</li>
-
-              <li>Services with decimal prices</li>
-
-              <li>Appointments referencing patients, dentists and services</li>
-
-              <li>EF Core migrations for schema evolution</li>
-
-            </ul>
-
-          </article>
-
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- AUTHENTICATION -->
-
-    <section class="section" id="security">
-
-      <div class="container">
-
-
-
-        <div class="section-heading">
-
-          <p class="eyebrow mono">03 / Security</p>
-
-          <h2>Authentication &amp; Authorization</h2>
-
-          <p>
-
-            The backend uses JWT bearer authentication and
-
-            role-based authorization to protect sensitive operations.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="grid grid-two">
-
-
-
-          <article class="card">
-
-            <h3>JWT Authentication</h3>
-
-            <p>
-
-              After successful login, the API issues a token
-
-              containing user identity and role claims.
-
-              Protected endpoints validate the bearer token.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>Role-Based Access Control</h3>
-
-            <p>
-
-              The backend restricts service modification endpoints
-
-              to administrators. A Patient token cannot bypass
-
-              these authorization rules.
-
-            </p>
-
-          </article>
-
-
-
-        </div>
-
-
-
-        <div class="code-window">
-
-          <div class="code-header">ServicesController.cs — Authorization example</div>
-
-<pre><code>// Only administrators may create services.
-
-[Authorize(Roles = UserRoles.Admin)]
-
-[HttpPost]
-
-public async Task&lt;ActionResult&lt;ServiceDto&gt;&gt; CreateService(
-
-    CreateServiceDto dto)
-
-{
-
-    // Validate and persist the requested service.
-
-    // Controller implementation omitted for brevity.
-
-}</code></pre>
-
-        </div>
-
-
-
-        <p class="muted" style="margin-top: 14px; font-size: .82rem;">
-
-          Illustrative excerpt showing the authorization pattern,
-
-          not the complete controller implementation.
-
-        </p>
-
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- REST API -->
-
-    <section class="section section-alt" id="api">
-
-      <div class="container">
-
-
-
-        <div class="section-heading">
-
-          <p class="eyebrow mono">04 / Backend Engineering</p>
-
-          <h2>RESTful Dental Services API</h2>
-
-          <p>
-
-            The service catalogue supports CRUD operations,
-
-            request validation, duplicate prevention and
-
-            role-based access restrictions.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="table-wrap">
-
-          <table>
-
-            <thead>
-
-              <tr>
-
-                <th>Method</th>
-
-                <th>Endpoint</th>
-
-                <th>Purpose</th>
-
-                <th>Access</th>
-
-              </tr>
-
-            </thead>
-
-            <tbody>
-
-              <tr>
-
-                <td><span class="method get">GET</span></td>
-
-                <td><code>/api/Services</code></td>
-
-                <td>List dental services</td>
-
-                <td>Public</td>
-
-              </tr>
-
-              <tr>
-
-                <td><span class="method get">GET</span></td>
-
-                <td><code>/api/Services/{id}</code></td>
-
-                <td>Retrieve service details</td>
-
-                <td>Public</td>
-
-              </tr>
-
-              <tr>
-
-                <td><span class="method post">POST</span></td>
-
-                <td><code>/api/Services</code></td>
-
-                <td>Create a service</td>
-
-                <td>Admin</td>
-
-              </tr>
-
-              <tr>
-
-                <td><span class="method put">PUT</span></td>
-
-                <td><code>/api/Services/{id}</code></td>
-
-                <td>Update a service</td>
-
-                <td>Admin</td>
-
-              </tr>
-
-              <tr>
-
-                <td><span class="method delete">DELETE</span></td>
-
-                <td><code>/api/Services/{id}</code></td>
-
-                <td>Delete a service</td>
-
-                <td>Admin</td>
-
-              </tr>
-
-            </tbody>
-
-          </table>
-
-        </div>
-
-
-
-        <div class="grid grid-two" style="margin-top: 22px;">
-
-
-
-          <article class="card">
-
-            <h3>DTO Validation</h3>
-
-            <p>
-
-              Request DTOs enforce constraints on service names,
-
-              descriptions and prices. Invalid requests are rejected
-
-              with meaningful validation errors.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>Business Rules</h3>
-
-            <p>
-
-              Duplicate names are rejected with HTTP 409 Conflict.
-
-              The delete operation also checks whether existing
-
-              appointments reference the service.
-
-            </p>
-
-          </article>
-
-
-
-        </div>
-
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- TESTING -->
-
-    <section class="section" id="testing">
-
-      <div class="container">
-
-
-
-        <div class="section-heading">
-
-          <p class="eyebrow mono">05 / Quality Assurance</p>
-
-          <h2>API Testing &amp; Verification</h2>
-
-          <p>
-
-            The following results were observed during local
-
-            Swagger UI testing on 17 November 2026.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="table-wrap">
-
-          <table>
-
-            <thead>
-
-              <tr>
-
-                <th>Scenario</th>
-
-                <th>HTTP Status</th>
-
-                <th>Result</th>
-
-              </tr>
-
-            </thead>
-
-            <tbody>
-
-              <tr>
-
-                <td>Admin authentication</td>
-
-                <td>200 OK</td>
-
-                <td><span class="status">Passed</span></td>
-
-              </tr>
-
-              <tr>
-
-                <td>Patient authentication</td>
-
-                <td>200 OK</td>
-
-                <td><span class="status">Passed</span></td>
-
-              </tr>
-
-              <tr>
-
-                <td>Create dental service</td>
-
-                <td>201 Created</td>
-
-                <td><span class="status">Passed</span></td>
-
-              </tr>
-
-              <tr>
-
-                <td>Retrieve dental services</td>
-
-                <td>200 OK</td>
-
-                <td><span class="status">Passed</span></td>
-
-              </tr>
-
-              <tr>
-
-                <td>Update dental service</td>
-
-                <td>200 OK</td>
-
-                <td><span class="status">Passed</span></td>
-
-              </tr>
-
-              <tr>
-
-                <td>Prevent duplicate service name</td>
-
-                <td>409 Conflict</td>
-
-                <td><span class="status">Passed</span></td>
-
-              </tr>
-
-              <tr>
-
-                <td>Delete dental service</td>
-
-                <td>204 No Content</td>
-
-                <td><span class="status">Passed</span></td>
-
-              </tr>
-
-              <tr>
-
-                <td>Patient denied service creation</td>
-
-                <td>403 Forbidden</td>
-
-                <td><span class="status">Passed</span></td>
-
-              </tr>
-
-              <tr>
-
-                <td>Reject negative service price</td>
-
-                <td>400 Bad Request</td>
-
-                <td><span class="status">Passed</span></td>
-
-              </tr>
-
-              <tr>
-
-                <td>Patient retrieves own identity</td>
-
-                <td>200 OK</td>
-
-                <td><span class="status">Passed</span></td>
-
-              </tr>
-
-            </tbody>
-
-          </table>
-
-        </div>
-
-
-
-        <div class="grid grid-two" style="margin-top: 22px;">
-
-
-
-          <article class="card">
-
-            <h3>Validation Test</h3>
-
-            <p>
-
-              A service creation request with a price of -100
-
-              returned HTTP 400 and the message:
-
-              "Price must be greater than zero."
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>Authorization Test</h3>
-
-            <p>
-
-              A Patient successfully authenticated but received
-
-              HTTP 403 when attempting to create a service,
-
-              demonstrating backend authorization enforcement.
-
-            </p>
-
-          </article>
-
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- SKILLS -->
-
-    <section class="section section-alt" id="skills">
-
-      <div class="container">
-
-
-
-        <div class="section-heading">
-
-          <p class="eyebrow mono">06 / Engineering Skills</p>
-
-          <h2>What This Project Demonstrates</h2>
-
-          <p>
-
-            Practical skills supported by implemented features
-
-            and observed API test results.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="grid">
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">BACKEND</span>
-
-            <h3>API Development</h3>
-
-            <p>
-
-              C#, ASP.NET Core controllers, RESTful endpoints,
-
-              DTOs, HTTP status codes and dependency injection.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">DATABASES</span>
-
-            <h3>Data Persistence</h3>
-
-            <p>
-
-              EF Core, PostgreSQL, Npgsql, entity relationships,
-
-              LINQ queries and database migrations.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">SECURITY</span>
-
-            <h3>Identity &amp; Access</h3>
-
-            <p>
-
-              JWT bearer authentication, role claims,
-
-              password hashing and server-side RBAC.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">VALIDATION</span>
-
-            <h3>Business Logic</h3>
-
-            <p>
-
-              Request validation, duplicate prevention,
-
-              protected CRUD operations and error responses.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">TESTING</span>
-
-            <h3>API Verification</h3>
-
-            <p>
-
-              Swagger UI testing, authenticated requests,
-
-              negative test cases and HTTP response inspection.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">FRONTEND</span>
-
-            <h3>Full-Stack Integration</h3>
-
-            <p>
-
-              Angular, TypeScript, routing, authentication
-
-              workflows and HTTP communication with a Web API.
-
-            </p>
-
-          </article>
-
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- LESSONS -->
-
-    <section class="section" id="lessons">
-
-      <div class="container">
-
-
-
-        <div class="section-heading">
-
-          <p class="eyebrow mono">07 / Problem Solving</p>
-
-          <h2>Challenges &amp; Lessons Learned</h2>
-
-        </div>
-
-
-
-        <div class="grid grid-two">
-
-
-
-          <article class="card">
-
-            <h3>Transient Database Failure</h3>
-
-            <p>
-
-              An Npgsql connection interruption occurred during
-
-              an update test. Retrying the request succeeded,
-
-              highlighting the importance of distinguishing
-
-              infrastructure failures from application logic defects.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>Authentication vs Authorization</h3>
-
-            <p>
-
-              A valid Patient JWT allowed identity retrieval
-
-              but not administrative service creation.
-
-              This demonstrated the difference between
-
-              proving identity and granting permissions.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>Meaningful HTTP Responses</h3>
-
-            <p>
-
-              The API uses HTTP 400 for invalid data,
-
-              403 for forbidden operations, 409 for duplicate
-
-              conflicts and 204 for successful deletion.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>API Documentation</h3>
-
-            <p>
-
-              Swagger showed some valid error responses as
-
-              "Undocumented". This identified an opportunity
-
-              to improve OpenAPI response metadata.
-
-            </p>
-
-          </article>
-
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- DOCUMENTATION -->
-
-    <section class="section section-alt" id="documentation">
-
-      <div class="container">
-
-
-
-        <div class="section-heading">
-
-          <p class="eyebrow mono">08 / Technical Documentation</p>
-
-          <h2>Development Report</h2>
-
-          <p>
-
-            A written record of the backend architecture,
-
-            implemented features, tests, technical challenges
-
-            and skills gained.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="documentation">
-
-          <div>
-
-            <h3>BrightSmile Dental — Backend Development Documentation</h3>
-
-            <p>
-
-              Covers authentication, user profiles, dental service
-
-              management, REST API design, validation,
-
-              role-based authorization and Swagger testing.
-
-              Updated for the completed backend development phases.
-
-            </p>
-
-          </div>
-
-
-
-          <div class="actions">
-
-            <a class="btn btn-primary"
-
-               href="assets/BrightSmile_Dental_Backend_Development_Documentation.pdf"
-
-               target="_blank"
-
-               rel="noopener noreferrer">
-
-              View PDF Report
-
+            <a href="index.html" class="brand">
+                &lt;Thabo /&gt;
             </a>
 
-          </div>
+            <div class="nav-links">
+                <a href="index.html#projects">Portfolio</a>
+                <a href="#overview">Overview</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#appointments">Appointments</a>
+                <a href="#testing">Testing</a>
+                <a href="#documentation">Documentation</a>
+            </div>
 
-        </div>
+        </nav>
+    </header>
 
+    <main>
 
+        <!-- HERO -->
 
-      </div>
+        <section class="hero">
+            <div class="container">
 
-    </section>
+                <p class="eyebrow mono">
+                    Full-Stack Engineering Case Study
+                </p>
 
+                <h1>
+                    BrightSmile <span>Dental</span>
+                </h1>
 
+                <p class="hero-description">
+                    A role-based dental practice management system
+                    developed using Angular, ASP.NET Core 10 Web API
+                    and PostgreSQL. The backend implements secure
+                    authentication, appointment scheduling,
+                    conflict prevention, service management and
+                    role-specific workflows.
+                </p>
 
-    <!-- ROADMAP -->
+                <div class="tech-tags">
+                    <span class="tag">Angular</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">C#</span>
+                    <span class="tag">ASP.NET Core 10</span>
+                    <span class="tag">EF Core</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Supabase</span>
+                    <span class="tag">JWT</span>
+                    <span class="tag">Swagger</span>
+                    <span class="tag">Render</span>
+                    <span class="tag">Netlify</span>
+                </div>
 
-    <section class="section" id="roadmap">
+                <div class="actions">
 
-      <div class="container">
+                    <a class="btn btn-primary"
+                       href="https://brightsmiledentalfrontend.netlify.app/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View Live Application
+                    </a>
 
+                    <a class="btn btn-outline"
+                       href="https://github.com/AriesMaster/BrightSmileDentalBackEnd"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Backend Source
+                    </a>
 
+                    <a class="btn btn-outline"
+                       href="https://github.com/AriesMaster/BrightSmileDentalFrontEnd"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Frontend Source
+                    </a>
 
-        <div class="section-heading">
+                </div>
 
-          <p class="eyebrow mono">09 / Development Roadmap</p>
+            </div>
+        </section>
 
-          <h2>What's Next?</h2>
+        <!-- OVERVIEW -->
 
-          <p>
+        <section class="section" id="overview">
+            <div class="container">
 
-            The application is actively being developed.
+                <div class="section-heading">
+                    <p class="eyebrow mono">01 / Project Overview</p>
 
-            Planned features are clearly separated from
+                    <h2>Building a Role-Based Dental Platform</h2>
 
-            functionality already implemented and tested.
+                    <p>
+                        BrightSmile Dental is a full-stack portfolio
+                        application designed around three user roles:
+                        Administrator, Dentist and Patient.
 
-          </p>
+                        Its backend supports the core dental
+                        appointment lifecycle, while the Angular
+                        dashboards are being developed to expose
+                        these capabilities through a complete
+                        user interface.
+                    </p>
+                </div>
 
-        </div>
+                <div class="grid">
 
+                    <!-- ADMIN -->
 
+                    <article class="card">
+                        <span class="card-number mono">
+                            01 — ADMIN
+                        </span>
 
-        <div class="grid">
+                        <h3>Practice Administration</h3>
 
+                        <p>
+                            Administrative users manage the dental
+                            service catalogue and have access to
+                            appointment administration endpoints.
+                        </p>
 
+                        <ul>
+                            <li>Create dental services</li>
+                            <li>Update service information and pricing</li>
+                            <li>Delete eligible services</li>
+                            <li>View all appointments</li>
+                            <li>Manage authorized appointment statuses</li>
+                        </ul>
+                    </article>
 
-          <article class="card">
+                    <!-- PATIENT -->
 
-            <span class="card-number mono">COMPLETED</span>
+                    <article class="card">
+                        <span class="card-number mono">
+                            02 — PATIENT
+                        </span>
 
-            <h3>Authentication Foundation</h3>
+                        <h3>Patient Experience</h3>
+
+                        <p>
+                            Patients can authenticate, manage
+                            their profiles and interact with
+                            appointment booking endpoints.
+                        </p>
+
+                        <ul>
+                            <li>Register and sign in</li>
+                            <li>View available dental services</li>
+                            <li>Book dental appointments</li>
+                            <li>View personal appointment history</li>
+                            <li>Reschedule pending appointments</li>
+                            <li>Cancel eligible appointments</li>
+                        </ul>
+                    </article>
+
+                    <!-- DENTIST -->
+
+                    <article class="card">
+                        <span class="card-number mono">
+                            03 — DENTIST
+                        </span>
+
+                        <h3>Dentist Workflow</h3>
+
+                        <p>
+                            Dentists have protected endpoints
+                            for retrieving assigned appointments
+                            and managing appointment statuses.
+                        </p>
+
+                        <ul>
+                            <li>Authenticate using the Dentist role</li>
+                            <li>View assigned appointments</li>
+                            <li>Confirm pending appointments</li>
+                            <li>Complete eligible appointments</li>
+                            <li>Follow controlled status transitions</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ARCHITECTURE -->
+
+        <section class="section section-alt" id="architecture">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow mono">
+                        02 / System Design
+                    </p>
+
+                    <h2>Application Architecture</h2>
+
+                    <p>
+                        The application separates frontend
+                        presentation, backend business logic
+                        and relational database persistence.
+                    </p>
+                </div>
+
+                <div class="architecture">
+
+                    <div class="architecture-flow">
+
+                        <div class="architecture-node">
+                            <strong>Angular SPA</strong>
+                            <small>
+                                Components, routing, forms
+                                and HTTP communication
+                            </small>
+                        </div>
+
+                        <span class="architecture-arrow"
+                              aria-hidden="true">→</span>
+
+                        <div class="architecture-node">
+                            <strong>ASP.NET Core 10 API</strong>
+                            <small>
+                                Controllers, DTOs, JWT,
+                                validation and business rules
+                            </small>
+                        </div>
+
+                        <span class="architecture-arrow"
+                              aria-hidden="true">→</span>
+
+                        <div class="architecture-node">
+                            <strong>PostgreSQL</strong>
+                            <small>
+                                Supabase, EF Core and Npgsql
+                            </small>
+                        </div>
+
+                    </div>
+
+                    <p class="architecture-note">
+                        The Angular frontend is hosted on Netlify.
+                        The ASP.NET Core backend is hosted on Render,
+                        with Supabase providing the PostgreSQL database.
+                        Entity Framework Core handles relational
+                        persistence through Npgsql.
+                    </p>
+
+                </div>
+
+                <div class="grid grid-two" style="margin-top: 22px;">
+
+                    <article class="card">
+
+                        <h3>Backend Organization</h3>
+
+                        <p>
+                            A controller-based Web API organized
+                            around HTTP endpoints, request and
+                            response DTOs, entity models,
+                            application services and EF Core.
+                        </p>
+
+                        <ul>
+                            <li>RESTful API controllers</li>
+                            <li>Request and response DTOs</li>
+                            <li>Entity Framework Core</li>
+                            <li>Dependency injection</li>
+                            <li>JWT authentication services</li>
+                            <li>Role-based authorization</li>
+                        </ul>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Database Design</h3>
+
+                        <p>
+                            Relational entities support account
+                            management, patient profiles,
+                            service catalogues and appointment
+                            scheduling.
+                        </p>
+
+                        <ul>
+                            <li>Users with unique email addresses</li>
+                            <li>User and Profile relationship</li>
+                            <li>Dental services with decimal prices</li>
+                            <li>Appointments linked to patients and dentists</li>
+                            <li>EF Core migrations</li>
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECURITY -->
+
+        <section class="section" id="security">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow mono">
+                        03 / Security
+                    </p>
+
+                    <h2>Authentication &amp; Authorization</h2>
+
+                    <p>
+                        Authentication establishes user identity,
+                        while server-side role and ownership checks
+                        determine which operations are permitted.
+                    </p>
+                </div>
+
+                <div class="grid grid-two">
+
+                    <article class="card">
+
+                        <h3>JWT Authentication</h3>
+
+                        <p>
+                            After successful login, the backend
+                            issues a JSON Web Token containing
+                            identity and role claims.
+
+                            Protected endpoints validate the
+                            bearer token before processing requests.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Role-Based Access Control</h3>
+
+                        <p>
+                            Admin, Dentist and Patient roles
+                            have different permissions.
+
+                            Additional ownership checks prevent
+                            patients from modifying another
+                            patient's appointments and restrict
+                            dentists to their assigned bookings.
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <div class="code-window">
+
+                    <div class="code-header">
+                        ASP.NET Core — Role-Based Authorization
+                    </div>
+
+<pre><code>// Restrict endpoint access to administrators.
+
+[Authorize(Roles = UserRoles.Admin)]
+[HttpGet]
+public async Task&lt;ActionResult&lt;IEnumerable&lt;AppointmentDto&gt;&gt;&gt;
+    GetAllAppointments()
+{
+    // Retrieve appointments using EF Core.
+    // Implementation shortened for illustration.
+}</code></pre>
+
+                </div>
+
+                <p class="muted"
+                   style="margin-top: 14px; font-size: .82rem;">
+                    Illustrative authorization example.
+                    The complete implementation is available
+                    in the backend GitHub repository.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- REST API -->
+
+        <section class="section section-alt" id="api">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow mono">
+                        04 / Backend Engineering
+                    </p>
+
+                    <h2>RESTful API Development</h2>
+
+                    <p>
+                        The backend exposes endpoints for
+                        authentication, profile management,
+                        dental services and appointments.
+                    </p>
+                </div>
+
+                <div class="table-wrap">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Endpoint</th>
+                                <th>Purpose</th>
+                                <th>Access</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td><span class="method post">POST</span></td>
+                                <td><code>/api/Auth/register</code></td>
+                                <td>Register patient</td>
+                                <td>Public</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method post">POST</span></td>
+                                <td><code>/api/Auth/login</code></td>
+                                <td>Authenticate user</td>
+                                <td>Public</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method get">GET</span></td>
+                                <td><code>/api/Profiles/me</code></td>
+                                <td>Retrieve profile</td>
+                                <td>Authenticated</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method put">PUT</span></td>
+                                <td><code>/api/Profiles/me</code></td>
+                                <td>Create or update profile</td>
+                                <td>Authenticated</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method get">GET</span></td>
+                                <td><code>/api/Services</code></td>
+                                <td>List dental services</td>
+                                <td>Public</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method post">POST</span></td>
+                                <td><code>/api/Services</code></td>
+                                <td>Create service</td>
+                                <td>Admin</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method put">PUT</span></td>
+                                <td><code>/api/Services/{id}</code></td>
+                                <td>Update service</td>
+                                <td>Admin</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method delete">DELETE</span></td>
+                                <td><code>/api/Services/{id}</code></td>
+                                <td>Delete service</td>
+                                <td>Admin</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div class="grid grid-two" style="margin-top: 22px;">
+
+                    <article class="card">
+
+                        <h3>DTO Validation</h3>
+
+                        <p>
+                            Request DTOs enforce constraints
+                            on incoming data.
+
+                            Invalid requests are rejected
+                            before database persistence.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Business Rules</h3>
+
+                        <p>
+                            The backend validates service
+                            operations, prevents duplicate
+                            service names and checks appointment
+                            availability before accepting bookings.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- APPOINTMENT MANAGEMENT -->
+
+        <section class="section" id="appointments">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow mono">
+                        05 / Appointment Management
+                    </p>
+
+                    <h2>Appointment Scheduling &amp; Lifecycle</h2>
+
+                    <p>
+                        Appointment management introduces
+                        business rules beyond basic CRUD,
+                        including scheduling conflicts,
+                        ownership checks and controlled
+                        status transitions.
+                    </p>
+
+                </div>
+
+                <div class="grid grid-two">
+
+                    <article class="card">
+
+                        <h3>Appointment Booking</h3>
+
+                        <p>
+                            Patients can book appointments
+                            with a selected dentist and
+                            dental service.
+
+                            The backend checks whether the
+                            requested time overlaps with
+                            an existing active appointment.
+                        </p>
+
+                        <ul>
+                            <li>Future appointment date validation</li>
+                            <li>Dentist and service validation</li>
+                            <li>30-minute appointment windows</li>
+                            <li>Overlapping booking prevention</li>
+                            <li>Adjacent time slot support</li>
+                        </ul>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Rescheduling &amp; Cancellation</h3>
+
+                        <p>
+                            Patients can reschedule their own
+                            pending appointments and cancel
+                            eligible bookings.
+
+                            Cancelled appointments release
+                            their reserved time slots.
+                        </p>
+
+                        <ul>
+                            <li>Patient ownership verification</li>
+                            <li>Conflict checks during rescheduling</li>
+                            <li>Cancellation workflow</li>
+                            <li>Rebooking cancelled time slots</li>
+                            <li>HTTP 409 responses for conflicts</li>
+                        </ul>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Appointment Status Management</h3>
+
+                        <p>
+                            Authorized dentists and
+                            administrators can update
+                            appointment statuses according
+                            to defined business rules.
+                        </p>
+
+                        <ul>
+                            <li>Pending to Confirmed</li>
+                            <li>Confirmed to Completed</li>
+                            <li>Eligible appointments to Cancelled</li>
+                            <li>Invalid status transitions rejected</li>
+                        </ul>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Database Transaction Handling</h3>
+
+                        <p>
+                            Scheduling mutations use
+                            PostgreSQL transactions and
+                            dentist-specific advisory locks
+                            to coordinate appointment changes.
+
+                            This is designed to reduce the
+                            risk of simultaneous conflicting
+                            bookings.
+                        </p>
+
+                        <p class="muted">
+                            Dedicated concurrent-request
+                            testing is still planned.
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <div class="table-wrap" style="margin-top: 22px;">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Endpoint</th>
+                                <th>Purpose</th>
+                                <th>Access</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td><span class="method post">POST</span></td>
+                                <td><code>/api/Appointments</code></td>
+                                <td>Create appointment</td>
+                                <td>Patient</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method get">GET</span></td>
+                                <td><code>/api/Appointments/me</code></td>
+                                <td>View own appointments</td>
+                                <td>Patient</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method get">GET</span></td>
+                                <td><code>/api/Appointments/dentist/me</code></td>
+                                <td>View assigned appointments</td>
+                                <td>Dentist</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method get">GET</span></td>
+                                <td><code>/api/Appointments</code></td>
+                                <td>View all appointments</td>
+                                <td>Admin</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method put">PUT</span></td>
+                                <td><code>/api/Appointments/{id}</code></td>
+                                <td>Reschedule appointment</td>
+                                <td>Owning Patient</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method put">PATCH</span></td>
+                                <td><code>/api/Appointments/{id}/status</code></td>
+                                <td>Update appointment status</td>
+                                <td>Assigned Dentist / Admin</td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="method put">PATCH</span></td>
+                                <td><code>/api/Appointments/{id}/cancel</code></td>
+                                <td>Cancel appointment</td>
+                                <td>Owning Patient / Admin</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TESTING -->
+
+        <section class="section section-alt" id="testing">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow mono">
+                        06 / Quality Assurance
+                    </p>
+
+                    <h2>API Testing &amp; Verification</h2>
+
+                    <p>
+                        Backend functionality was tested locally
+                        using Swagger UI and authenticated
+                        HTTP requests during November 2026.
+
+                        The results below reflect observed
+                        API behavior rather than automated
+                        test-suite coverage.
+                    </p>
+
+                </div>
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Test Scenario</th>
+                                <th>HTTP Status</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Patient authentication</td>
+                                <td>200 OK</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Admin authentication</td>
+                                <td>200 OK</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Create dental service</td>
+                                <td>201 Created</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Update dental service</td>
+                                <td>200 OK</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Delete dental service</td>
+                                <td>204 No Content</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Patient denied admin access</td>
+                                <td>403 Forbidden</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Create patient appointment</td>
+                                <td>201 Created</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Reject overlapping appointment</td>
+                                <td>409 Conflict</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Accept adjacent appointment slot</td>
+                                <td>201 Created</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Reject conflicting reschedule</td>
+                                <td>409 Conflict</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Successfully reschedule appointment</td>
+                                <td>200 OK</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Cancel appointment</td>
+                                <td>200 OK</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Book previously cancelled time slot</td>
+                                <td>201 Created</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Reject modification of cancelled booking</td>
+                                <td>409 Conflict</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Retrieve dentist appointments</td>
+                                <td>200 OK</td>
+                                <td><span class="status">Passed</span></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="grid grid-two" style="margin-top: 22px;">
+
+                    <article class="card">
+
+                        <h3>Scheduling Conflict Test</h3>
+
+                        <p>
+                            With an existing 09:00 appointment,
+                            a booking request at 09:15 was
+                            rejected with HTTP 409.
+
+                            A booking at 09:30 was accepted
+                            with HTTP 201, demonstrating
+                            the intended 30-minute slot
+                            boundary behavior.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Cancellation &amp; Rebooking Test</h3>
+
+                        <p>
+                            Appointment cancellation returned
+                            HTTP 200 and changed its status
+                            to Cancelled.
+
+                            A new booking for the same time
+                            subsequently returned HTTP 201.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ENGINEERING SKILLS -->
+
+        <section class="section" id="skills">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow mono">
+                        07 / Engineering Skills
+                    </p>
+
+                    <h2>What This Project Demonstrates</h2>
+
+                    <p>
+                        Technical skills supported by
+                        implemented functionality,
+                        source code and API verification.
+                    </p>
+
+                </div>
+
+                <div class="grid">
+
+                    <article class="card">
+                        <span class="card-number mono">BACKEND</span>
+
+                        <h3>API Development</h3>
+
+                        <p>
+                            C#, ASP.NET Core 10,
+                            RESTful endpoints,
+                            DTOs, dependency injection
+                            and HTTP response handling.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-number mono">DATABASES</span>
+
+                        <h3>Data Persistence</h3>
+
+                        <p>
+                            EF Core, PostgreSQL,
+                            Supabase, Npgsql,
+                            LINQ, relationships
+                            and database migrations.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-number mono">SECURITY</span>
+
+                        <h3>Identity &amp; Access</h3>
+
+                        <p>
+                            JWT authentication,
+                            BCrypt password hashing,
+                            role-based authorization
+                            and resource ownership checks.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-number mono">BUSINESS LOGIC</span>
+
+                        <h3>Scheduling Rules</h3>
+
+                        <p>
+                            Appointment conflict detection,
+                            scheduling validation,
+                            cancellation, rescheduling
+                            and status transitions.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-number mono">TESTING</span>
+
+                        <h3>API Verification</h3>
+
+                        <p>
+                            Swagger UI, authenticated
+                            requests, negative test cases,
+                            HTTP status verification
+                            and debugging.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="card-number mono">DEPLOYMENT</span>
+
+                        <h3>Cloud Deployment</h3>
+
+                        <p>
+                            Angular deployment to Netlify,
+                            ASP.NET Core deployment to Render
+                            and cloud PostgreSQL integration
+                            through Supabase.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LESSONS -->
+
+        <section class="section section-alt" id="lessons">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow mono">
+                        08 / Problem Solving
+                    </p>
+
+                    <h2>Engineering Challenges &amp; Lessons</h2>
+
+                </div>
+
+                <div class="grid grid-two">
+
+                    <article class="card">
+
+                        <h3>Preventing Double Bookings</h3>
+
+                        <p>
+                            Comparing appointment timestamps
+                            for exact equality was insufficient
+                            because partially overlapping
+                            appointment windows could still
+                            be accepted.
+
+                            The scheduling logic was improved
+                            to detect overlapping 30-minute
+                            appointment intervals.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Authentication vs Authorization</h3>
+
+                        <p>
+                            A valid JWT proves user identity
+                            but does not grant unrestricted
+                            access.
+
+                            Role checks and appointment
+                            ownership validation protect
+                            sensitive operations.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Database Reliability</h3>
+
+                        <p>
+                            A transient PostgreSQL connection
+                            failure occurred during local
+                            testing.
+
+                            Retrying succeeded, highlighting
+                            the importance of distinguishing
+                            infrastructure issues from
+                            application logic defects.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>API Documentation</h3>
+
+                        <p>
+                            Swagger exposed valid HTTP
+                            responses that were not fully
+                            documented in the OpenAPI
+                            response metadata.
+
+                            Improving response annotations
+                            remains a future refinement.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DOCUMENTATION -->
+
+        <section class="section" id="documentation">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow mono">
+                        09 / Technical Documentation
+                    </p>
+
+                    <h2>Development Report</h2>
+
+                    <p>
+                        Technical documentation covering
+                        backend architecture, implementation
+                        decisions, API development and
+                        testing.
+                    </p>
+
+                </div>
+
+                <div class="documentation">
+
+                    <div>
+
+                        <h3>
+                            BrightSmile Dental —
+                            Backend Development Documentation
+                        </h3>
+
+                        <p>
+                            The existing PDF documents earlier
+                            backend development phases.
+
+                            The current GitHub repository and
+                            this case study also cover the
+                            subsequently implemented appointment
+                            management workflows.
+                        </p>
+
+                    </div>
+
+                    <div class="actions">
+
+                        <a class="btn btn-primary"
+                           href="assets/BrightSmile_Dental_Backend_Development_Documentation.pdf"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View PDF Report
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ROADMAP -->
+
+        <section class="section section-alt" id="roadmap">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow mono">
+                        10 / Development Roadmap
+                    </p>
+
+                    <h2>Current Progress &amp; Next Steps</h2>
+
+                    <p>
+                        The core backend workflows have
+                        been implemented and locally tested.
+
+                        The next priority is integrating
+                        them into the Angular frontend
+                        and verifying the complete
+                        production experience.
+                    </p>
+
+                </div>
+
+                <div class="grid">
+
+                    <article class="card">
+
+                        <span class="card-number mono">
+                            BACKEND IMPLEMENTED
+                        </span>
+
+                        <h3>Authentication &amp; Profiles</h3>
+
+                        <p>
+                            JWT login, registration,
+                            role-based authorization,
+                            identity endpoints and
+                            profile management.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <span class="card-number mono">
+                            BACKEND IMPLEMENTED
+                        </span>
+
+                        <h3>Dental Services API</h3>
+
+                        <p>
+                            Administrative service CRUD,
+                            validation, duplicate prevention
+                            and protected operations.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <span class="card-number mono">
+                            BACKEND IMPLEMENTED
+                        </span>
+
+                        <h3>Appointment Management</h3>
+
+                        <p>
+                            Appointment creation, viewing,
+                            rescheduling, cancellation,
+                            conflict detection and
+                            status workflows.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <span class="card-number mono">
+                            FRONTEND NEXT
+                        </span>
+
+                        <h3>Patient Dashboard</h3>
+
+                        <p>
+                            Integrate service browsing,
+                            appointment booking,
+                            rescheduling, cancellation
+                            and profile management.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <span class="card-number mono">
+                            FRONTEND NEXT
+                        </span>
+
+                        <h3>Dentist Dashboard</h3>
+
+                        <p>
+                            Display assigned appointments
+                            and provide controls for
+                            authorized status changes.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <span class="card-number mono">
+                            FRONTEND NEXT
+                        </span>
+
+                        <h3>Admin Dashboard</h3>
+
+                        <p>
+                            Connect administrative service
+                            management, appointment
+                            monitoring and status workflows
+                            to the existing API.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECT LINKS -->
+
+        <section class="section">
+
+            <div class="container" style="text-align:center;">
+
+                <p class="eyebrow mono">
+                    Explore the Project
+                </p>
+
+                <h2 style="margin: 10px 0; font-size: 2rem;">
+                    Source Code &amp; Live Application
+                </h2>
+
+                <p class="muted">
+                    Explore the source code, technical
+                    implementation and ongoing
+                    frontend development.
+                </p>
+
+                <div class="actions" style="justify-content:center;">
+
+                    <a class="btn btn-primary"
+                       href="https://brightsmiledentalfrontend.netlify.app/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Live Demo
+                    </a>
+
+                    <a class="btn btn-outline"
+                       href="https://github.com/AriesMaster/BrightSmileDentalFrontEnd"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Frontend GitHub
+                    </a>
+
+                    <a class="btn btn-outline"
+                       href="https://github.com/AriesMaster/BrightSmileDentalBackEnd"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Backend GitHub
+                    </a>
+
+                    <a class="btn btn-outline"
+                       href="index.html#projects">
+                        Back to Portfolio
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
 
             <p>
+                &copy; 2026 Thabo Tankiso Mavundza.
+                Built as part of my software development portfolio.
+            </p>
 
-              JWT login, user roles, identity endpoints
+            <p style="margin-top: 8px;">
 
-              and profile management APIs.
+                <a href="index.html">Portfolio</a>
+
+                &nbsp;·&nbsp;
+
+                <a href="https://github.com/AriesMaster"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub
+                </a>
 
             </p>
 
-          </article>
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">COMPLETED</span>
-
-            <h3>Dental Services API</h3>
-
-            <p>
-
-              Administrative CRUD, validation,
-
-              duplicate prevention and authorization testing.
-
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <span class="card-number mono">NEXT PHASE</span>
-
-            <h3>Appointment Management</h3>
-
-            <p>
-
-              Booking endpoints, dentist assignment,
-
-              scheduling conflict checks, cancellation
-
-              and role-specific appointment workflows.
-
-            </p>
-
-          </article>
-
-
-
         </div>
 
+    </footer>
+
+    <!-- PORTFOLIO CURSOR -->
+
+    <div class="cursor-dot"
+         data-cursor-dot
+         aria-hidden="true"></div>
+
+    <div class="cursor-outline"
+         data-cursor-outline
+         aria-hidden="true"></div>
+
+    <script>
+        (() => {
+            if (!window.matchMedia(
+                '(hover: hover) and (pointer: fine)'
+            ).matches) return;
+
+            const dot = document.querySelector(
+                '[data-cursor-dot]'
+            );
+
+            const glow = document.querySelector(
+                '[data-cursor-outline]'
+            );
+
+            if (!dot || !glow) return;
+
+            document.addEventListener(
+                'pointermove',
+                (event) => {
+                    dot.style.left =
+                        glow.style.left =
+                        `${event.clientX}px`;
+
+                    dot.style.top =
+                        glow.style.top =
+                        `${event.clientY}px`;
+                },
+                { passive: true }
+            );
+
+            document.querySelectorAll(
+                'a, button'
+            ).forEach(element => {
+
+                element.addEventListener(
+                    'pointerenter',
+                    () => {
+                        dot.classList.add('hovering');
+                        glow.classList.add('hovering');
+                    }
+                );
+
+                element.addEventListener(
+                    'pointerleave',
+                    () => {
+                        dot.classList.remove('hovering');
+                        glow.classList.remove('hovering');
+                    }
+                );
+
+            });
+        })();
+    </script>
 
-
-      </div>
-
-    </section>
-
-
-
-    <!-- FINAL LINKS -->
-
-    <section class="section section-alt">
-
-      <div class="container" style="text-align:center;">
-
-
-
-        <p class="eyebrow mono">Explore the Project</p>
-
-        <h2 style="margin: 10px 0; font-size: 2rem;">
-
-          Source Code &amp; Live Application
-
-        </h2>
-
-
-
-        <p class="muted">
-
-          Review the implementation and follow the development progress.
-
-        </p>
-
-
-
-        <div class="actions" style="justify-content:center;">
-
-          <a class="btn btn-primary"
-
-             href="https://brightsmiledentalfrontend.netlify.app/"
-
-             target="_blank" rel="noopener noreferrer">
-
-            Live Demo
-
-          </a>
-
-
-
-          <a class="btn btn-outline"
-
-             href="https://github.com/AriesMaster/BrightSmileDentalFrontEnd"
-
-             target="_blank" rel="noopener noreferrer">
-
-            Frontend GitHub
-
-          </a>
-
-
-
-          <a class="btn btn-outline"
-
-             href="https://github.com/AriesMaster/BrightSmileDentalBackEnd"
-
-             target="_blank" rel="noopener noreferrer">
-
-            Backend GitHub
-
-          </a>
-
-
-
-          <a class="btn btn-outline" href="index.html#projects">
-
-            Back to Portfolio
-
-          </a>
-
-        </div>
-
-
-
-      </div>
-
-    </section>
-
-
-
-  </main>
-
-
-
-  <footer>
-
-    <div class="container">
-
-      <p>
-
-        &copy; 2026 Thabo Tankiso Mavundza.
-
-        Built as part of my software development portfolio.
-
-      </p>
-
-      <p style="margin-top: 8px;">
-
-        <a href="index.html">Portfolio</a>
-
-        &nbsp;·&nbsp;
-
-        <a href="https://github.com/AriesMaster"
-
-           target="_blank" rel="noopener noreferrer">GitHub</a>
-
-      </p>
-
-    </div>
-
-  </footer>
-
-
-
-  <!-- Portfolio cursor glow -->
-  <div class="cursor-dot" data-cursor-dot aria-hidden="true"></div>
-  <div class="cursor-outline" data-cursor-outline aria-hidden="true"></div>
-  <script>
-    (() => {
-      if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-      const dot = document.querySelector('[data-cursor-dot]');
-      const glow = document.querySelector('[data-cursor-outline]');
-      document.addEventListener('pointermove', (event) => {
-        dot.style.left = glow.style.left = `${event.clientX}px`;
-        dot.style.top = glow.style.top = `${event.clientY}px`;
-      }, { passive: true });
-      document.querySelectorAll('a, button').forEach(element => {
-        element.addEventListener('pointerenter', () => {
-          dot.classList.add('hovering');
-          glow.classList.add('hovering');
-        });
-        element.addEventListener('pointerleave', () => {
-          dot.classList.remove('hovering');
-          glow.classList.remove('hovering');
-        });
-      });
-    })();
-  </script>
 </body>
-
 </html>

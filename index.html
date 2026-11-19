@@ -1,28 +1,39 @@
 
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
+
           content="Thabo Tankiso Mavundza - Junior Full-Stack Software Developer specialising in Angular, ASP.NET Core, C#, REST APIs and SQL databases.">
 
     <title>Thabo Mavundza | Junior Software Developer</title>
 
     <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="mediaqQueries.css">
 
     <style>
+
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
     </style>
+
 </head>
 
 <body>
 
     <!-- =========================
+
          DESKTOP NAVIGATION
+
     ========================== -->
 
     <nav id="desktop-nav">
@@ -30,19 +41,27 @@
         <div class="logo">Thabo Tankiso Mavundza</div>
 
         <ul class="nav-links">
+
             <li><a href="#about">About</a></li>
+
             <li><a href="#experience">Skills</a></li>
+
             <li><a href="#work">Experience</a></li>
+
             <li><a href="#projects">Projects</a></li>
+
             <li><a href="#bookshelf">Bookshelf</a></li>
+
             <li><a href="#contact">Contact</a></li>
+
         </ul>
 
     </nav>
 
-
     <!-- =========================
+
          MOBILE NAVIGATION
+
     ========================== -->
 
     <nav id="hamburger-nav">
@@ -52,35 +71,51 @@
         <div class="hamburger-menu">
 
             <div class="hamburger-icon"
+
                  onclick="toggleMenu()"
+
                  onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleMenu(); }"
+
                  role="button"
+
                  tabindex="0"
+
                  aria-label="Toggle menu"
+
                  aria-expanded="false">
 
                 <span></span>
+
                 <span></span>
+
                 <span></span>
 
             </div>
 
             <div class="menu-links">
+
                 <li><a href="#about" onclick="toggleMenu()">About</a></li>
+
                 <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+
                 <li><a href="#work" onclick="toggleMenu()">Experience</a></li>
+
                 <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+
                 <li><a href="#bookshelf" onclick="toggleMenu()">Bookshelf</a></li>
+
                 <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+
             </div>
 
         </div>
 
     </nav>
 
-
     <!-- =========================
+
          PROFILE / HERO
+
     ========================== -->
 
     <section id="profile">
@@ -88,6 +123,7 @@
         <div class="section__pic-container">
 
             <img src="./assets/profile-pic11.png"
+
                  alt="Thabo Tankiso Mavundza profile picture">
 
         </div>
@@ -95,35 +131,51 @@
         <div class="section__text">
 
             <h1 class="title terminal-title"
+
                 id="typewriter">&nbsp;</h1>
 
             <p class="section__text__p2">
+
                 Junior Full-Stack Software Developer
+
             </p>
 
             <p>
+
                 Angular · ASP.NET Core · C# · SQL · REST APIs
+
             </p>
 
             <p>
+
                 BSc Information Technology graduate with one year
+
                 of professional full-stack software development experience.
+
             </p>
 
             <p>
+
                 Location: Midrand, Gauteng
+
             </p>
 
             <div class="btn-container">
 
                 <button class="btn btn-color-2"
+
                         onclick="window.open('./assets/cv.pdf', '_blank')">
+
                     Download CV
+
                 </button>
 
                 <button class="btn btn-color-1"
+
                         onclick="location.href='#projects'">
+
                     View My Projects
+
                 </button>
 
             </div>
@@ -131,13 +183,19 @@
             <div id="socials-container">
 
                 <img src="./assets/linkedin.png"
+
                      class="icon"
+
                      alt="LinkedIn"
+
                      onclick="window.open('https://linkedin.com/in/thabo-mavundza', '_blank')">
 
                 <img src="./assets/github.png"
+
                      class="icon"
+
                      alt="GitHub"
+
                      onclick="window.open('https://github.com/AriesMaster', '_blank')">
 
             </div>
@@ -146,9 +204,10 @@
 
     </section>
 
-
     <!-- =========================
+
          ABOUT
+
     ========================== -->
 
     <section id="about">
@@ -168,31 +227,42 @@
                     <h3>Professional Summary</h3>
 
                     <p>
+
                         BSc Information Technology graduate with one year
+
                         of professional full-stack experience building
+
                         and supporting applications with Angular,
+
                         ASP.NET Core, Entity Framework Core and SQL Server.
 
                         Strong in REST APIs, database design, debugging,
+
                         documentation and Azure DevOps workflows.
 
                         Data side: SQL, data preparation, Data Analytics
+
                         coursework, Python, R and Power BI for analysis
+
                         and visualisation.
 
                         IT support side: Windows environments,
+
                         Microsoft 365 basics, networking fundamentals
+
                         (TCP/IP, DHCP, DNS, LAN/WAN), hardware/software
+
                         troubleshooting and clear user guidance.
 
                         Also experienced with Java/Spring Boot and Oracle APEX.
 
                         Passionate about clean software, reliable systems
+
                         and continuous learning.
+
                     </p>
 
                 </div>
-
 
                 <!-- EDUCATION -->
 
@@ -201,40 +271,58 @@
                     <h3>Education</h3>
 
                     <p>
+
                         <strong>
+
                             Bachelor of Science in Information Technology (NQF 7)
+
                         </strong>
+
                         <br>
 
                         North-West University — Vaal Triangle Campus
+
                         <br>
 
                         January 2020 – November 2024
+
                         <br><br>
 
                         Major: Software Development
+
                         <br>
 
                         Minors: Accounting &amp; Statistics
+
                         <br><br>
 
                         <strong>Key modules:</strong>
 
                         Object-Oriented Programming,
+
                         Data Structures &amp; Algorithms,
+
                         Databases &amp; Advanced Databases,
+
                         Systems Analysis &amp; Design,
+
                         Computer Networks,
+
                         Operating Systems,
+
                         Information Security,
+
                         Data Analytics,
+
                         Artificial Intelligence,
+
                         Decision Support Systems,
+
                         User Interface Programming.
+
                     </p>
 
                 </div>
-
 
                 <!-- CERTIFICATES -->
 
@@ -245,37 +333,65 @@
                     <ul class="cert-list">
 
                         <li>
+
                             <strong>Work Readiness Programme</strong>
+
                             — North-West University (Nov 2024)
+
                             <br>
+
                             <span>
+
                                 Professional communication, teamwork
+
                                 and workplace readiness
+
                             </span>
+
                         </li>
 
                         <li>
+
                             <strong>
+
                                 Project Quality, Risk and Time Management
+
                             </strong>
+
                             — Enterprises University of Pretoria (Jan 2026)
+
                             <br>
+
                             <span>
+
                                 Planning, quality standards, risk awareness
+
                                 and delivering on time
+
                             </span>
+
                         </li>
 
                         <li>
+
                             <strong>
+
                                 Java Supplemental Instruction Facilitator
+
                             </strong>
+
                             — North-West University (Jun–Nov 2022)
+
                             <br>
+
                             <span>
+
                                 Led weekly Java sessions and one-on-one
+
                                 debugging support for students
+
                             </span>
+
                         </li>
 
                     </ul>
@@ -288,9 +404,10 @@
 
     </section>
 
-
     <!-- =========================
+
          TECHNICAL SKILLS
+
     ========================== -->
 
     <section id="experience">
@@ -308,27 +425,42 @@
                 <div class="details-container mock-window">
 
                     <div class="window-header">
+
                         <span class="dot red"></span>
+
                         <span class="dot yellow"></span>
+
                         <span class="dot green"></span>
+
                         <span class="filename">skills.ts</span>
+
                     </div>
 
                     <pre class="code-content"><span class="keyword">const</span> <span class="variable">skills</span>: <span class="type">string</span>[] = [
+
     <span class="string">'Angular'</span>,
+
     <span class="string">'ASP.NET Core'</span>,
+
     <span class="string">'C#'</span>,
+
     <span class="string">'SQL / Data Analytics'</span>,
+
     <span class="string">'Python / R / Power BI'</span>,
+
     <span class="string">'REST APIs'</span>,
+
     <span class="string">'Azure DevOps'</span>,
+
     <span class="string">'Windows / M365'</span>,
+
     <span class="string">'Networking (TCP/IP)'</span>,
+
     <span class="string">'IT Support &amp; Troubleshooting'</span>
+
 ];</pre>
 
                 </div>
-
 
                 <!-- FRONTEND -->
 
@@ -339,49 +471,78 @@
                     <div class="article-container">
 
                         <article>
+
                             <img src="assets/html.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>HTML</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/css1.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>CSS</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/javas.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>JavaScript</h3>
+
                                 <p>Intermediate</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/react.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>TypeScript</h3>
+
                                 <p>Intermediate</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/react.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Angular</h3>
+
                                 <p>Intermediate</p>
+
                             </div>
+
                         </article>
 
                     </div>
 
                 </div>
-
 
                 <!-- BACKEND -->
 
@@ -392,49 +553,78 @@
                     <div class="article-container">
 
                         <article>
+
                             <img src="assets/c.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>C#</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/c.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>ASP.NET Core</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/java.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Java</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/java.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Spring Boot</h3>
+
                                 <p>Intermediate</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/node.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>REST APIs</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                     </div>
 
                 </div>
-
 
                 <!-- DATABASES -->
 
@@ -445,49 +635,78 @@
                     <div class="article-container">
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>SQL Server</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Entity Framework</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>PostgreSQL</h3>
+
                                 <p>Intermediate</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Oracle / APEX</h3>
+
                                 <p>Intermediate</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>SQL / LINQ</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                     </div>
 
                 </div>
-
 
                 <!-- TOOLS -->
 
@@ -498,57 +717,92 @@
                     <div class="article-container">
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Git</h3>
+
                                 <p>Intermediate</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/vsc.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>VS Code</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/vs.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Visual Studio</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Azure DevOps</h3>
+
                                 <p>Intermediate</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Postman</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Git / Azure DevOps</h3>
+
                                 <p>Intermediate</p>
+
                             </div>
+
                         </article>
 
                     </div>
 
                 </div>
-
 
                 <!-- DATA & ANALYTICS -->
 
@@ -559,57 +813,92 @@
                     <div class="article-container">
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>SQL</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Data Analytics</h3>
+
                                 <p>Coursework</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Python</h3>
+
                                 <p>Foundational</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>R</h3>
+
                                 <p>Foundational</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Power BI</h3>
+
                                 <p>Foundational</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Statistics</h3>
+
                                 <p>Minor</p>
+
                             </div>
+
                         </article>
 
                     </div>
 
                 </div>
-
 
                 <!-- IT SUPPORT -->
 
@@ -620,51 +909,87 @@
                     <div class="article-container">
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Windows</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Microsoft 365</h3>
+
                                 <p>Basics</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Networking</h3>
+
                                 <p>TCP/IP, DHCP, DNS</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Troubleshooting</h3>
+
                                 <p>Hardware &amp; Software</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>Documentation</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                         <article>
+
                             <img src="assets/git.png" class="icon" alt="">
+
                             <div>
+
                                 <h3>User Support</h3>
+
                                 <p>Experienced</p>
+
                             </div>
+
                         </article>
 
                     </div>
@@ -677,9 +1002,10 @@
 
     </section>
 
-
     <!-- =========================
+
          WORK EXPERIENCE
+
     ========================== -->
 
     <section id="work">
@@ -688,7 +1014,6 @@
 
         <h1 class="title code-header">&lt;Experience /&gt;</h1>
 
-
         <!-- SCENIVISION -->
 
         <div class="details-container">
@@ -696,114 +1021,176 @@
             <h3>Software Developer Intern</h3>
 
             <p>
+
                 <strong>Scenivision — Centurion, Gauteng</strong>
+
             </p>
 
             <p>
+
                 <em>April 2025 – April 2026</em>
+
             </p>
 
             <p style="margin: 1.5rem 0; text-align: justify;">
+
                 Built and maintained full-stack features using Angular,
+
                 ASP.NET Core Web API, Entity Framework Core and SQL Server.
 
                 Worked across UI, API and database layers:
+
                 designing models, writing LINQ and SQL,
+
                 implementing authentication and role-based access control,
+
                 testing with Postman, and collaborating through
+
                 Azure DevOps (boards, pull requests, CI/CD).
 
                 Focused on clean architecture, SOLID principles
+
                 and maintainable, well-documented code.
+
             </p>
 
             <h4 style="margin-bottom: 0.5rem; color: var(--accent);">
+
                 Major Duties
+
             </h4>
 
             <ul>
+
                 <li>
+
                     Build Angular components, services,
+
                     routing and responsive UI layouts
+
                 </li>
 
                 <li>
+
                     Use browser DevTools to debug UI issues,
+
                     inspect API requests and analyse performance
+
                 </li>
 
                 <li>
+
                     Develop ASP.NET Core Web API endpoints using
+
                     clean architecture and Dependency Injection
+
                 </li>
 
                 <li>
+
                     Apply code-first Entity Framework Core
+
                     for tables, relationships and migrations
+
                 </li>
 
                 <li>
+
                     Write LINQ queries and design efficient
+
                     relational data structures
+
                 </li>
 
                 <li>
+
                     Design features from the ground up:
+
                     data models, workflows and UI structure
+
                 </li>
 
                 <li>
+
                     Implement authentication, role-based access control
+
                     and secure password practices
+
                 </li>
 
                 <li>
+
                     Test and validate API functionality with Postman
+
                 </li>
 
                 <li>
+
                     Use Azure DevOps and Git for source control,
+
                     pull requests, task tracking and collaboration
+
                 </li>
 
                 <li>
+
                     Follow SOLID principles, Separation of Concerns
+
                     and modern clean coding practices
+
                 </li>
+
             </ul>
 
             <h4 style="margin: 1.5rem 0 0.5rem 0; color: var(--accent);">
+
                 Key Skills &amp; Successes
+
             </h4>
 
             <ul>
+
                 <li>
+
                     Able to work independently across the full stack
+
                     (UI → API → Database)
+
                 </li>
 
                 <li>
+
                     Effective collaboration using Azure DevOps workflows
+
                 </li>
 
                 <li>
+
                     Strong debugging with browser DevTools,
+
                     backend diagnostics and API testing
+
                 </li>
 
                 <li>
+
                     Improved system design by building and refining
+
                     complete features from scratch
+
                 </li>
 
                 <li>
+
                     Consistent focus on clean, reusable
+
                     and maintainable code
+
                 </li>
+
             </ul>
 
         </div>
-
 
         <!-- JAVA SI FACILITATOR -->
 
@@ -812,39 +1199,57 @@
             <h3>Java Supplemental Instruction Facilitator</h3>
 
             <p>
+
                 <strong>
+
                     North-West University — Vaal Triangle Campus
+
                 </strong>
+
             </p>
 
             <p>
+
                 <em>June 2022 – November 2022</em>
+
             </p>
 
             <ul>
+
                 <li>
+
                     Led weekly Java programming
+
                     and exam-preparation sessions
+
                 </li>
 
                 <li>
+
                     Provided one-on-one debugging assistance
+
                     and helped students resolve coding problems
+
                 </li>
 
                 <li>
+
                     Explained OOP, algorithms and structured
+
                     problem-solving in clear language
+
                 </li>
+
             </ul>
 
         </div>
 
     </section>
 
-
     <!-- =========================
+
          PROJECTS — REDESIGNED
+
     ========================== -->
 
     <section id="projects" class="portfolio-projects">
@@ -854,14 +1259,19 @@
         <h1 class="title code-header">&lt;Projects /&gt;</h1>
 
         <p class="projects-intro">
+
             A selection of applications demonstrating full-stack development,
+
             backend engineering, database integration and software design.
+
         </p>
 
         <div class="projects-layout">
 
             <!-- =========================
+
                  FEATURED: BRIGHTSMILE
+
             ========================== -->
 
             <article class="project-card project-featured">
@@ -869,12 +1279,17 @@
                 <div class="project-topline">
 
                     <span class="project-category">
+
                         FULL-STACK APPLICATION
+
                     </span>
 
                     <span class="project-status">
+
                         <span class="status-dot"></span>
-                        In Development
+
+                        Backend Implemented · Frontend In Development
+
                     </span>
 
                 </div>
@@ -886,69 +1301,106 @@
                     <div class="project-main">
 
                         <div class="project-icon" aria-hidden="true">
+
                             BS.
+
                         </div>
 
                         <h2>BrightSmile Dental</h2>
 
                         <p class="project-subtitle">
+
                             Dental Practice Management System
+
                         </p>
 
                         <p class="project-description">
+
                             A role-based dental management application built
+
                             with Angular, ASP.NET Core Web API and PostgreSQL.
-                            Features JWT authentication, user profiles,
-                            protected service management endpoints and
-                            RESTful API validation.
+
+                            Includes JWT authentication, role-based access control,
+                            dental service management and patient appointment
+                            booking, rescheduling and cancellation. The API
+                            prevents overlapping 30-minute bookings and supports
+                            dentist and admin appointment status workflows.
+                            Angular role dashboards are in development.
+
                         </p>
 
                         <div class="project-tags">
+
                             <span>Angular</span>
+
                             <span>TypeScript</span>
+
                             <span>C#</span>
+
                             <span>ASP.NET Core 10</span>
+
                             <span>EF Core</span>
+
                             <span>PostgreSQL</span>
+
                             <span>JWT</span>
+
                         </div>
 
                         <div class="project-actions">
 
                             <a href="brightsmile.html"
+
                                class="project-btn primary">
+
                                 View Case Study
+
                                 <span aria-hidden="true">↗</span>
+
                             </a>
 
                             <a href="https://brightsmiledentalfrontend.netlify.app/"
+
                                target="_blank"
+
                                rel="noopener noreferrer"
+
                                class="project-btn secondary">
+
                                 Live Demo
+
                                 <span aria-hidden="true">↗</span>
+
                             </a>
 
                             <a href="assets/BrightSmile_Dental_Backend_Development_Documentation.pdf"
+
                                target="_blank"
+
                                rel="noopener noreferrer"
+
                                class="project-btn secondary">
+
                                 Documentation
+
                                 <span aria-hidden="true">↗</span>
+
                             </a>
 
                         </div>
 
                     </div>
 
-
                     <!-- ENGINEERING HIGHLIGHTS -->
 
                     <div class="project-feature-panel">
 
                         <div class="feature-panel-heading">
+
                             <span class="feature-dot"></span>
+
                             Engineering Highlights
+
                         </div>
 
                         <div class="feature-item">
@@ -956,10 +1408,15 @@
                             <span class="feature-number">01</span>
 
                             <div>
+
                                 <strong>Authentication &amp; RBAC</strong>
+
                                 <p>
+
                                     JWT with Admin, Dentist and Patient roles.
+
                                 </p>
+
                             </div>
 
                         </div>
@@ -969,10 +1426,15 @@
                             <span class="feature-number">02</span>
 
                             <div>
+
                                 <strong>RESTful API Development</strong>
+
                                 <p>
-                                    Service CRUD, DTO validation and HTTP responses.
+
+                                    Service CRUD, appointment APIs, DTO validation and HTTP responses.
+
                                 </p>
+
                             </div>
 
                         </div>
@@ -982,10 +1444,15 @@
                             <span class="feature-number">03</span>
 
                             <div>
-                                <strong>Database Integration</strong>
+
+                                <strong>Scheduling &amp; Database</strong>
+
                                 <p>
-                                    Entity Framework Core and Supabase PostgreSQL.
+
+                                    EF Core, Supabase PostgreSQL and 30-minute overlap detection.
+
                                 </p>
+
                             </div>
 
                         </div>
@@ -995,10 +1462,15 @@
                             <span class="feature-number">04</span>
 
                             <div>
+
                                 <strong>API Testing</strong>
+
                                 <p>
-                                    Swagger verification and authorization tests.
+
+                                    Swagger-tested booking conflicts, rescheduling, cancellation and RBAC.
+
                                 </p>
+
                             </div>
 
                         </div>
@@ -1006,15 +1478,23 @@
                         <div class="feature-panel-footer">
 
                             <a href="https://github.com/AriesMaster/BrightSmileDentalFrontEnd"
+
                                target="_blank"
+
                                rel="noopener noreferrer">
+
                                 Frontend Repository ↗
+
                             </a>
 
                             <a href="https://github.com/AriesMaster/BrightSmileDentalBackEnd"
+
                                target="_blank"
+
                                rel="noopener noreferrer">
+
                                 Backend Repository ↗
+
                             </a>
 
                         </div>
@@ -1025,9 +1505,10 @@
 
             </article>
 
-
             <!-- =========================
+
                  SECONDARY PROJECTS
+
             ========================== -->
 
             <div class="projects-secondary">
@@ -1039,7 +1520,9 @@
                     <div class="project-topline">
 
                         <span class="project-category">
+
                             BACKEND / REST API
+
                         </span>
 
                         <span class="project-index">02</span>
@@ -1047,38 +1530,54 @@
                     </div>
 
                     <div class="project-small-icon" aria-hidden="true">
+
                         API
+
                     </div>
 
                     <h3>Tech Trends REST API</h3>
 
                     <p class="project-description">
+
                         An ASP.NET Core REST API demonstrating CRUD
+
                         operations, authentication and structured
+
                         backend endpoint design.
+
                     </p>
 
                     <div class="project-tags">
+
                         <span>C#</span>
+
                         <span>ASP.NET Core</span>
+
                         <span>REST API</span>
+
                         <span>CRUD</span>
+
                     </div>
 
                     <div class="project-card-footer">
 
                         <a href="https://github.com/AriesMaster/Tech-Trends-Management-API-System-CRUD-RESTful-API"
+
                            target="_blank"
+
                            rel="noopener noreferrer"
+
                            class="project-text-link">
+
                             Explore Source Code
+
                             <span aria-hidden="true">↗</span>
+
                         </a>
 
                     </div>
 
                 </article>
-
 
                 <!-- TELEMETRY PORTAL MVC -->
 
@@ -1087,7 +1586,9 @@
                     <div class="project-topline">
 
                         <span class="project-category">
+
                             WEB APPLICATION / MVC
+
                         </span>
 
                         <span class="project-index">03</span>
@@ -1095,33 +1596,51 @@
                     </div>
 
                     <div class="project-small-icon" aria-hidden="true">
+
                         MVC
+
                     </div>
 
                     <h3>Telemetry Portal MVC</h3>
 
                     <p class="project-description">
+
                         An ASP.NET Core MVC application with CRUD
+
                         functionality and SQL Server integration,
+
                         applying architectural patterns and
+
                         software design principles.
+
                     </p>
 
                     <div class="project-tags">
+
                         <span>C#</span>
+
                         <span>ASP.NET Core MVC</span>
+
                         <span>SQL Server</span>
+
                         <span>CRUD</span>
+
                     </div>
 
                     <div class="project-card-footer">
 
                         <a href="https://github.com/AriesMaster/CRUD-functionality-architectural-patterns-and-design-principles-ASP.NET-Core-MVC"
+
                            target="_blank"
+
                            rel="noopener noreferrer"
+
                            class="project-text-link">
+
                             Explore Source Code
+
                             <span aria-hidden="true">↗</span>
+
                         </a>
 
                     </div>
@@ -1134,9 +1653,10 @@
 
     </section>
 
-
     <!-- =========================
+
          BOOKSHELF
+
     ========================== -->
 
     <section id="bookshelf">
@@ -1146,116 +1666,155 @@
         <h1 class="title code-header">&lt;Bookshelf /&gt;</h1>
 
         <p class="bookshelf-description">
+
             Books that have shaped how I think about software development,
+
             software architecture, system design and engineering practices.
+
         </p>
 
         <div class="books-grid">
-
 
             <!-- BOOK 1 -->
 
             <div class="book-card">
 
                 <div class="book-cover">
+
                     <img src="assets/A Philosophy of Software Design.jpg"
+
                          alt="A Philosophy of Software Design by John Ousterhout">
+
                 </div>
 
                 <div class="book-info">
+
                     <h3>A Philosophy of Software Design</h3>
+
                     <p>John Ousterhout</p>
+
                 </div>
 
             </div>
-
 
             <!-- BOOK 2 -->
 
             <div class="book-card">
 
                 <div class="book-cover">
+
                     <img src="assets/Designing Data-Intensive Applications The Big Ideas Behind Reliable, Scalable, and Maintainable Systems.jpg"
+
                          alt="Designing Data-Intensive Applications">
+
                 </div>
 
                 <div class="book-info">
+
                     <h3>Designing Data-Intensive Applications</h3>
+
                     <p>Martin Kleppmann, Chris Riccomini</p>
+
                 </div>
 
             </div>
-
 
             <!-- BOOK 3 -->
 
             <div class="book-card">
 
                 <div class="book-cover">
+
                     <img src="assets/Software Architecture The Hard Parts Modern Trade-Off Analyses for Distributed Architectures.jpg"
+
                          alt="Software Architecture: The Hard Parts">
+
                 </div>
 
                 <div class="book-info">
+
                     <h3>Software Architecture: The Hard Parts</h3>
+
                     <p>
+
                         Neal Ford, Mark Richards,
+
                         Pramod Sadalage, Zhamak Dehghani
+
                     </p>
+
                 </div>
 
             </div>
-
 
             <!-- BOOK 4 -->
 
             <div class="book-card">
 
                 <div class="book-cover">
+
                     <img src="assets/Fundamentals of Software Architecture A Modern Engineering Approach.jpg"
+
                          alt="Fundamentals of Software Architecture">
+
                 </div>
 
                 <div class="book-info">
+
                     <h3>Fundamentals of Software Architecture</h3>
+
                     <p>Mark Richards, Neal Ford</p>
+
                 </div>
 
             </div>
-
 
             <!-- BOOK 5 -->
 
             <div class="book-card">
 
                 <div class="book-cover">
+
                     <img src="assets/Learning Domain-Driven Design Aligning Software Architecture and Business Strategy.jpg"
+
                          alt="Learning Domain-Driven Design">
+
                 </div>
 
                 <div class="book-info">
+
                     <h3>Learning Domain-Driven Design</h3>
+
                     <p>Vlad Khononov</p>
+
                 </div>
 
             </div>
-
 
             <!-- BOOK 6 -->
 
             <div class="book-card">
 
                 <div class="book-cover">
+
                     <img src="assets/Fundamentals of Software Engineering From Coder to Engineer.jpg"
+
                          alt="Fundamentals of Software Engineering: From Coder to Engineer">
+
                 </div>
 
                 <div class="book-info">
+
                     <h3>
+
                         Fundamentals of Software Engineering:
+
                         From Coder to Engineer
+
                     </h3>
+
                     <p>Nathaniel Schutta, Dan Vega</p>
+
                 </div>
 
             </div>
@@ -1264,9 +1823,10 @@
 
     </section>
 
-
     <!-- =========================
+
          CONTACT
+
     ========================== -->
 
     <section id="contact">
@@ -1277,57 +1837,76 @@
 
         <div class="contact-info-upper-container">
 
-
             <!-- EMAIL -->
 
             <div class="contact-info-container">
 
                 <img src="assets/email.png"
+
                      class="icon email-icon"
+
                      alt="Email">
 
                 <p>
+
                     <a href="mailto:thabotankisomavundza@gmail.com">
+
                         thabotankisomavundza@gmail.com
+
                     </a>
+
                 </p>
 
             </div>
-
 
             <!-- LINKEDIN -->
 
             <div class="contact-info-container">
 
                 <img src="assets/linkedin.png"
+
                      class="icon"
+
                      alt="LinkedIn">
 
                 <p>
+
                     <a href="https://linkedin.com/in/thabo-mavundza"
+
                        target="_blank"
+
                        rel="noopener noreferrer">
+
                         LinkedIn
+
                     </a>
+
                 </p>
 
             </div>
-
 
             <!-- GITHUB -->
 
             <div class="contact-info-container">
 
                 <img src="assets/github.png"
+
                      class="icon"
+
                      alt="GitHub">
 
                 <p>
+
                     <a href="https://github.com/AriesMaster"
+
                        target="_blank"
+
                        rel="noopener noreferrer">
+
                         GitHub
+
                     </a>
+
                 </p>
 
             </div>
@@ -1336,9 +1915,10 @@
 
     </section>
 
-
     <!-- =========================
+
          FOOTER
+
     ========================== -->
 
     <footer>
@@ -1346,12 +1926,19 @@
         <nav>
 
             <ul class="nav-links">
+
                 <li><a href="#about">About</a></li>
+
                 <li><a href="#experience">Skills</a></li>
+
                 <li><a href="#work">Experience</a></li>
+
                 <li><a href="#projects">Projects</a></li>
+
                 <li><a href="#bookshelf">Bookshelf</a></li>
+
                 <li><a href="#contact">Contact</a></li>
+
             </ul>
 
         </nav>
@@ -1360,17 +1947,20 @@
 
     </footer>
 
-
     <!-- =========================
+
          CUSTOM CURSOR
+
     ========================== -->
 
     <div class="cursor-dot" data-cursor-dot></div>
+
     <div class="cursor-outline" data-cursor-outline></div>
 
-
     <!-- =========================
+
          JAVASCRIPT
+
     ========================== -->
 
     <script src="script.js"></script>
