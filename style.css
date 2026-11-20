@@ -464,6 +464,17 @@ article img {
   color: #555;
 }
 
+#projects .project-featured .project-status {
+  min-width: 0;
+  max-width: 100%;
+  line-height: 1.5;
+}
+
+.project-status-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .status-dot,
 .feature-dot {
   display: inline-block;
@@ -522,10 +533,16 @@ article img {
   margin-bottom: 10px;
 }
 
+#projects .project-featured .project-main h2 {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
 .project-subtitle {
   color: #444;
   font-size: 0.94rem;
   font-weight: 600;
+  line-height: 1.5;
   margin-bottom: 22px;
 }
 
@@ -1058,6 +1075,14 @@ footer {
 
   .project-featured-content {
     gap: 25px;
+  }
+
+  #projects .project-featured .project-topline {
+    align-items: flex-start;
+  }
+
+  #projects .project-featured .project-status {
+    width: 100%;
   }
 
   #projects .project-small {
