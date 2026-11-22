@@ -76,7 +76,7 @@
         </p>
 
         <div class="tech-tags">
-          <span class="tag">Angular</span>
+          <span class="tag">Angular 21</span>
           <span class="tag">TypeScript</span>
           <span class="tag">Angular Material</span>
           <span class="tag">C#</span>
@@ -85,7 +85,9 @@
           <span class="tag">PostgreSQL</span>
           <span class="tag">Supabase</span>
           <span class="tag">JWT</span>
-          <span class="tag">Swagger</span>
+          <span class="tag">Scalar / OpenAPI</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Render</span>
           <span class="tag">Netlify</span>
         </div>
 
@@ -153,9 +155,7 @@
             relational data persistence using Entity
             Framework Core.
 
-            The project remains under active development,
-            with frontend integration and end-to-end
-            verification continuing across all three roles.
+            The Angular frontend and ASP.NET Core backend are deployed and connected in production. The portfolio application continues to receive feature updates and engineering improvements.
           </p>
 
         </div>
@@ -365,9 +365,7 @@
               Separate Angular features provide
               dashboard interfaces for each role.
 
-              These dashboards are being progressively
-              connected to the implemented backend
-              workflows.
+              The role-based dashboards are connected to the deployed API, including patient scheduling, dentist appointment workflows and administrative reporting.
             </p>
 
             <ul>
@@ -376,7 +374,7 @@
               <li>Patient dashboard</li>
               <li>Role-specific navigation</li>
               <li>Feature-based component organization</li>
-              <li>Ongoing API integration</li>
+              <li>Connected production API workflows</li>
             </ul>
 
           </article>
@@ -581,10 +579,7 @@
           </div>
 
           <p class="architecture-note">
-            The Angular frontend is deployed to Netlify.
-            The application uses ASP.NET Core Web API
-            for backend functionality and Supabase
-            PostgreSQL for relational persistence.
+            The Angular frontend is deployed to Netlify and communicates with the ASP.NET Core 10 API on Render. Supabase PostgreSQL provides relational persistence.
 
             Entity Framework Core handles database
             access and migrations through Npgsql.
@@ -1461,206 +1456,44 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;AppointmentDto&gt;&gt;&gt;
 
 
     <!-- DOCUMENTATION -->
-
     <section class="section section-alt" id="documentation">
       <div class="container">
-
         <div class="section-heading">
-
-          <p class="eyebrow mono">
-            10 / Technical Documentation
-          </p>
-
-          <h2>Development Report</h2>
-
-          <p>
-            Technical documentation covering
-            backend architecture, implementation
-            decisions, API development and testing.
-          </p>
-
+          <p class="eyebrow mono">10 / Technical Documentation</p>
+          <h2>Engineering Documentation</h2>
+          <p>Explore the source-based technical documentation behind this deployed application: architecture, relational design, requirements, security, deployment and testing strategy. The testing document distinguishes manual verification from future automated test coverage.</p>
         </div>
-
-        <div class="documentation">
-
-          <div>
-
-            <h3>
-              BrightSmile Dental —
-              Backend Development Documentation
-            </h3>
-
-            <p>
-              The existing PDF documents earlier
-              backend development phases.
-
-              The current GitHub repositories
-              and this case study reflect
-              subsequent backend functionality
-              and Angular frontend development.
-            </p>
-
-          </div>
-
-          <div class="actions">
-
-            <a class="btn btn-primary"
-               href="assets/BrightSmile_Dental_Backend_Development_Documentation.pdf"
-               target="_blank"
-               rel="noopener noreferrer">
-              View PDF Report
-            </a>
-
-          </div>
-
+        <div class="grid grid-two">
+          <article class="card"><h3>Architecture &amp; Data</h3><p>System architecture, component boundaries, deployment flow and PostgreSQL entity relationships.</p><ul>
+            <li><a href="https://github.com/AriesMaster/BrightSmileDentalBackEnd/blob/master/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">System architecture</a></li>
+            <li><a href="https://github.com/AriesMaster/BrightSmileDentalBackEnd/blob/master/docs/DATABASE.md" target="_blank" rel="noopener noreferrer">Database design and ERD</a></li>
+          </ul></article>
+          <article class="card"><h3>Requirements &amp; Security</h3><p>Functional requirements, business rules, role-based access, password recovery and security hardening priorities.</p><ul>
+            <li><a href="https://github.com/AriesMaster/BrightSmileDentalBackEnd/blob/master/docs/REQUIREMENTS.md" target="_blank" rel="noopener noreferrer">Software requirements</a></li>
+            <li><a href="https://github.com/AriesMaster/BrightSmileDentalBackEnd/blob/master/docs/SECURITY.md" target="_blank" rel="noopener noreferrer">Security design</a></li>
+          </ul></article>
+          <article class="card"><h3>Deployment &amp; Operations</h3><p>Netlify, Render, Supabase, Docker, environment variables, migration procedures and troubleshooting.</p><a href="https://github.com/AriesMaster/BrightSmileDentalBackEnd/blob/master/docs/DEPLOYMENT.md" target="_blank" rel="noopener noreferrer">Read deployment guide ↗</a></article>
+          <article class="card"><h3>Testing Strategy</h3><p>Documented manual API results, test cases, PostgreSQL concurrency testing and proposed CI quality gates.</p><a href="https://github.com/AriesMaster/BrightSmileDentalBackEnd/blob/master/docs/TESTING.md" target="_blank" rel="noopener noreferrer">Read testing plan ↗</a></article>
         </div>
-
       </div>
     </section>
-
 
     <!-- DEVELOPMENT ROADMAP -->
-
     <section class="section" id="roadmap">
       <div class="container">
-
         <div class="section-heading">
-
-          <p class="eyebrow mono">
-            11 / Development Roadmap
-          </p>
-
-          <h2>Current Progress &amp; Next Steps</h2>
-
-          <p>
-            The backend appointment and service
-            management workflows have been
-            implemented and locally tested.
-
-            The Angular application now includes
-            public pages, authentication, registration,
-            protected role-based dashboard routes,
-            shared profile management and a patient
-            appointment-booking feature.
-
-            The next priority is completing
-            frontend integration and verifying
-            the full user experience.
-          </p>
-
+          <p class="eyebrow mono">11 / Development Roadmap</p>
+          <h2>Live System &amp; Engineering Improvements</h2>
+          <p>BrightSmile Dental is deployed as a connected full-stack portfolio application. Continued development focuses on automated testing, CI/CD quality gates, security hardening and new product features—not completing the initial frontend/backend integration.</p>
         </div>
-
         <div class="grid">
-
-          <article class="card">
-
-            <span class="card-number mono">
-              IMPLEMENTED
-            </span>
-
-            <h3>Backend Authentication &amp; Profiles</h3>
-
-            <p>
-              JWT login, registration,
-              role-based authorization,
-              identity endpoints and
-              profile management.
-            </p>
-
-          </article>
-
-          <article class="card">
-
-            <span class="card-number mono">
-              IMPLEMENTED
-            </span>
-
-            <h3>Dental Services API</h3>
-
-            <p>
-              Administrative service CRUD,
-              validation, duplicate prevention
-              and protected operations.
-            </p>
-
-          </article>
-
-          <article class="card">
-
-            <span class="card-number mono">
-              IMPLEMENTED
-            </span>
-
-            <h3>Appointment Management API</h3>
-
-            <p>
-              Appointment creation, viewing,
-              rescheduling, cancellation,
-              conflict detection and
-              status workflows.
-            </p>
-
-          </article>
-
-          <article class="card">
-
-            <span class="card-number mono">
-              FRONTEND IMPLEMENTED
-            </span>
-
-            <h3>Public Website &amp; Authentication</h3>
-
-            <p>
-              Home, Services and About pages,
-              patient registration, login,
-              demo account selection and
-              authentication integration.
-            </p>
-
-          </article>
-
-          <article class="card">
-
-            <span class="card-number mono">
-              FRONTEND IN PROGRESS
-            </span>
-
-            <h3>Role-Based Dashboards</h3>
-
-            <p>
-              Admin, Dentist and Patient
-              dashboard components and
-              protected routes are present.
-
-              Further API integration and
-              feature verification are ongoing.
-            </p>
-
-          </article>
-
-          <article class="card">
-
-            <span class="card-number mono">
-              NEXT PRIORITY
-            </span>
-
-            <h3>End-to-End Verification</h3>
-
-            <p>
-              Complete role-specific frontend
-              workflows, test appointment
-              management through the UI,
-              verify deployed API connectivity
-              and improve automated testing.
-            </p>
-
-          </article>
-
+          <article class="card"><span class="card-number mono">DEPLOYED</span><h3>Connected Full Stack</h3><p>Angular 21 on Netlify, ASP.NET Core 10 on Render and Supabase PostgreSQL, with production API integration.</p></article>
+          <article class="card"><span class="card-number mono">IMPLEMENTED</span><h3>Role-Based Workflows</h3><p>Patient bookings, dentist appointment management, admin service and patient management, and reporting with CSV export.</p></article>
+          <article class="card"><span class="card-number mono">DOCUMENTED</span><h3>Software Engineering Artifacts</h3><p>Architecture, ERD, requirements, security, deployment and testing strategy documents linked above.</p></article>
+          <article class="card"><span class="card-number mono">NEXT PRIORITY</span><h3>Automated Tests &amp; CI/CD</h3><p>Add xUnit integration tests, PostgreSQL concurrency tests, Angular tests and verified GitHub Actions checks.</p></article>
         </div>
-
       </div>
     </section>
-
 
     <!-- PROJECT LINKS -->
 
@@ -1676,9 +1509,7 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;AppointmentDto&gt;&gt;&gt;
         </h2>
 
         <p class="muted">
-          Explore the Angular frontend,
-          ASP.NET Core backend and ongoing
-          full-stack development.
+          Explore the deployed Angular frontend, Render-hosted ASP.NET Core backend and technical documentation.
         </p>
 
         <div class="actions" style="justify-content: center;">
