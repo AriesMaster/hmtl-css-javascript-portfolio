@@ -71,13 +71,20 @@ Highlights my experience as a Software Developer Intern at Scenivision and as a 
 
 ### Projects
 
-#### BrightSmile Dental System
+#### BrightSmile Dental — Live Full-Stack Application
 
-A full-stack dental management application built with Angular, ASP.NET Core Web API, Entity Framework Core, and PostgreSQL.
+A deployed, fully connected dental practice management portfolio application using **Angular 21, TypeScript, ASP.NET Core 10 Web API, Entity Framework Core 10 and Supabase PostgreSQL**.
 
-- [Frontend Repository](https://github.com/AriesMaster/BrightSmileDentalFrontEnd)
-- [Backend Repository](https://github.com/AriesMaster/BrightSmileDentalBackEnd)
-- [Live Demo](https://brightsmiledentalfrontend.netlify.app/)
+- **Hosting:** Angular on Netlify, ASP.NET Core API on Render, PostgreSQL on Supabase.
+- **Authentication:** JWT bearer authentication, BCrypt password hashing and Admin / Dentist / Patient roles.
+- **Patient workflows:** registration, profile management, booking, rescheduling and cancellation.
+- **Dentist workflows:** assigned appointment management and authorized status transitions.
+- **Admin workflows:** service and dentist management, patient records, reporting and CSV export.
+- **Engineering:** 30-minute scheduling rules, PostgreSQL transactions and advisory locks, OpenAPI / Scalar reference, Docker backend build.
+- **Documentation:** system architecture, ERD and data dictionary, software requirements, security design, deployment guide and testing strategy.
+- **Quality status:** manual API checks recorded; automated tests and GitHub Actions CI/CD quality gates are planned.
+
+[Live Application](https://brightsmiledentalfrontend.netlify.app/) · [Case Study](https://thabo.netlify.app/brightsmile.html) · [Frontend Source](https://github.com/AriesMaster/BrightSmileDentalFrontEnd) · [Backend Source](https://github.com/AriesMaster/BrightSmileDentalBackEnd) · [Engineering Documentation](https://github.com/AriesMaster/BrightSmileDentalBackEnd/tree/master/docs)
 
 #### Tech Trends REST API
 
