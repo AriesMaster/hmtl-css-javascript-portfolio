@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="StockFlow engineering case study covering purchase order approval, partial deliveries, and inventory tracking with Angular, Spring Boot, and PostgreSQL.">
+
+  <title>StockFlow | Full-Stack Case Study</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="brightsmile.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <nav class="container nav-inner" aria-label="Project navigation">
+      <a href="index.html" class="brand">&lt;Thabo /&gt;</a>
+      <div class="nav-links">
+        <a href="index.html#projects">Portfolio</a>
+        <a href="#overview">Overview</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#testing">Testing</a>
+        <a href="#roadmap">Roadmap</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow mono">Full-Stack Software Engineering Case Study · In Development</p>
+        <h1>Stock<span>Flow</span></h1>
+        <p class="hero-description">
+          A stock and purchase order management system for a small business. StockFlow is designed to track approvals, partial deliveries, outstanding quantities, and the stock movements created when goods arrive.
+        </p>
+        <div class="tech-tags">
+          <span class="tag">Angular 22</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Java 21</span>
+          <span class="tag">Spring Boot 4</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">Flyway</span>
+          <span class="tag">JUnit</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#workflow">Explore the Workflow</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderFrontend">Frontend Source</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend">Backend Source</a>
+          <a class="btn btn-outline" href="#documentation">Technical Documentation</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/database-design.md">Database Design &amp; ERD</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mono">Project Overview</p>
+          <h2>Tracking Orders and Stock as Goods Arrive</h2>
+          <p>An order can arrive in several deliveries. For each delivery, the business needs to know what arrived, what remains outstanding, and how much stock is on hand.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Purchase Orders</h3>
+            <p>The workflow starts with a draft order containing products and quantities. Approval makes the order eligible to receive stock.</p>
+          </article>
+          <article class="card">
+            <h3>Goods Receiving</h3>
+            <p>Each delivery records the quantities received against the original order lines. The outstanding quantity guides what can be received next.</p>
+          </article>
+          <article class="card">
+            <h3>Inventory Tracking</h3>
+            <p>Each receipt line is designed to produce a stock movement and update the product’s on-hand balance. The movement history records where the change came from.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="architecture">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mono">System Architecture</p>
+          <h2>Angular, Spring Boot and PostgreSQL</h2>
+          <p>Angular is the user interface. Spring Boot hosts the Java domain model and the planned REST endpoints. PostgreSQL stores orders, receipts, balances, and stock movements.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Angular Frontend</h3>
+            <p>The responsive public homepage, navigation, footer, and routing are implemented. Angular’s HTTP client and development proxy are configured for future integration with the purchase order and inventory screens.</p>
+          </article>
+          <article class="card">
+            <h3>Java Domain Model</h3>
+            <p>The model handles order state transitions and quantity validation. Typed exceptions and problem-detail mapping are in place for business-rule failures.</p>
+          </article>
+          <article class="card">
+            <h3>Relational Model</h3>
+            <p>Flyway creates seven tables. Order lines reference products, receipt lines fulfil order lines, and each receipt line can produce one stock movement. JPA mappings and repositories are planned.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mono">Purchase Order Workflow</p>
+          <h2>Receiving 12 of 20 Units</h2>
+          <p>Consider an approved order for 20 units. The first delivery contains 12, leaving 8 outstanding. The next delivery can contain up to 8 units.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Approve the Draft</h3>
+            <p>The Java domain model controls which state transitions are allowed. The planned Angular screen will display the current order state and the actions available for it.</p>
+          </article>
+          <article class="card">
+            <h3>Record a Partial Delivery</h3>
+            <p>In the planned persistence workflow, receiving 12 adds 12 to on-hand stock, records a movement of +12, and leaves the order partially received. A follow-up receipt for 9 is invalid because only 8 units are outstanding.</p>
+          </article>
+          <article class="card">
+            <h3>Handle Retries and Concurrent Deliveries</h3>
+            <p>The receipt design uses one database transaction for receipt lines, order quantities, inventory balances, and stock movements. An idempotency key is planned to keep a retried request from counting stock twice. Database locking is planned to protect concurrent updates.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="testing">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mono">Testing and Verification</p>
+          <h2>Domain Rules and Database Setup</h2>
+          <p>JUnit tests cover purchase order business rules. Flyway’s initial migration has been applied and validated on the development PostgreSQL database, and Spring Boot Actuator returned an UP health response locally.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Persistence and API Tests</h3>
+            <p>Planned tests cover persisted quantities, invalid receipts, rollback, duplicate requests, and concurrent delivery updates.</p>
+          </article>
+          <article class="card">
+            <h3>End-to-End Verification</h3>
+            <p>Once the screens and API are connected, verify a draft through approval and partial receiving, including the outstanding quantity and the resulting stock movement.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="documentation">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mono">Technical Documentation</p>
+          <h2>Design and API Contracts</h2>
+          <p>The system design, ERD, API contract, and physical data flow diagram describe how orders and receipts move through the application.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/system-design.md">System Design</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/database-design.md">Database Design &amp; ERD</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/api-contract.md">API Contract</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/physical-dfd.md">Physical Data Flow Diagram</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="roadmap">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mono">Development Roadmap</p>
+          <h2>Connecting the Workflow End to End</h2>
+          <p>The next milestone is to approve an order, record a partial delivery, and see the remaining quantity and inventory balance in Angular.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Persistence and Transactions</h3>
+            <p>Implement JPA mappings and repositories, then build transactional receipt processing with idempotent retries.</p>
+          </article>
+          <article class="card">
+            <h3>REST API</h3>
+            <p>Expose purchase order, receipt, and inventory operations and verify the HTTP contract.</p>
+          </article>
+          <article class="card">
+            <h3>Angular Integration</h3>
+            <p>Build purchase order and inventory screens, connect them to the API, and verify the workflow before deployment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <p>
+        &copy; 2026 Thabo Mavundza.
+        Built as part of my software development portfolio.
+      </p>
+
+      <p style="margin-top: 8px;">
+
+        <a href="index.html">Portfolio</a>
+
+        &nbsp;·&nbsp;
+
+        <a href="https://github.com/AriesMaster"
+           target="_blank"
+           rel="noopener noreferrer">
+          GitHub
+        </a>
+
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- PORTFOLIO CURSOR -->
+
+  <div class="cursor-dot"
+       data-cursor-dot
+       aria-hidden="true"></div>
+
+  <div class="cursor-outline"
+       data-cursor-outline
+       aria-hidden="true"></div>
+
+  <script>
+    (() => {
+      if (!window.matchMedia(
+        '(hover: hover) and (pointer: fine)'
+      ).matches) return;
+
+      const dot = document.querySelector(
+        '[data-cursor-dot]'
+      );
+
+      const glow = document.querySelector(
+        '[data-cursor-outline]'
+      );
+
+      if (!dot || !glow) return;
+
+      document.addEventListener(
+        'pointermove',
+        (event) => {
+          dot.style.left =
+            glow.style.left =
+            `${event.clientX}px`;
+
+          dot.style.top =
+            glow.style.top =
+            `${event.clientY}px`;
+        },
+        { passive: true }
+      );
+
+      document.querySelectorAll(
+        'a, button'
+      ).forEach(element => {
+
+        element.addEventListener(
+          'pointerenter',
+          () => {
+            dot.classList.add('cursor-hover');
+            glow.classList.add('cursor-hover');
+          }
+        );
+
+        element.addEventListener(
+          'pointerleave',
+          () => {
+            dot.classList.remove('cursor-hover');
+            glow.classList.remove('cursor-hover');
+          }
+        );
+
+      });
+    })();
+  </script>
+
+</body>
+</html>
