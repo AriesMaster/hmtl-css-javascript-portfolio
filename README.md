@@ -86,6 +86,12 @@ A deployed, fully connected dental practice management portfolio application usi
 
 [Live Application](https://brightsmiledentalfrontend.netlify.app/) · [Case Study](https://thabo.netlify.app/brightsmile.html) · [Frontend Source](https://github.com/AriesMaster/BrightSmileDentalFrontEnd) · [Backend Source](https://github.com/AriesMaster/BrightSmileDentalBackEnd) · [Engineering Documentation](https://github.com/AriesMaster/BrightSmileDentalBackEnd/tree/master/docs)
 
+#### StockFlow — Stock and Purchase Order Management (In Development)
+
+Angular 22 and Java/Spring Boot portfolio project with Supabase PostgreSQL, Flyway and automated tests. Domain rules, database schema and frontend infrastructure are implemented; persistence mappings, business endpoints and screens remain in development. Latest reported runs: 13 JUnit and 4 Vitest tests passed.
+
+[Frontend](https://github.com/AriesMaster/StockPurchaseOrderFrontend) · [Backend](https://github.com/AriesMaster/StockPurchaseOrderBackend) · [Engineering Documentation](https://github.com/AriesMaster/StockPurchaseOrderBackend/tree/main/docs) · [Database Design](https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/database-design.md) · [API Contract](https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/api-contract.md)
+
 #### Tech Trends REST API
 
 An ASP.NET Core RESTful API demonstrating CRUD operations, authentication, and structured API development.
