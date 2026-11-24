@@ -58,7 +58,7 @@ if (cursorDot && cursorOutline) {
 // Terminal Typewriter Effect
 const typewriterElement = document.getElementById('typewriter');
 if (typewriterElement) {
-    const text = "> Hello, I'm Thabo Tankiso Mavundza";
+    const text = "> Hello, I'm Thabo Mavundza";
     let index = 0;
     
     typewriterElement.innerHTML = '';
