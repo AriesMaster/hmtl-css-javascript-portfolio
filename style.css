@@ -351,6 +351,24 @@ section {
   gap: 2rem;
 }
 
+.professional-summary {
+  grid-column: 1 / -1;
+}
+
+.professional-summary > h3 {
+  margin-bottom: 1rem;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 1.25rem;
+}
+
+.summary-cards p {
+  line-height: 1.65;
+}
+
 /* ==========================================
    SKILLS SECTION
 ========================================== */
