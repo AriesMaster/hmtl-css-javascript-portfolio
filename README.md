@@ -7,7 +7,7 @@ The website serves as a central place for recruiters, hiring managers, and fello
 
 ## About Me
 
-I'm **Thabo Tankiso Mavundza**, a software developer based in Gauteng, South Africa.
+I'm **Thabo Mavundza**, a software developer based in Gauteng, South Africa.
 
 I hold a **Bachelor of Science in Information Technology** from North-West University, majoring in Software Development, with minors in Accounting and Statistics.
 
@@ -209,7 +209,7 @@ The goal is to maintain a professional appearance while reflecting my interest i
 
 ## Author
 
-**Thabo Tankiso Mavundza**
+**Thabo Mavundza**
 
 Software Developer | Full-Stack Development | Data & Analytics
 
@@ -219,6 +219,6 @@ Software Developer | Full-Stack Development | Data & Analytics
 
 ## License
 
-Copyright © 2026 Thabo Tankiso Mavundza.
+Copyright © 2026 Thabo Mavundza.
 
 All rights reserved unless a separate license is added to this repository.
