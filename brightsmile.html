@@ -213,10 +213,8 @@
             <h3>Dentist Workflow</h3>
 
             <p>
-              When a patient books a cleaning, it starts as pending. The assigned
-              dentist can confirm it and mark it complete after the visit. The
-              API also lets the assigned dentist or an administrator cancel an
-              active appointment.
+              A patient books a cleaning online. The assigned dentist can confirm
+              the booking and mark it complete after the visit.
             </p>
 
             <ul>
@@ -227,6 +225,11 @@
               <li>Complete eligible appointments</li>
               <li>Follow controlled status transitions</li>
             </ul>
+
+            <p><strong>Booking status:</strong> Pending → Confirmed → Completed</p>
+            <p>The API checks the dentist’s role and appointment assignment before allowing a status change. It also supports cancellation by the assigned dentist or an administrator.</p>
+            <p><a class="btn btn-outline" href="https://brightsmiledentalfrontend.netlify.app/login">Open the live demo</a></p>
+            <p>Choose the Patient demo account to see booking or the Dentist demo account to see the appointment dashboard.</p>
 
           </article>
 
