@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-    content="StockFlow engineering case study covering purchase order approval, partial deliveries, and inventory tracking with Angular, Spring Boot, and PostgreSQL.">
+    content="StockFlow case study on supplier orders, partial deliveries, and inventory tracking for small hardware stores.">
 
   <title>StockFlow | Full-Stack Case Study</title>
 
@@ -42,7 +42,7 @@
         <p class="eyebrow mono">Full-Stack Software Engineering Case Study · In Development</p>
         <h1>Stock<span>Flow</span></h1>
         <p class="hero-description">
-          A stock and purchase order management system for a small business. StockFlow is designed to track approvals, partial deliveries, outstanding quantities, and the stock movements created when goods arrive.
+          StockFlow helps small hardware stores track supplier orders, record partial deliveries, and see what stock is on hand and what’s still due.
         </p>
         <div class="tech-tags">
           <span class="tag">Angular 22</span>
@@ -120,8 +120,8 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow mono">Purchase Order Workflow</p>
-          <h2>Receiving 12 of 20 Units</h2>
-          <p>Consider an approved order for 20 units. The first delivery contains 12, leaving 8 outstanding. The next delivery can contain up to 8 units.</p>
+          <h2>Receiving 12 of 20 Boxes of Screws</h2>
+          <p>A hardware store orders 20 boxes of screws, and the supplier delivers 12. The store can add 12 boxes to its on-hand stock and see that 8 are still due.</p>
         </div>
         <div class="grid">
           <article class="card">
@@ -130,7 +130,7 @@
           </article>
           <article class="card">
             <h3>Record a Partial Delivery</h3>
-            <p>In the planned persistence workflow, receiving 12 adds 12 to on-hand stock, records a movement of +12, and leaves the order partially received. A follow-up receipt for 9 is invalid because only 8 units are outstanding.</p>
+            <p>In the planned persistence workflow, recording the delivery creates a stock movement of +12 boxes and leaves the order partially received. A follow-up receipt for 9 boxes is invalid because only 8 are outstanding.</p>
           </article>
           <article class="card">
             <h3>Handle Retries and Concurrent Deliveries</h3>
