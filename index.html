@@ -928,8 +928,8 @@
                             <span class="project-category">FULL-STACK APPLICATION</span>
                             <span class="project-status">In Development</span>
                         </div>
-                        <p class="project-description">A full-stack engineering project using Angular 22, Java and Spring Boot to manage purchase order approvals, partial deliveries and inventory movements. The Java domain rules, PostgreSQL schema, exception mapping and frontend HTTP infrastructure are implemented. JPA persistence, transactional receipt processing and business screens are planned.</p>
-                        <div class="project-tags"><span>Angular 22</span> <span>TypeScript</span> <span>Java 21 target</span> <span>Spring Boot 4</span> <span>Spring Data JPA</span> <span>Hibernate</span> <span>PostgreSQL</span> <span>Flyway</span> <span>JUnit</span> <span>Vitest</span></div>
+                        <p class="project-description">A full-stack engineering project using Angular 22, Java and Spring Boot to manage purchase order approvals, partial deliveries and inventory movements. Domain rules, Flyway migrations, selected JPA repositories and authentication foundations are implemented. Login UI, route guards and a protected workspace are available on feature branches; end-to-end authentication and receipt processing remain in development.</p>
+                        <div class="project-tags"><span>Angular 22</span> <span>TypeScript</span> <span>Java 21 target</span> <span>Spring Boot 4</span> <span>Spring Security</span> <span>Spring Data JPA</span> <span>Hibernate</span> <span>PostgreSQL</span> <span>Flyway</span> <span>JUnit</span> <span>Vitest</span></div>
                         <div class="project-actions">
 
                             <a class="project-btn secondary" href="https://github.com/AriesMaster/StockPurchaseOrderFrontend" target="_blank" rel="noopener noreferrer">Frontend Repository ↗</a>
@@ -945,9 +945,9 @@
                     <div class="project-feature-panel">
                         <div class="feature-panel-heading"><span class="feature-dot"></span>Engineering Highlights</div>
                         <div class="feature-item"><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z M3 7l9 5 9-5 M12 12v10"/></svg><div><strong>Java Domain Modelling</strong><p>Purchase order states, quantity validation and typed domain exceptions.</p></div></div>
-                        <div class="feature-item"><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6a9 3 0 1 0 18 0a9 3 0 1 0-18 0 M3 6v12a9 3 0 0 0 18 0V6 M3 12a9 3 0 0 0 18 0"/></svg><div><strong>PostgreSQL &amp; Flyway</strong><p>Seven application tables, relational constraints, row-level security and verified database connectivity.</p></div></div>
-                        <div class="feature-item"><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6 M10 3v7l-6 9a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3 M7 15h10"/></svg><div><strong>Automated Testing</strong><p>Latest reported runs passed 13 JUnit tests and 4 Vitest tests; Angular production build succeeded.</p></div></div>
-                        <div class="feature-item"><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v6H9z M3 15h6v6H3z M15 15h6v6h-6z M12 9v3 M6 15v-3h12v3"/></svg><div><strong>Frontend &amp; System Design</strong><p>Responsive Angular homepage, Material theme, HTTP client, development proxy and documented target architecture.</p></div></div>
+                        <div class="feature-item"><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6a9 3 0 1 0 18 0a9 3 0 1 0-18 0 M3 6v12a9 3 0 0 0 18 0V6 M3 12a9 3 0 0 0 18 0"/></svg><div><strong>PostgreSQL &amp; Flyway</strong><p>Two validated migrations, relational constraints, row-level security and JPA/Hibernate persistence.</p></div></div>
+                        <div class="feature-item"><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6 M10 3v7l-6 9a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3 M7 15h10"/></svg><div><strong>Automated Testing</strong><p>25 Nov 2026: 31 JUnit and 20 Vitest tests passed locally; Angular production build succeeded.</p></div></div>
+                        <div class="feature-item"><svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v6H9z M3 15h6v6H3z M15 15h6v6h-6z M12 9v3 M6 15v-3h12v3"/></svg><div><strong>Authentication &amp; Architecture</strong><p>Argon2id, signed JWTs, refresh-token rotation, Angular signals and route guards implemented on feature branches; HTTP integration pending.</p></div></div>
                         
                     </div>
                 </div>
@@ -1137,6 +1137,7 @@
                             <div class="skills-code-line"><span class="string">'Angular'</span>,</div>
                             <div class="skills-code-line"><span class="string">'ASP.NET Core'</span>,</div>
                             <div class="skills-code-line"><span class="string">'Spring Boot'</span>,</div>
+                            <div class="skills-code-line"><span class="string">'Spring Security'</span>,</div>
                             <div class="skills-code-line"><span class="string">'REST APIs'</span>,</div>
                             <div class="skills-code-line"><span class="string">'Object-Oriented Programming'</span></div>
                         </div>
@@ -1146,6 +1147,9 @@
                             <div class="skills-code-line"><span class="string">'SQL Server'</span>,</div>
                             <div class="skills-code-line"><span class="string">'PostgreSQL'</span>,</div>
                             <div class="skills-code-line"><span class="string">'Entity Framework Core'</span>,</div>
+                            <div class="skills-code-line"><span class="string">'Spring Data JPA'</span>,</div>
+                            <div class="skills-code-line"><span class="string">'Hibernate'</span>,</div>
+                            <div class="skills-code-line"><span class="string">'Flyway'</span>,</div>
                             <div class="skills-code-line"><span class="string">'Python'</span>,</div>
                             <div class="skills-code-line"><span class="string">'R'</span>,</div>
                             <div class="skills-code-line"><span class="string">'Oracle APEX'</span>,</div>
