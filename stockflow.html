@@ -131,11 +131,15 @@
         <div class="grid">
           <article class="card">
             <h3>Approve the Draft</h3>
-            <p>The Java domain model controls which state transitions are allowed. The planned Angular screen will display the current order state and the actions available for it.</p>
+            <p>The Java domain model allows a draft order to be approved before it can receive stock. The planned Angular screen will show the current order state and available actions.</p>
           </article>
           <article class="card">
             <h3>Record a Partial Delivery</h3>
             <p>In the planned persistence workflow, recording the delivery creates a stock movement of +12 boxes and leaves the order partially received. A follow-up receipt for 9 boxes is invalid because only 8 are outstanding.</p>
+            <div class="actions">
+              <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/src/main/java/com/stockpurchaseorder/backend/purchaseorder/domain/PurchaseOrder.java">View Domain Rules</a>
+              <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/src/test/java/com/stockpurchaseorder/backend/purchaseorder/domain/PurchaseOrderTest.java">View JUnit Tests</a>
+            </div>
           </article>
           <article class="card">
             <h3>Handle Retries and Concurrent Deliveries</h3>
