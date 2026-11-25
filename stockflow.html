@@ -29,6 +29,7 @@
         <a href="#overview">Overview</a>
         <a href="#architecture">Architecture</a>
         <a href="#workflow">Workflow</a>
+        <a href="#security">Security</a>
         <a href="#testing">Testing</a>
         <a href="#roadmap">Roadmap</a>
       </div>
@@ -48,6 +49,10 @@
           <span class="tag">TypeScript</span>
           <span class="tag">Java 21</span>
           <span class="tag">Spring Boot 4</span>
+          <span class="tag">Spring Security</span>
+          <span class="tag">Spring Data JPA</span>
+          <span class="tag">Hibernate</span>
+          <span class="tag">Vitest</span>
           <span class="tag">PostgreSQL</span>
           <span class="tag">Supabase</span>
           <span class="tag">Flyway</span>
@@ -97,7 +102,7 @@
         <div class="grid">
           <article class="card">
             <h3>Angular Frontend</h3>
-            <p>The responsive public homepage, navigation, footer, and routing are implemented. Angular’s HTTP client and development proxy are configured for future integration with the purchase order and inventory screens.</p>
+            <p>The public site, login form, signal-based authentication store, HTTP interceptor, route guards and responsive protected workspace are implemented on the authentication feature branch. Real sign-in and business API integration remain pending.</p>
           </article>
           <article class="card">
             <h3>Java Domain Model</h3>
@@ -105,7 +110,7 @@
           </article>
           <article class="card">
             <h3>Relational Model</h3>
-            <p>Flyway creates seven tables. Order lines reference products, receipt lines fulfil order lines, and each receipt line can produce one stock movement. JPA mappings and repositories are planned.</p>
+            <p>Flyway V1 defines the business schema; V2 adds four authentication tables. Product, user, session and refresh-token JPA persistence is implemented. Remaining business mappings and receipt transactions are planned.</p>
           </article>
         </div>
       </div>
@@ -135,16 +140,32 @@
       </div>
     </section>
 
+    <section class="section" id="security">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow mono">Engineering Decisions</p><h2>Security by Design</h2><p>Authentication foundations are implemented on feature branches; HTTP integration and production hardening remain in progress.</p></div>
+        <div class="grid">
+          <article class="card"><h3>Spring Security &amp; Argon2id</h3><p>Database-backed credential verification uses salted Argon2id hashes rather than plaintext or reversible encryption. Four roles model administration, purchasing, approval and warehouse responsibilities.</p></article>
+          <article class="card"><h3>JWT &amp; Session Lifecycle</h3><p>Signed 15-minute access tokens, seven-day sessions and SHA-256 refresh-token digests. Transactional rotation uses a pessimistic session lock and revokes a session on detected reuse. PostgreSQL concurrency verification is pending.</p></article>
+          <article class="card"><h3>Angular Security Boundary</h3><p>Signals keep access tokens in memory. The interceptor restricts token attachment to relative API paths; guards control navigation. Server-side authorization, HttpOnly refresh cookies and CSRF integration remain pending.</p></article>
+        </div>
+        <div class="architecture" style="margin-top:28px">
+          <div class="architecture-flow"><div class="architecture-node"><strong>Angular</strong><small>Reactive forms · Signals · Guards</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Spring Boot</strong><small>Security · Domain services · REST boundary</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div>
+          <p class="architecture-note">Target end-to-end architecture; authentication HTTP endpoints are not yet connected.</p>
+        </div>
+        <div class="actions"><a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/tree/feature/auth-persistence">Backend Authentication Source</a><a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderFrontend/tree/feature/auth-ui">Frontend Authentication Source</a></div>
+      </div>
+    </section>
+
     <section class="section section-alt" id="testing">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow mono">Testing and Verification</p>
           <h2>Domain Rules and Database Setup</h2>
-          <p>JUnit tests cover purchase order business rules. Flyway’s initial migration has been applied and validated on the development PostgreSQL database, and Spring Boot Actuator returned an UP health response locally.</p>
+          <p>Local verification on 25 November 2026: 31 backend JUnit tests and 20 frontend Vitest tests passed. Both Flyway migrations were validated against development PostgreSQL; Hibernate schema validation and Angular production compilation succeeded. These results are not end-to-end or production certification.</p>
         </div>
         <div class="grid">
           <article class="card">
-            <h3>Persistence and API Tests</h3>
+            <h3>Verified Automated Tests</h3><p>JUnit covers domain rules, password hashing, credential verification, JWT validation and session primitives. Vitest covers authentication state, interceptor behavior and guards.</p></article><article class="card"><h3>Persistence and API Tests</h3>
             <p>Planned tests cover persisted quantities, invalid receipts, rollback, duplicate requests, and concurrent delivery updates.</p>
           </article>
           <article class="card">
@@ -167,6 +188,9 @@
           <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/database-design.md">Database Design &amp; ERD</a>
           <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/api-contract.md">API Contract</a>
           <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/physical-dfd.md">Physical Data Flow Diagram</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/security-design.md">Security Design</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/technical-specification.md">Technical Specification</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/database-operations.md">Database Operations</a>
         </div>
       </div>
     </section>
@@ -176,11 +200,11 @@
         <div class="section-heading">
           <p class="eyebrow mono">Development Roadmap</p>
           <h2>Connecting the Workflow End to End</h2>
-          <p>The next milestone is to approve an order, record a partial delivery, and see the remaining quantity and inventory balance in Angular.</p>
+          <p>The immediate milestone is real sign-in and session verification, followed by the end-to-end purchase order workflow.</p>
         </div>
         <div class="grid">
           <article class="card">
-            <h3>Persistence and Transactions</h3>
+            <h3>Implemented Foundations</h3><p>Domain rules, two database migrations, authentication services, login UI, protected workspace and 51 locally passing tests across both repositories.</p></article><article class="card"><h3>Next: Authentication Integration</h3><p>PostgreSQL transaction tests, live session checks, login and refresh endpoints, secure cookies, CSRF and administrator provisioning.</p></article><article class="card"><h3>Planned: Persistence and Transactions</h3>
             <p>Implement JPA mappings and repositories, then build transactional receipt processing with idempotent retries.</p>
           </article>
           <article class="card">
