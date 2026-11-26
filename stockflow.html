@@ -32,6 +32,7 @@
         <a href="#workflow">Workflow</a>
         <a href="#security">Security</a>
         <a href="#testing">Testing</a>
+        <a href="#deployment">Deployment</a>
         <a href="#roadmap">Roadmap</a>
       </div>
     </nav>
@@ -64,6 +65,9 @@
           <span class="tag">Flyway</span>
           <span class="tag">JUnit</span>
           <span class="tag">Docker</span>
+          <span class="tag">Render</span>
+          <span class="tag">Maven</span>
+          <span class="tag">WSL 2</span>
           <span class="tag">Testcontainers</span>
           <span class="tag">MockMvc</span>
           <span class="tag">GitHub Actions</span>
@@ -173,7 +177,7 @@
 
     <section class="section" id="security">
       <div class="container">
-        <div class="section-heading"><p class="eyebrow mono">Engineering Decisions</p><h2>Security by Design</h2><p>Authentication foundations are implemented on feature branches; Backend login, refresh, CSRF and current-user endpoints are verified; logout verification, browser integration and production hardening remain in progress.</p></div>
+        <div class="section-heading"><p class="eyebrow mono">Engineering Decisions</p><h2>Security by Design</h2><p>Authentication foundations are implemented on feature branches; Backend login, refresh, CSRF and current-user endpoints are verified; logout is locally verified; browser integration and production hardening remain in progress.</p></div>
         <div class="grid">
           <article class="card"><h3>Spring Security &amp; Argon2id</h3><p>Database-backed credential verification uses salted Argon2id hashes rather than plaintext or reversible encryption. Four roles model administration, purchasing, approval and warehouse responsibilities.</p></article>
           <article class="card"><h3>JWT &amp; Session Lifecycle</h3><p>Signed 15-minute access tokens, seven-day sessions and SHA-256 refresh-token digests. Transactional rotation uses a pessimistic session lock and revokes a session on detected reuse. PostgreSQL concurrency tests verify refresh rotation and replay handling.</p></article>
@@ -192,7 +196,7 @@
         <div class="section-heading">
           <p class="eyebrow mono">Testing and Verification</p>
           <h2>Domain Rules and Database Setup</h2>
-          <p>On 26 November 2026, a local Windows Maven build reported 54 tests passed with zero failures, errors or skips, and reached JAR packaging. On 25 November, the Angular production build succeeded and 20 Vitest tests passed on the authentication feature branch. Both Flyway migrations and the Hibernate schema were validated against development PostgreSQL.</p>
+          <p>On 26 November 2026, a local Windows Maven build reported 62 tests passed with zero failures, errors or skips, and reached JAR packaging. On 26 November, the Angular production build succeeded and 30 Vitest tests passed on the authentication feature branch. Both Flyway migrations and the Hibernate schema were validated against development PostgreSQL.</p>
         </div>
         <div class="grid">
           <article class="card">
@@ -204,6 +208,19 @@
             <p>Once the screens and API are connected, verify a draft through approval and partial receiving, including the outstanding quantity and the resulting stock movement.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="deployment">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow mono">DevOps &amp; Cloud Infrastructure</p><h2>From Source Code to Cloud Container</h2><p>Multi-stage Docker packaging separates the Maven build from the Java runtime. GitHub Actions verifies changes independently of image packaging.</p></div>
+        <div class="architecture"><div class="architecture-flow"><div class="architecture-node"><strong>GitHub repository</strong><small>Java source · Dockerfile</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Render build server</strong><small>Maven · JDK 21 · Docker image</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Render cloud container</strong><small>JRE 21 · Spring Boot REST API</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Supabase PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div><p class="architecture-note">26 November 2026: local container health and Supabase connectivity verified; Render image build and push succeeded. Cloud startup and health verification pending. Netlify frontend deployment is planned.</p></div>
+        <div class="grid">
+          <article class="card"><h3>Containerization</h3><p>Java 21 JDK build stage, executable Spring Boot JAR, Java 21 JRE runtime and non-root container user. Docker Desktop with WSL 2 supports local development.</p></article>
+          <article class="card"><h3>Cloud Configuration</h3><p>Render supplies the runtime port and environment variables. Database credentials and JWT signing keys stay outside source control. Actuator provides a health endpoint.</p></article>
+          <article class="card"><h3>Continuous Integration</h3><p>GitHub Actions runs Maven verification and Angular build and test checks. Testcontainers provides isolated PostgreSQL integration tests.</p></article>
+        </div>
+        <div class="actions"><a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/Dockerfile">View Dockerfile</a><a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/README.md#cloud-deployment-and-containerization">Deployment Documentation</a></div>
       </div>
     </section>
 
@@ -235,7 +252,7 @@
         </div>
         <div class="grid">
           <article class="card">
-            <h3>Implemented Foundations</h3><p>Domain rules, two database migrations, authentication services, login UI, protected workspace and 74 locally passing tests across both repositories.</p></article><article class="card"><h3>Next: Authentication Integration</h3><p>Verify logout, provision administrator accounts, connect Angular sign-in and enforce business permissions.</p></article><article class="card"><h3>Planned: Persistence and Transactions</h3>
+            <h3>Implemented Foundations</h3><p>Domain rules, two database migrations, authentication services, login UI, protected workspace and 92 locally passing tests across both repositories.</p></article><article class="card"><h3>Next: Authentication Integration</h3><p>Provision administrator accounts, connect Angular sign-in and enforce business permissions.</p></article><article class="card"><h3>Planned: Persistence and Transactions</h3>
             <p>Implement JPA mappings and repositories, then build transactional receipt processing with idempotent retries.</p>
           </article>
           <article class="card">
@@ -244,7 +261,7 @@
           </article>
           <article class="card">
             <h3>Angular Integration</h3>
-            <p>Build purchase order and inventory screens, connect them to the API, and verify the workflow before deployment.</p>
+            <p>Build purchase order and inventory screens, connect them to the API, and verify the workflow in the cloud preview.</p>
           </article>
         </div>
       </div>
