@@ -28,6 +28,7 @@
         <a href="index.html#projects">Portfolio</a>
         <a href="#overview">Overview</a>
         <a href="#architecture">Architecture</a>
+        <a href="#roles">User Roles</a>
         <a href="#workflow">Workflow</a>
         <a href="#security">Security</a>
         <a href="#testing">Testing</a>
@@ -62,6 +63,10 @@
           <span class="tag">Supabase</span>
           <span class="tag">Flyway</span>
           <span class="tag">JUnit</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Testcontainers</span>
+          <span class="tag">MockMvc</span>
+          <span class="tag">GitHub Actions</span>
         </div>
         <div class="actions">
           <a class="btn btn-primary" href="#workflow">Explore the Workflow</a>
@@ -97,12 +102,29 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="architecture">
+    <section class="section section-alt" id="roles">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mono">System Users</p>
+          <h2>Four Roles, One Procurement Workflow</h2>
+          <p>StockFlow is an internal employee system supporting multiple accounts per role. Administrators will invite employees rather than allow public registration.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>Administrator</h3><p>Manage employee accounts, roles, suppliers and products; oversee authorized procurement operations.</p></article>
+          <article class="card"><h3>Purchasing Officer</h3><p>Create draft purchase orders, submit them for approval and cancel eligible orders.</p></article>
+          <article class="card"><h3>Approver</h3><p>Review and approve purchase orders and cancel eligible orders.</p></article>
+          <article class="card"><h3>Warehouse Officer</h3><p>Record partial or complete deliveries and monitor stock movements.</p></article>
+        </div>
+        <p class="architecture-note">All active roles are intended to read orders, products and inventory. Role definitions exist; business permissions, account provisioning and functional role-specific dashboards remain planned.</p>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow mono">System Architecture</p>
           <h2>Angular, Spring Boot and PostgreSQL</h2>
-          <p>Angular is the user interface. Spring Boot hosts the Java domain model and the planned REST endpoints. PostgreSQL stores orders, receipts, balances, and stock movements.</p>
+          <p>Angular is the user interface. Spring Boot hosts the Java domain model and authentication REST endpoints and planned business endpoints. PostgreSQL stores orders, receipts, balances, and stock movements.</p>
         </div>
         <div class="grid">
           <article class="card">
@@ -151,11 +173,11 @@
 
     <section class="section" id="security">
       <div class="container">
-        <div class="section-heading"><p class="eyebrow mono">Engineering Decisions</p><h2>Security by Design</h2><p>Authentication foundations are implemented on feature branches; HTTP integration and production hardening remain in progress.</p></div>
+        <div class="section-heading"><p class="eyebrow mono">Engineering Decisions</p><h2>Security by Design</h2><p>Authentication foundations are implemented on feature branches; Backend login, refresh, CSRF and current-user endpoints are verified; logout verification, browser integration and production hardening remain in progress.</p></div>
         <div class="grid">
           <article class="card"><h3>Spring Security &amp; Argon2id</h3><p>Database-backed credential verification uses salted Argon2id hashes rather than plaintext or reversible encryption. Four roles model administration, purchasing, approval and warehouse responsibilities.</p></article>
-          <article class="card"><h3>JWT &amp; Session Lifecycle</h3><p>Signed 15-minute access tokens, seven-day sessions and SHA-256 refresh-token digests. Transactional rotation uses a pessimistic session lock and revokes a session on detected reuse. PostgreSQL concurrency verification is pending.</p></article>
-          <article class="card"><h3>Angular Security Boundary</h3><p>Signals keep access tokens in memory. The interceptor restricts token attachment to relative API paths; guards control navigation. Server-side authorization, HttpOnly refresh cookies and CSRF integration remain pending.</p></article>
+          <article class="card"><h3>JWT &amp; Session Lifecycle</h3><p>Signed 15-minute access tokens, seven-day sessions and SHA-256 refresh-token digests. Transactional rotation uses a pessimistic session lock and revokes a session on detected reuse. PostgreSQL concurrency tests verify refresh rotation and replay handling.</p></article>
+          <article class="card"><h3>Angular Security Boundary</h3><p>Signals keep access tokens in memory. The interceptor restricts token attachment to relative API paths; guards control navigation. Backend JWT session validation, HttpOnly refresh cookies and CSRF are verified; business authorization and browser integration remain pending.</p></article>
         </div>
         <div class="architecture" style="margin-top:28px">
           <div class="architecture-flow"><div class="architecture-node"><strong>Angular</strong><small>Reactive forms · Signals · Guards</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Spring Boot</strong><small>Security · Domain services · REST boundary</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div>
@@ -170,12 +192,12 @@
         <div class="section-heading">
           <p class="eyebrow mono">Testing and Verification</p>
           <h2>Domain Rules and Database Setup</h2>
-          <p>On 26 November 2026, a local Windows Maven build reported 38 tests passed with zero failures, errors or skips, and reached JAR packaging. On 25 November, the Angular production build succeeded and 20 Vitest tests passed on the authentication feature branch. Both Flyway migrations and the Hibernate schema were validated against development PostgreSQL.</p>
+          <p>On 26 November 2026, a local Windows Maven build reported 54 tests passed with zero failures, errors or skips, and reached JAR packaging. On 25 November, the Angular production build succeeded and 20 Vitest tests passed on the authentication feature branch. Both Flyway migrations and the Hibernate schema were validated against development PostgreSQL.</p>
         </div>
         <div class="grid">
           <article class="card">
             <h3>Verified Automated Tests</h3><p>JUnit covers domain rules, password hashing, credential verification, JWT validation and session primitives. Vitest covers authentication state, interceptor behavior and guards.</p></article><article class="card"><h3>Persistence and API Tests</h3>
-            <p>Planned tests cover persisted quantities, invalid receipts, rollback, duplicate requests, and concurrent delivery updates.</p>
+            <p>Docker-backed PostgreSQL integration tests and MockMvc verify authentication, CSRF, cookies, token rotation and session validation. Business receipt transaction tests remain planned.</p>
           </article>
           <article class="card">
             <h3>End-to-End Verification</h3>
@@ -213,7 +235,7 @@
         </div>
         <div class="grid">
           <article class="card">
-            <h3>Implemented Foundations</h3><p>Domain rules, two database migrations, authentication services, login UI, protected workspace and 51 locally passing tests across both repositories.</p></article><article class="card"><h3>Next: Authentication Integration</h3><p>PostgreSQL transaction tests, live session checks, login and refresh endpoints, secure cookies, CSRF and administrator provisioning.</p></article><article class="card"><h3>Planned: Persistence and Transactions</h3>
+            <h3>Implemented Foundations</h3><p>Domain rules, two database migrations, authentication services, login UI, protected workspace and 74 locally passing tests across both repositories.</p></article><article class="card"><h3>Next: Authentication Integration</h3><p>Verify logout, provision administrator accounts, connect Angular sign-in and enforce business permissions.</p></article><article class="card"><h3>Planned: Persistence and Transactions</h3>
             <p>Implement JPA mappings and repositories, then build transactional receipt processing with idempotent retries.</p>
           </article>
           <article class="card">
