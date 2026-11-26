@@ -77,7 +77,7 @@
           <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderFrontend">Frontend Source</a>
           <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend">Backend Source</a>
           <a class="btn btn-outline" href="#documentation">Technical Documentation</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/database-design.md">Database Design &amp; ERD</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/database-design.md">Database Design &amp; ERD</a>
         </div>
       </div>
     </section>
@@ -111,7 +111,7 @@
         <div class="section-heading">
           <p class="eyebrow mono">System Users</p>
           <h2>Four Roles, One Procurement Workflow</h2>
-          <p>StockFlow is an internal employee system supporting multiple accounts per role. Administrators will invite employees rather than allow public registration.</p>
+          <p>StockFlow is an internal employee system supporting multiple accounts per role. Administrators provision employee accounts; public registration is not available.</p>
         </div>
         <div class="grid">
           <article class="card"><h3>Administrator</h3><p>Manage employee accounts, roles, suppliers and products; oversee authorized procurement operations.</p></article>
@@ -119,7 +119,7 @@
           <article class="card"><h3>Approver</h3><p>Review and approve purchase orders and cancel eligible orders.</p></article>
           <article class="card"><h3>Warehouse Officer</h3><p>Record partial or complete deliveries and monitor stock movements.</p></article>
         </div>
-        <p class="architecture-note">All active roles are intended to read orders, products and inventory. Role definitions exist; business permissions, account provisioning and functional role-specific dashboards remain planned.</p>
+        <p class="architecture-note">All active roles are intended to read orders, products and inventory. Employee administration and supplier permissions are implemented; four local role accounts are provisioned. Procurement permissions and complete browser role verification remain pending.</p>
       </div>
     </section>
 
@@ -133,7 +133,7 @@
         <div class="grid">
           <article class="card">
             <h3>Angular Frontend</h3>
-            <p>The public site, login form, signal-based authentication store, HTTP interceptor, route guards and responsive protected workspace are implemented on the authentication feature branch. Real sign-in and business API integration remain pending.</p>
+            <p>The public site, login form, signal-based authentication store, HTTP interceptor, route guards and responsive protected workspace are implemented on the authentication feature branch. Local administrator sign-in and employee administration are verified. Supplier interface and API integration code are implemented; browser acceptance remains pending.</p>
           </article>
           <article class="card">
             <h3>Java Domain Model</h3>
@@ -141,12 +141,16 @@
           </article>
           <article class="card">
             <h3>Relational Model</h3>
-            <p>Flyway V1 defines the business schema; V2 adds four authentication tables. Product, user, session and refresh-token JPA persistence is implemented. Remaining business mappings and receipt transactions are planned.</p>
+            <p>Flyway V1 defines the business schema; V2 adds authentication persistence and V3 adds the supplier table. Product, supplier, user, session and refresh-token JPA persistence is implemented. Remaining business mappings and receipt transactions are planned.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <section class="section section-alt" id="implementation">
+      <div class="container"><div class="section-heading"><p class="eyebrow mono">Implementation checkpoint · 26 November 2026</p><h2>From Authentication to Supplier Management</h2><p>98 backend and 66 frontend tests passed locally (164 combined). Both production builds succeeded. Latest cloud deployment and supplier browser acceptance remain unverified.</p></div>
+      <div class="grid"><article class="card"><h3>Employee Management</h3><p>Administrator account provisioning, role and status changes, session revocation, pagination and reusable confirmation dialogs. Local browser workflow exercised.</p></article><article class="card"><h3>Supplier Management</h3><p>Flyway V3, JPA persistence, transactional REST services, search, validation and soft deactivation. All active roles can read; only administrators can modify. Backend tests passed; Angular directory compiled.</p></article><article class="card"><h3>Next Milestones</h3><p>Supplier frontend tests and browser acceptance, product management, order approval, receiving, inventory and isolated public demo protection.</p></article></div></div>
+    </section>
     <section class="section" id="workflow">
       <div class="container">
         <div class="section-heading">
@@ -177,15 +181,15 @@
 
     <section class="section" id="security">
       <div class="container">
-        <div class="section-heading"><p class="eyebrow mono">Engineering Decisions</p><h2>Security by Design</h2><p>Authentication foundations are implemented on feature branches; Backend login, refresh, CSRF and current-user endpoints are verified; logout is locally verified; browser integration and production hardening remain in progress.</p></div>
+        <div class="section-heading"><p class="eyebrow mono">Engineering Decisions</p><h2>Security by Design</h2><p>Authentication foundations are implemented on feature branches; Backend login, refresh, CSRF and current-user endpoints are verified; logout is locally verified; local administrator sign-in and employee management are verified; cloud browser workflows and production hardening remain in progress.</p></div>
         <div class="grid">
           <article class="card"><h3>Spring Security &amp; Argon2id</h3><p>Database-backed credential verification uses salted Argon2id hashes rather than plaintext or reversible encryption. Four roles model administration, purchasing, approval and warehouse responsibilities.</p></article>
           <article class="card"><h3>JWT &amp; Session Lifecycle</h3><p>Signed 15-minute access tokens, seven-day sessions and SHA-256 refresh-token digests. Transactional rotation uses a pessimistic session lock and revokes a session on detected reuse. PostgreSQL concurrency tests verify refresh rotation and replay handling.</p></article>
-          <article class="card"><h3>Angular Security Boundary</h3><p>Signals keep access tokens in memory. The interceptor restricts token attachment to relative API paths; guards control navigation. Backend JWT session validation, HttpOnly refresh cookies and CSRF are verified; business authorization and browser integration remain pending.</p></article>
+          <article class="card"><h3>Angular Security Boundary</h3><p>Signals keep access tokens in memory. The interceptor restricts token attachment to relative API paths; guards control navigation. Backend JWT session validation, HttpOnly refresh cookies and CSRF are verified; employee and supplier API authorization is verified; remaining procurement authorization is planned.</p></article>
         </div>
         <div class="architecture" style="margin-top:28px">
           <div class="architecture-flow"><div class="architecture-node"><strong>Angular</strong><small>Reactive forms · Signals · Guards</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Spring Boot</strong><small>Security · Domain services · REST boundary</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div>
-          <p class="architecture-note">Target end-to-end architecture; authentication HTTP endpoints are not yet connected.</p>
+          <p class="architecture-note">Implemented authentication and administration architecture; procurement transactions remain planned.</p>
         </div>
         <div class="actions"><a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/tree/feature/auth-persistence">Backend Authentication Source</a><a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderFrontend/tree/feature/auth-ui">Frontend Authentication Source</a></div>
       </div>
@@ -196,12 +200,12 @@
         <div class="section-heading">
           <p class="eyebrow mono">Testing and Verification</p>
           <h2>Domain Rules and Database Setup</h2>
-          <p>On 26 November 2026, a local Windows Maven build reported 62 tests passed with zero failures, errors or skips, and reached JAR packaging. On 26 November, the Angular production build succeeded and 30 Vitest tests passed on the authentication feature branch. Both Flyway migrations and the Hibernate schema were validated against development PostgreSQL.</p>
+          <p>On 26 November 2026, a local Windows Maven build reported 98 tests passed with zero failures, errors or skips, and reached JAR packaging. On 26 November, the Angular production build succeeded and 66 Vitest tests passed on the authentication feature branch. All three Flyway migrations and the Hibernate schema were validated against development PostgreSQL.</p>
         </div>
         <div class="grid">
           <article class="card">
-            <h3>Verified Automated Tests</h3><p>JUnit covers domain rules, password hashing, credential verification, JWT validation and session primitives. Vitest covers authentication state, interceptor behavior and guards.</p></article><article class="card"><h3>Persistence and API Tests</h3>
-            <p>Docker-backed PostgreSQL integration tests and MockMvc verify authentication, CSRF, cookies, token rotation and session validation. Business receipt transaction tests remain planned.</p>
+            <h3>Verified Automated Tests</h3><p>JUnit covers domain rules, password hashing, credential verification, JWT validation and session primitives. Vitest covers authentication, interceptor behavior, guards, employee management and shared dialogs. Supplier-specific frontend tests remain pending.</p></article><article class="card"><h3>Persistence and API Tests</h3>
+            <p>Docker-backed PostgreSQL integration tests and MockMvc verify authentication, CSRF, cookies, token rotation and session validation. Employee and supplier API tests verify validation and authorization; receipt transaction tests remain planned.</p>
           </article>
           <article class="card">
             <h3>End-to-End Verification</h3>
@@ -214,7 +218,7 @@
     <section class="section" id="deployment">
       <div class="container">
         <div class="section-heading"><p class="eyebrow mono">DevOps &amp; Cloud Infrastructure</p><h2>From Source Code to Cloud Container</h2><p>Multi-stage Docker packaging separates the Maven build from the Java runtime. GitHub Actions verifies changes independently of image packaging.</p></div>
-        <div class="architecture"><div class="architecture-flow"><div class="architecture-node"><strong>GitHub repository</strong><small>Java source · Dockerfile</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Render build server</strong><small>Maven · JDK 21 · Docker image</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Render cloud container</strong><small>JRE 21 · Spring Boot REST API</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Supabase PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div><p class="architecture-note">26 November 2026: local container health and Supabase connectivity verified; Render image build and push succeeded. Render deployment succeeded and health returned UP. Angular is published on Netlify; API proxy and end-to-end authentication verification remain pending.</p></div>
+        <div class="architecture"><div class="architecture-flow"><div class="architecture-node"><strong>GitHub repository</strong><small>Java source · Dockerfile</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Render build server</strong><small>Maven · JDK 21 · Docker image</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Render cloud container</strong><small>JRE 21 · Spring Boot REST API</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Supabase PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div><p class="architecture-note">26 November 2026: local container health and Supabase connectivity verified; Render image build and push succeeded. Render deployment succeeded and health returned UP. Angular is published on Netlify; the API proxy CSRF response was verified earlier; latest cloud browser workflows remain unverified.</p></div>
         <div class="grid">
           <article class="card"><h3>Containerization</h3><p>Java 21 JDK build stage, executable Spring Boot JAR, Java 21 JRE runtime and non-root container user. Docker Desktop with WSL 2 supports local development.</p></article>
           <article class="card"><h3>Cloud Configuration</h3><p>Render supplies the runtime port and environment variables. Database credentials and JWT signing keys stay outside source control. Actuator provides a health endpoint.</p></article>
@@ -232,13 +236,13 @@
           <p>The system design, ERD, API contract, and physical data flow diagram describe how orders and receipts move through the application.</p>
         </div>
         <div class="actions">
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/system-design.md">System Design</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/database-design.md">Database Design &amp; ERD</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/api-contract.md">API Contract</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/physical-dfd.md">Physical Data Flow Diagram</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/security-design.md">Security Design</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/technical-specification.md">Technical Specification</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/database-operations.md">Database Operations</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/system-design.md">System Design</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/database-design.md">Database Design &amp; ERD</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/api-contract.md">API Contract</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/physical-dfd.md">Physical Data Flow Diagram</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/security-design.md">Security Design</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/technical-specification.md">Technical Specification</a>
+          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/database-operations.md">Database Operations</a>
         </div>
       </div>
     </section>
@@ -248,11 +252,11 @@
         <div class="section-heading">
           <p class="eyebrow mono">Development Roadmap</p>
           <h2>Connecting the Workflow End to End</h2>
-          <p>The immediate milestone is real sign-in and session verification, followed by the end-to-end purchase order workflow.</p>
+          <p>The immediate milestone is supplier browser acceptance and frontend tests, followed by product management and the procurement workflow.</p>
         </div>
         <div class="grid">
           <article class="card">
-            <h3>Implemented Foundations</h3><p>Domain rules, two database migrations, authentication services, login UI, protected workspace and 92 locally passing tests across both repositories.</p></article><article class="card"><h3>Next: Authentication Integration</h3><p>Provision administrator accounts, connect Angular sign-in and enforce business permissions.</p></article><article class="card"><h3>Planned: Persistence and Transactions</h3>
+            <h3>Implemented Foundations</h3><p>Domain rules, three database migrations, authentication, employee management, supplier API and Angular directory, and 164 locally passing tests across both repositories.</p></article><article class="card"><h3>Next: Supplier Verification</h3><p>Verify supplier browser workflows, add dedicated Angular tests and complete role checks.</p></article><article class="card"><h3>Planned: Persistence and Transactions</h3>
             <p>Implement JPA mappings and repositories, then build transactional receipt processing with idempotent retries.</p>
           </article>
           <article class="card">
