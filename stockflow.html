@@ -18,33 +18,9 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="brightsmile.css">
-  <style>
-    .stockflow-case .hero { background: linear-gradient(135deg,#fff 45%,#eff6ff); padding: 72px 0 48px; }
-    .stockflow-case .hero-description + .hero-description { margin-top: 12px; }
-    .stockflow-case .nav-links { gap: 16px; }
-    .stockflow-case .section { padding: 56px 0; }
-    .stockflow-case .section-alt { background: #f8fafc; border-block: 1px solid #e5e7eb; }
-    .stockflow-case .card { box-shadow: 0 4px 16px #0f172a0a; border-radius: 14px; padding: 24px; }
-    .stockflow-case .card:hover { transform: none; box-shadow: 0 4px 16px #0f172a0a; }
-    .stockflow-case .section-heading { text-align: left; }
-    .stockflow-case .section-heading p { margin-left: 0; }
-    .stockflow-case .section-heading .eyebrow { color: #2563eb; }
-    .stockflow-case .architecture-note { color: #475569; text-align: left; }
-    .stockflow-case .architecture .architecture-note { color: #d1d5db; }
-    .stockflow-case #roles .grid, .stockflow-case #roadmap .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-    .stockflow-case .metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:32px; }
-    .stockflow-case .metric { background:#fff; border:1px solid #dbe3ef; border-radius:12px; padding:18px; }
-    .stockflow-case .metric strong { display:block; font-size:1.8rem; color:#1d4ed8; line-height:1.3; }
-    .stockflow-case .metric small { color:#475569; }
-    .stockflow-case #workflow .card { border-top:3px solid #3b82f6; }
-    .stockflow-case #documentation .actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .stockflow-case .cursor-outline { opacity:.15; }
-    @media(max-width:900px) { .stockflow-case .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-    @media(max-width:600px) { .stockflow-case .grid,.stockflow-case #roles .grid,.stockflow-case #roadmap .grid,.stockflow-case #documentation .actions { grid-template-columns:1fr; } .stockflow-case .metrics { gap:6px; } .stockflow-case .metric { padding:10px; } .stockflow-case .metric strong { font-size:1.35rem; } .stockflow-case .metric small { font-size:.7rem; } .stockflow-case .navbar { position:static; } .stockflow-case .hero { padding:40px 0; } .stockflow-case .section { padding:36px 0; } }
-  </style>
 </head>
 
-<body class="stockflow-case">
+<body>
   <header class="navbar">
     <nav class="container nav-inner" aria-label="Project navigation">
       <a href="index.html" class="brand">&lt;Thabo /&gt;</a>
@@ -73,11 +49,6 @@
         <p class="hero-description">
           Two suppliers can sell the same box of screws at different prices. StockFlow ties each offer to a supplier and saves the agreed price when a buyer creates an order.
         </p>
-        <div class="metrics" aria-label="Project metrics">
-          <div class="metric"><strong>245</strong><small>Local tests passed</small></div>
-          <div class="metric"><strong>4</strong><small>Employee roles</small></div>
-          <div class="metric"><strong>6</strong><small>Database migrations</small></div>
-        </div>
         <div class="tech-tags">
           <span class="tag">Angular 22</span>
           <span class="tag">TypeScript</span>
