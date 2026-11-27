@@ -27,12 +27,10 @@
       <div class="nav-links">
         <a href="index.html#projects">Portfolio</a>
         <a href="#overview">Overview</a>
-        <a href="#architecture">Architecture</a>
         <a href="#roles">User Roles</a>
-        <a href="#workflow">Workflow</a>
-        <a href="#security">Security</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#workflow">Orders</a>
         <a href="#testing">Testing</a>
-        <a href="#deployment">Deployment</a>
         <a href="#roadmap">Roadmap</a>
       </div>
     </nav>
@@ -41,7 +39,7 @@
   <main>
     <section class="hero">
       <div class="container">
-        <p class="eyebrow mono">Full-Stack Software Engineering Case Study · In Development</p>
+        <p class="eyebrow mono">Full-Stack Software Engineering Case Study</p>
         <h1>Stock<span>Flow</span></h1>
         <p class="hero-description">
           StockFlow helps a small hardware store prepare supplier orders. Staff maintain supplier catalogues, compare prices on order lines and save drafts in rand.
@@ -64,6 +62,7 @@
           <span class="tag">JUnit</span>
           <span class="tag">Docker</span>
           <span class="tag">Render</span>
+          <span class="tag">Netlify</span>
           <span class="tag">Maven</span>
           <span class="tag">WSL 2</span>
           <span class="tag">Testcontainers</span>
@@ -84,21 +83,18 @@
     <section class="section" id="overview">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow mono">Project Overview</p>
+          <p class="eyebrow mono">01 / Project Overview</p>
           <h2>From Supplier Catalogue to Draft Purchase Order</h2>
           <p>The current implementation covers supplier and product setup, supplier-specific offers, and creating and viewing draft orders. Partial receiving and inventory updates are planned for a later stage.</p>
         </div>
         <div class="grid">
-          <article class="card">
-            <h3>Purchase Orders</h3>
+          <article class="card"><span class="card-number mono">01 — PROCUREMENT</span><h3>Purchase Orders</h3>
             <p>A purchase order belongs to one supplier and can contain several product lines. Draft creation, listing and details are implemented; approval is planned.</p>
           </article>
-          <article class="card">
-            <h3>Goods Receiving</h3>
+          <article class="card"><span class="card-number mono">02 — RECEIVING</span><h3>Goods Receiving</h3>
             <p>Receiving is the next workflow stage. The database and domain design describe partial deliveries, but the REST endpoint and screen are not implemented yet.</p>
           </article>
-          <article class="card">
-            <h3>Inventory Tracking</h3>
+          <article class="card"><span class="card-number mono">03 — INVENTORY</span><h3>Inventory Tracking</h3>
             <p>Inventory balances and stock movements are planned. The current application does not update on-hand stock when an order is created.</p>
           </article>
         </div>
@@ -108,38 +104,35 @@
     <section class="section section-alt" id="roles">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow mono">System Users</p>
+          <p class="eyebrow mono">02 / System Users</p>
           <h2>Four Roles, One Procurement Workflow</h2>
           <p>StockFlow is an internal employee system supporting multiple accounts per role. Administrators provision employee accounts; public registration is not available.</p>
         </div>
-        <div class="grid">
-          <article class="card"><h3>Administrator</h3><p>Manage employee accounts, suppliers, products and catalogue prices. Administrators can also create and review draft orders.</p></article>
-          <article class="card"><h3>Purchasing Officer</h3><p>Select a supplier, add items at its agreed prices and save a draft purchase order.</p></article>
-          <article class="card"><h3>Approver</h3><p>Review order details. Approval and cancellation actions are planned.</p></article>
-          <article class="card"><h3>Warehouse Officer</h3><p>View the items and quantities on an order. Recording deliveries and updating stock are planned.</p></article>
+        <div class="grid grid-two">
+          <article class="card"><span class="card-number mono">01 — ADMIN</span><h3>Administrator</h3><p>Manage employee accounts, suppliers, products and catalogue prices. Administrators can also create and review draft orders.</p></article>
+          <article class="card"><span class="card-number mono">02 — PURCHASING</span><h3>Purchasing Officer</h3><p>Select a supplier, add items at its agreed prices and save a draft purchase order.</p></article>
+          <article class="card"><span class="card-number mono">03 — APPROVER</span><h3>Approver</h3><p>Review order details. Approval and cancellation actions are planned.</p></article>
+          <article class="card"><span class="card-number mono">04 — WAREHOUSE</span><h3>Warehouse Officer</h3><p>View the items and quantities on an order. Recording deliveries and updating stock are planned.</p></article>
         </div>
-        <p class="architecture-note">Every active role can read suppliers, products, offers and orders. Spring Security checks permissions on each request.</p>
+        <p class="architecture-note" style="color:var(--muted)">Every active role can read suppliers, products, offers and orders. Spring Security checks permissions on each request.</p>
       </div>
     </section>
 
     <section class="section" id="architecture">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow mono">System Architecture</p>
+          <p class="eyebrow mono">03 / System Architecture</p>
           <h2>Angular, Spring Boot and PostgreSQL</h2>
           <p>Angular provides the protected workspace. Spring Boot hosts authentication, administration, catalogue and draft purchase-order APIs. PostgreSQL stores current records plus the schema reserved for future receipt and inventory processing.</p>
         </div>
         <div class="grid">
-          <article class="card">
-            <h3>Angular Frontend</h3>
+          <article class="card"><span class="card-number mono">01 — FRONTEND</span><h3>Angular Frontend</h3>
             <p>The Angular workspace connects the employee, supplier, product and order screens to the API. A buyer can search one supplier’s offers, adjust quantities and open the saved draft from the order directory.</p>
           </article>
-          <article class="card">
-            <h3>Java Domain Model</h3>
+          <article class="card"><span class="card-number mono">02 — BACKEND</span><h3>Java Domain Model</h3>
             <p>The model handles order state transitions and quantity validation. Typed exceptions and problem-detail mapping are in place for business-rule failures.</p>
           </article>
-          <article class="card">
-            <h3>Relational Model</h3>
+          <article class="card"><span class="card-number mono">03 — DATABASE</span><h3>Relational Model</h3>
             <p>Flyway V1–V6 define the business, authentication, supplier, product and supplier-catalogue schema. JPA mappings support users, products, suppliers, supplier offers and purchase orders. Receipt/inventory application services and transactions remain future work.</p>
           </article>
         </div>
@@ -147,31 +140,28 @@
     </section>
 
     <section class="section section-alt" id="implementation">
-      <div class="container"><div class="section-heading"><p class="eyebrow mono">Implementation checkpoint · 27 November 2026</p><h2>Supplier Catalogues and Draft Purchase Orders</h2><p>Staff can now go from a supplier’s agreed prices to a saved purchase order. The order keeps its original prices even if the supplier changes its catalogue.</p></div>
-      <div class="grid"><article class="card"><h3>Supplier and Product Catalogues</h3><p>Administrators manage suppliers and products, then link products to suppliers with supplier-specific prices. Active roles can read; administrator-only writes are enforced by the API.</p></article><article class="card"><h3>Draft Purchase Orders</h3><p>Administrators and purchasing officers choose a supplier and add products to a draft. Staff can filter the order list and inspect the prices saved on each line.</p></article><article class="card"><h3>Next Milestones</h3><p>Verify the new screens in a browser; implement approval, cancellation, delivery receiving and inventory updates.</p></article></div></div>
+      <div class="container"><div class="section-heading"><p class="eyebrow mono">04 / Implementation checkpoint</p><h2>Supplier Catalogues and Draft Purchase Orders</h2><p>Staff can now go from a supplier’s agreed prices to a saved purchase order. The order keeps its original prices even if the supplier changes its catalogue.</p></div>
+      <div class="grid"><article class="card"><span class="card-number mono">IMPLEMENTED</span><h3>Supplier and Product Catalogues</h3><p>Administrators manage suppliers and products, then link products to suppliers with supplier-specific prices. Active roles can read; administrator-only writes are enforced by the API.</p></article><article class="card"><span class="card-number mono">IMPLEMENTED</span><h3>Draft Purchase Orders</h3><p>Administrators and purchasing officers choose a supplier and add products to a draft. Staff can filter the order list and inspect the prices saved on each line.</p></article><article class="card"><span class="card-number mono">NEXT PRIORITY</span><h3>Next Milestones</h3><p>Verify the new screens in a browser; implement approval, cancellation, delivery receiving and inventory updates.</p></article></div></div>
     </section>
     <section class="section" id="workflow">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow mono">Purchase Order Workflow · Current Progress</p>
+          <p class="eyebrow mono">05 / Purchase Order Workflow</p>
           <h2>One Supplier, Multiple Product Lines</h2>
           <p>A purchase order is a store's request to buy products from one supplier. It can contain several products, but each item must be offered by the selected supplier at that supplier's price.</p>
         </div>
         <div class="grid">
-          <article class="card">
-            <h3>1. Select the Supplier</h3>
+          <article class="card"><span class="card-number mono">01 — SUPPLIER</span><h3>1. Select the Supplier</h3>
             <p>The form searches active suppliers. When the user chooses one, StockFlow loads only that supplier's active product catalogue. Changing supplier clears the current draft lines.</p>
           </article>
-          <article class="card">
-            <h3>2. Add Products and Quantities</h3>
+          <article class="card"><span class="card-number mono">02 — ORDER LINES</span><h3>2. Add Products and Quantities</h3>
             <p>For example, adding 20 boxes of screws at R12.50 per box gives a line total of R250.00. The buyer can add other products offered by the same supplier.</p>
           </article>
-          <article class="card">
-            <h3>3. Save and Review the Draft</h3>
+          <article class="card"><span class="card-number mono">03 — DRAFT</span><h3>3. Save and Review the Draft</h3>
             <p>The API validates the supplier and offers, then stores the product name and unit-price snapshots. The order directory supports status filtering and detail views.</p>
           </article>
         </div>
-        <p class="architecture-note">Approval, cancellation and delivery receiving are not implemented yet. The planned receiving example is 12 of 20 units delivered, leaving 8 outstanding; inventory will only change once receipt processing is built.</p>
+        <p class="architecture-note" style="color:var(--muted)">Approval, cancellation and delivery receiving are not implemented yet. The planned receiving example is 12 of 20 units delivered, leaving 8 outstanding; inventory will only change once receipt processing is built.</p>
         <div class="actions">
           <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/src/main/java/com/stockpurchaseorder/backend/purchaseorder/domain/PurchaseOrder.java">View Domain Rules</a>
           <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/src/test/java/com/stockpurchaseorder/backend/purchaseorder/domain/PurchaseOrderTest.java">View JUnit Tests</a>
@@ -182,11 +172,11 @@
 
     <section class="section" id="security">
       <div class="container">
-        <div class="section-heading"><p class="eyebrow mono">Engineering Decisions</p><h2>Security by Design</h2><p>Employees sign in through Spring Security. The API uses the employee’s current role and session when it authorizes a catalogue change or a new purchase order.</p></div>
+        <div class="section-heading"><p class="eyebrow mono">06 / Engineering Decisions</p><h2>Security by Design</h2><p>Employees sign in through Spring Security. The API uses the employee’s current role and session when it authorizes a catalogue change or a new purchase order.</p></div>
         <div class="grid">
-          <article class="card"><h3>Spring Security &amp; Argon2id</h3><p>Database-backed credential verification uses salted Argon2id hashes rather than plaintext or reversible encryption. Four roles model administration, purchasing, approval and warehouse responsibilities.</p></article>
-          <article class="card"><h3>JWT &amp; Session Lifecycle</h3><p>Signed 15-minute access tokens, seven-day sessions and SHA-256 refresh-token digests. Transactional rotation uses a pessimistic session lock and revokes a session on detected reuse. PostgreSQL concurrency tests verify refresh rotation and replay handling.</p></article>
-          <article class="card"><h3>Angular Security Boundary</h3><p>Signals keep access tokens in memory. The interceptor restricts token attachment to API paths; guards control navigation. The backend enforces employee, supplier, product and catalogue roles. All active roles can read orders; ADMIN and PURCHASING_OFFICER can create them. Approval and warehouse receipt authorization awaits those endpoints.</p></article>
+          <article class="card"><span class="card-number mono">01 — AUTHENTICATION</span><h3>Spring Security &amp; Argon2id</h3><p>Database-backed credential verification uses salted Argon2id hashes rather than plaintext or reversible encryption. Four roles model administration, purchasing, approval and warehouse responsibilities.</p></article>
+          <article class="card"><span class="card-number mono">02 — SESSIONS</span><h3>JWT &amp; Session Lifecycle</h3><p>Signed 15-minute access tokens, seven-day sessions and SHA-256 refresh-token digests. Transactional rotation uses a pessimistic session lock and revokes a session on detected reuse. PostgreSQL concurrency tests verify refresh rotation and replay handling.</p></article>
+          <article class="card"><span class="card-number mono">03 — AUTHORIZATION</span><h3>Angular Security Boundary</h3><p>Signals keep access tokens in memory. The interceptor restricts token attachment to API paths; guards control navigation. The backend enforces employee, supplier, product and catalogue roles. All active roles can read orders; ADMIN and PURCHASING_OFFICER can create them. Approval and warehouse receipt authorization awaits those endpoints.</p></article>
         </div>
         <div class="architecture" style="margin-top:28px">
           <div class="architecture-flow"><div class="architecture-node"><strong>Angular</strong><small>Reactive forms · Signals · Guards</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Spring Boot</strong><small>Security · Domain services · REST boundary</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div>
@@ -199,21 +189,18 @@
     <section class="section section-alt" id="testing">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow mono">Testing and Verification · 27 November 2026</p>
-          <h2>245 Local Tests Passed</h2>
+          <p class="eyebrow mono">07 / Testing and Verification</p>
+          <h2>Automated Testing &amp; Verification</h2>
           <p>The Maven backend build passed 122 tests and packaged the JAR. The Angular production build succeeded and 123 Vitest tests passed. Flyway V1–V6 were validated against the development PostgreSQL database.</p>
         </div>
         <div class="grid">
-          <article class="card">
-            <h3>Backend Tests</h3>
+          <article class="card"><span class="card-number mono">BACKEND</span><h3>Backend Tests</h3>
             <p>JUnit and Spring integration tests cover authentication/session behavior, employee and catalogue APIs, product operations, purchase-order creation and reads, and domain validation. All 122 tests passed locally.</p>
           </article>
-          <article class="card">
-            <h3>Frontend Tests</h3>
+          <article class="card"><span class="card-number mono">FRONTEND</span><h3>Frontend Tests</h3>
             <p>The 123 Vitest tests cover authentication, guards, the API interceptor, employees, suppliers, products, the dashboard and shared components. Dedicated purchase-order UI acceptance tests remain to be added.</p>
           </article>
-          <article class="card">
-            <h3>Cloud and Browser Checks</h3>
+          <article class="card"><span class="card-number mono">VERIFICATION</span><h3>Cloud and Browser Checks</h3>
             <p>Backend health and the Netlify CSRF proxy response were verified on 26 November. Browser verification of the newest product, supplier-catalogue and purchase-order screens is still needed.</p>
           </article>
         </div>
@@ -222,12 +209,12 @@
 
     <section class="section" id="deployment">
       <div class="container">
-        <div class="section-heading"><p class="eyebrow mono">DevOps &amp; Cloud Infrastructure</p><h2>From Source Code to Cloud Container</h2><p>Multi-stage Docker packaging separates the Maven build from the Java runtime. GitHub Actions verifies changes independently of image packaging.</p></div>
-        <div class="architecture"><div class="architecture-flow"><div class="architecture-node"><strong>GitHub repository</strong><small>Java source · Dockerfile</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Render build server</strong><small>Maven · JDK 21 · Docker image</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Render cloud container</strong><small>JRE 21 · Spring Boot REST API</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node"><strong>Supabase PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div><p class="architecture-note">Render health and the Netlify CSRF proxy response were verified on 26 November 2026. Local tests and builds for the latest feature branches succeeded on 27 November. Deployment of the newest catalogue and purchase-order code and full cloud browser workflows remain unverified.</p></div>
+        <div class="section-heading"><p class="eyebrow mono">08 / DevOps &amp; Cloud Infrastructure</p><h2>From Source Code to Cloud Container</h2><p>Multi-stage Docker packaging separates the Maven build from the Java runtime. GitHub Actions verifies changes independently of image packaging.</p></div>
+        <div class="architecture" style="margin-bottom:24px"><div class="architecture-flow" style="flex-wrap:nowrap"><div class="architecture-node" style="min-width:0"><strong>GitHub repository</strong><small>Java source · Dockerfile</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node" style="min-width:0"><strong>Render build server</strong><small>Maven · JDK 21 · Docker image</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node" style="min-width:0"><strong>Render cloud container</strong><small>JRE 21 · Spring Boot REST API</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node" style="min-width:0"><strong>Supabase PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div><p class="architecture-note">Render health and the Netlify CSRF proxy response were verified on 26 November 2026. Local tests and builds for the latest feature branches succeeded on 27 November. Deployment of the newest catalogue and purchase-order code and full cloud browser workflows remain unverified.</p></div>
         <div class="grid">
-          <article class="card"><h3>Containerization</h3><p>Java 21 JDK build stage, executable Spring Boot JAR, Java 21 JRE runtime and non-root container user. Docker Desktop with WSL 2 supports local development.</p></article>
-          <article class="card"><h3>Cloud Configuration</h3><p>Render supplies the runtime port and environment variables. Database credentials and JWT signing keys stay outside source control. Actuator provides a health endpoint.</p></article>
-          <article class="card"><h3>Continuous Integration</h3><p>GitHub Actions runs Maven verification and Angular build and test checks. Testcontainers provides isolated PostgreSQL integration tests.</p></article>
+          <article class="card"><span class="card-number mono">DOCKER</span><h3>Containerization</h3><p>Java 21 JDK build stage, executable Spring Boot JAR, Java 21 JRE runtime and non-root container user. Docker Desktop with WSL 2 supports local development.</p></article>
+          <article class="card"><span class="card-number mono">CLOUD</span><h3>Cloud Configuration</h3><p>Render supplies the runtime port and environment variables. Database credentials and JWT signing keys stay outside source control. Actuator provides a health endpoint.</p></article>
+          <article class="card"><span class="card-number mono">CI/CD</span><h3>Continuous Integration</h3><p>GitHub Actions runs Maven verification and Angular build and test checks. Testcontainers provides isolated PostgreSQL integration tests.</p></article>
         </div>
         <div class="actions"><a class="btn btn-outline" href="https://stockflow-management.netlify.app/">Live Development Preview</a><a class="btn btn-outline" href="https://stockflow-backend-5cke.onrender.com/actuator/health">Backend Health</a><a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/Dockerfile">View Dockerfile</a><a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/README.md#cloud-deployment-and-containerization">Deployment Documentation</a></div>
       </div>
@@ -236,7 +223,7 @@
     <section class="section" id="documentation">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow mono">Technical Documentation</p>
+          <p class="eyebrow mono">09 / Technical Documentation</p>
           <h2>Design and API Contracts</h2>
           <p>The API contract shows how to save an order. The database diagram shows why one product can have a different price with each supplier.</p>
         </div>
@@ -255,27 +242,38 @@
     <section class="section section-alt" id="roadmap">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow mono">Development Roadmap</p>
+          <p class="eyebrow mono">10 / Development Roadmap</p>
           <h2>From Draft Orders to Stock Updates</h2>
           <p>The current milestone is browser verification of the product, supplier-catalogue and draft-order screens. The next build stage adds approval and receiving.</p>
         </div>
-        <div class="grid">
-          <article class="card">
-            <h3>Implemented</h3>
+        <div class="grid grid-two">
+          <article class="card"><span class="card-number mono">IMPLEMENTED</span><h3>Implemented</h3>
             <p>Authentication, employee administration, supplier/product management, supplier-specific prices, draft order creation/list/detail, six Flyway migrations and 245 locally passing tests.</p>
           </article>
-          <article class="card">
-            <h3>Next: Verify the Current UI</h3>
+          <article class="card"><span class="card-number mono">NEXT PRIORITY</span><h3>Next: Verify the Current UI</h3>
             <p>Exercise supplier selection, product filtering, draft creation and order details in the browser; add dedicated purchase-order UI and end-to-end tests.</p>
           </article>
-          <article class="card">
-            <h3>Next: Complete Procurement</h3>
+          <article class="card"><span class="card-number mono">PLANNED</span><h3>Next: Complete Procurement</h3>
             <p>Add approval/cancellation endpoints, partial delivery receipts, inventory balance updates and stock-movement history with transactional safeguards.</p>
           </article>
-          <article class="card">
-            <h3>Cloud Preview</h3>
+          <article class="card"><span class="card-number mono">VERIFICATION</span><h3>Cloud Preview</h3>
             <p>Deploy and verify the latest feature branches, then confirm login and role permissions in the hosted browser workflow.</p>
           </article>
+        </div>
+      </div>
+    </section>
+      <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow mono" style="color:var(--accent)">Explore the Project</p>
+          <h2>Source Code &amp; Live Application</h2>
+          <p>Explore the Angular frontend, Spring Boot backend and development preview.</p>
+          <div class="actions" style="justify-content:center">
+            <a class="btn btn-primary" href="https://stockflow-management.netlify.app/">Live Development Preview</a>
+            <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderFrontend/tree/feature/auth-ui">Frontend GitHub</a>
+            <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/tree/feature/auth-persistence">Backend GitHub</a>
+            <a class="btn btn-outline" href="index.html#projects">Back to Portfolio</a>
+          </div>
         </div>
       </div>
     </section>
