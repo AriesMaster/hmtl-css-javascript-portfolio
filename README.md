@@ -88,9 +88,9 @@ A deployed, fully connected dental practice management portfolio application usi
 
 #### StockFlow — Stock and Purchase Order Management (In Development)
 
-Angular 22 and Java/Spring Boot portfolio project with Supabase PostgreSQL, Flyway and automated tests. Domain rules, database schema and frontend infrastructure are implemented; persistence mappings, business endpoints and screens remain in development. Latest reported runs: 13 JUnit and 4 Vitest tests passed.
+In StockFlow, a hardware store can maintain suppliers and products, set a price for each supplier’s offer and save a purchase order with several items. I built the Angular workspace and the Java 21 / Spring Boot API. The API checks employee permissions and stores the product name and agreed price on each order line. Approval, receiving and stock tracking are planned. On 27 November 2026, the local builds passed 122 backend and 123 frontend tests.
 
-[Frontend](https://github.com/AriesMaster/StockPurchaseOrderFrontend) · [Backend](https://github.com/AriesMaster/StockPurchaseOrderBackend) · [Engineering Documentation](https://github.com/AriesMaster/StockPurchaseOrderBackend/tree/main/docs) · [Database Design](https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/database-design.md) · [API Contract](https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/main/docs/api-contract.md)
+[StockFlow case study](https://thabo.netlify.app/stockflow.html) · [Live preview](https://stockflow-management.netlify.app/) · [Frontend](https://github.com/AriesMaster/StockPurchaseOrderFrontend/tree/feature/auth-ui) · [Backend](https://github.com/AriesMaster/StockPurchaseOrderBackend/tree/feature/auth-persistence) · [Engineering Documentation](https://github.com/AriesMaster/StockPurchaseOrderBackend/tree/feature/auth-persistence/docs) · [Database Design](https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/database-design.md) · [API Contract](https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/api-contract.md)
 
 #### Tech Trends REST API
 
