@@ -210,7 +210,7 @@
     <section class="section" id="deployment">
       <div class="container">
         <div class="section-heading"><p class="eyebrow mono">08 / DevOps &amp; Cloud Infrastructure</p><h2>From Source Code to Cloud Container</h2><p>Multi-stage Docker packaging separates the Maven build from the Java runtime. GitHub Actions verifies changes independently of image packaging.</p></div>
-        <div class="architecture" style="margin-bottom:24px"><div class="architecture-flow" style="flex-wrap:nowrap"><div class="architecture-node" style="min-width:0"><strong>GitHub repository</strong><small>Java source · Dockerfile</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node" style="min-width:0"><strong>Render build server</strong><small>Maven · JDK 21 · Docker image</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node" style="min-width:0"><strong>Render cloud container</strong><small>JRE 21 · Spring Boot REST API</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node" style="min-width:0"><strong>Supabase PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div><p class="architecture-note">Render health and the Netlify CSRF proxy response were verified on 26 November 2026. Local tests and builds for the latest feature branches succeeded on 27 November. Deployment of the newest catalogue and purchase-order code and full cloud browser workflows remain unverified.</p></div>
+        <div class="architecture" style="margin-bottom:24px"><div class="architecture-flow" ><div class="architecture-node" style="min-width:0"><strong>GitHub repository</strong><small>Java source · Dockerfile</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node" style="min-width:0"><strong>Render build server</strong><small>Maven · JDK 21 · Docker image</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node" style="min-width:0"><strong>Render cloud container</strong><small>JRE 21 · Spring Boot REST API</small></div><span class="architecture-arrow" aria-hidden="true">→</span><div class="architecture-node" style="min-width:0"><strong>Supabase PostgreSQL</strong><small>JPA · Hibernate · Flyway</small></div></div><p class="architecture-note">Render health and the Netlify CSRF proxy response were verified on 26 November 2026. Local tests and builds for the latest feature branches succeeded on 27 November. Deployment of the newest catalogue and purchase-order code and full cloud browser workflows remain unverified.</p></div>
         <div class="grid">
           <article class="card"><span class="card-number mono">DOCKER</span><h3>Containerization</h3><p>Java 21 JDK build stage, executable Spring Boot JAR, Java 21 JRE runtime and non-root container user. Docker Desktop with WSL 2 supports local development.</p></article>
           <article class="card"><span class="card-number mono">CLOUD</span><h3>Cloud Configuration</h3><p>Render supplies the runtime port and environment variables. Database credentials and JWT signing keys stay outside source control. Actuator provides a health endpoint.</p></article>
@@ -220,33 +220,75 @@
       </div>
     </section>
 
-    <section class="section" id="documentation">
+    <section class="section section-alt" id="documentation">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow mono">09 / Technical Documentation</p>
-          <h2>Design and API Contracts</h2>
-          <p>The API contract shows how to save an order. The database diagram shows why one product can have a different price with each supplier.</p>
+          <h2>Engineering Documentation</h2>
+          <p>Explore the source-based technical documentation behind StockFlow: system architecture, relational design, API contracts, data flows, security and database operations.</p>
         </div>
-        <div class="actions">
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/system-design.md">System Design</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/database-design.md">Database Design &amp; ERD</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/api-contract.md">API Contract</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/physical-dfd.md">Physical Data Flow Diagram</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/security-design.md">Security Design</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/technical-specification.md">Technical Specification</a>
-          <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/database-operations.md">Database Operations</a>
+        <div class="grid grid-two">
+          <article class="card">
+            <h3>System Design</h3>
+            <p>System architecture, application components and design decisions.</p>
+            <div class="actions">
+              <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/system-design.md" target="_blank" rel="noopener noreferrer">View System Design ↗</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Database Design &amp; ERD</h3>
+            <p>PostgreSQL entities, relationships, constraints and the entity-relationship diagram.</p>
+            <div class="actions">
+              <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/database-design.md" target="_blank" rel="noopener noreferrer">View Database Design &amp; ERD ↗</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>API Contract</h3>
+            <p>REST API endpoints, request and response structures, and API contracts.</p>
+            <div class="actions">
+              <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/api-contract.md" target="_blank" rel="noopener noreferrer">View API Contract ↗</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Physical Data Flow Diagram</h3>
+            <p>Data movement between application components and persistent storage.</p>
+            <div class="actions">
+              <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/physical-dfd.md" target="_blank" rel="noopener noreferrer">View Physical Data Flow Diagram ↗</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Security Design</h3>
+            <p>Authentication, session management, role-based authorization and access control.</p>
+            <div class="actions">
+              <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/security-design.md" target="_blank" rel="noopener noreferrer">View Security Design ↗</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Technical Specification</h3>
+            <p>Functional requirements, business rules and technical specifications.</p>
+            <div class="actions">
+              <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/technical-specification.md" target="_blank" rel="noopener noreferrer">View Technical Specification ↗</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Database Operations</h3>
+            <p>Database migrations, configuration and data management.</p>
+            <div class="actions">
+              <a class="btn btn-outline" href="https://github.com/AriesMaster/StockPurchaseOrderBackend/blob/feature/auth-persistence/docs/database-operations.md" target="_blank" rel="noopener noreferrer">View Database Operations ↗</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="roadmap">
+    <section class="section" id="roadmap">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow mono">10 / Development Roadmap</p>
           <h2>From Draft Orders to Stock Updates</h2>
           <p>The current milestone is browser verification of the product, supplier-catalogue and draft-order screens. The next build stage adds approval and receiving.</p>
         </div>
-        <div class="grid grid-two">
+        <div class="grid">
           <article class="card"><span class="card-number mono">IMPLEMENTED</span><h3>Implemented</h3>
             <p>Authentication, employee administration, supplier/product management, supplier-specific prices, draft order creation/list/detail, six Flyway migrations and 245 locally passing tests.</p>
           </article>
@@ -265,7 +307,7 @@
       <section class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow mono" style="color:var(--accent)">Explore the Project</p>
+          <p class="eyebrow mono">Explore the Project</p>
           <h2>Source Code &amp; Live Application</h2>
           <p>Explore the Angular frontend, Spring Boot backend and development preview.</p>
           <div class="actions" style="justify-content:center">
